@@ -27,7 +27,7 @@
     </nav>
     <!-- /.navbar -->
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="height:1000px; background: light ">
+    <div class="content-wrapper" style="height:100%; background: light ">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container">
@@ -37,29 +37,337 @@
         <!-- Main content -->
         <div class="content">
             <div class="container">
-                <div class="card card-default">
-                    <div class="card-header">
-                        <h4>Future State</h4>
+                <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+
+                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                        <h3>Application Devlopment</h3>
                     </div>
-                    <div class="card-body">
-                            <div class="form-group ">
-                                    <label>BU</label>
-                                    <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
-                                        <select title="BU"  formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Mustard</option>
-                                            <option value="2">Ketchup</option>
-                                            <option value="3">Relish</option>
-                                            <option value="4">Mustard</option>
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Plateform</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">aws</option>
+                                            <option value="2">azure</option>
+                                            <option value="3">on-premise</option>
                                         </select>
-                                        <button>submit</button>
-                                    </form>
 
+
+                                    </div>
                                 </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Database</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">DynamoDB</option>
+                                            <option value="2">Oracle</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Analytics</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">analytics</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Streaming</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">kafka</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Messaging</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Rabbit MQ</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Serverless</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Lamda</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Integration</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Mulesoft</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Schema Definition</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">rami</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Image Selectild</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Fabric8</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>CI/CD</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Jenkins</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    
 
-                </div>
+
+                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                        <h3>Orchestration & Management</h3>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Container Orchestration</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Kubernetes</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Service Discovery</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Netflix</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Remote Procedure Calls</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">rest</option>
+                                            <option value="2">gRPC</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Service Mesh</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Istio</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>API Gateway</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Amazon</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                        <h3>Provisioning</h3>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-body">
+                                <div class="row">
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <label>Host Management</label>
+            
+                                                <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                    <option value="1">terraform</option>
+                                                </select>
+            
+            
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <label>Container Registry</label>
+            
+                                                <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                    <option value="1">JFRog</option>
+                                                </select>
+            
+            
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <label>Security</label>
+            
+                                                <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                    <option value="1">JWT</option>
+                                                    <option value="1">OpenID</option>
+                                                    <option value="1">SAML</option>
+                                                </select>
+            
+            
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <label>Key Management</label>
+            
+                                                <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                    <option value="1">keycloak</option>
+                                                </select>
+            
+            
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group ">
+                                                <label>Memory Management</label>
+            
+                                                <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                    <option value="1">redis</option>
+                                                </select>
+            
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                        <h3>Governance</h3>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Monitoring</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">prometesis</option>
+                                            <option value="2">cloudwatch</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Logging</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">log4j</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Tracing</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">zipkin</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>API Analytics</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">apigee</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group ">
+                                        <label>Alerts</label>
+
+                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">aws</option>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
             </div>
             <!-- /.container-fluid -->
         </div>
