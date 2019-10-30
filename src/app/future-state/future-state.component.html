@@ -47,12 +47,12 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group ">
-                                        <label>Plateform</label>
+                                        <label>Platform</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">aws</option>
-                                            <option value="2">azure</option>
-                                            <option value="3">on-premise</option>
+                                        <select  title="Select" formControlName="platform" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="aws">aws</option>
+                                            <option value="azure">azure</option>
+                                            <option value="on-premise">on-premise</option>
                                         </select>
 
 
@@ -62,9 +62,9 @@
                                     <div class="form-group ">
                                         <label>Database</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">DynamoDB</option>
-                                            <option value="2">Oracle</option>
+                                        <select title="Select" formControlName="database" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="DynamoDB">DynamoDB</option>
+                                            <option value="Oracle">Oracle</option>
                                         </select>
 
 
@@ -74,8 +74,8 @@
                                     <div class="form-group ">
                                         <label>Analytics</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">analytics</option>
+                                        <select title="Select" formControlName="analytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="analytics">analytics</option>
                                         </select>
 
 
@@ -85,8 +85,8 @@
                                     <div class="form-group ">
                                         <label>Streaming</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">kafka</option>
+                                        <select title="Select" formControlName="streaming" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="kafka">kafka</option>
                                         </select>
 
 
@@ -96,8 +96,8 @@
                                     <div class="form-group ">
                                         <label>Messaging</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Rabbit MQ</option>
+                                        <select title="Select" formControlName="messaging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Rabbit MQ">Rabbit MQ</option>
                                         </select>
 
 
@@ -109,8 +109,8 @@
                                     <div class="form-group ">
                                         <label>Serverless</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Lamda</option>
+                                        <select title="Select" formControlName="serverless" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Lamda">Lamda</option>
                                         </select>
 
 
@@ -120,8 +120,8 @@
                                     <div class="form-group ">
                                         <label>Integration</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Mulesoft</option>
+                                        <select title="Select" formControlName="integration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Mulesoft">Mulesoft</option>
                                         </select>
 
 
@@ -131,8 +131,8 @@
                                     <div class="form-group ">
                                         <label>Schema Definition</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">rami</option>
+                                        <select title="Select" formControlName="schemaDefinition" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="rami">rami</option>
                                         </select>
 
 
@@ -142,8 +142,8 @@
                                     <div class="form-group ">
                                         <label>Image Build</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Fabric8</option>
+                                        <select title="Select" formControlName="imageBuild" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Fabric8">Fabric8</option>
                                         </select>
 
 
@@ -153,8 +153,8 @@
                                     <div class="form-group ">
                                         <label>CI/CD</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Jenkins</option>
+                                        <select title="Select" formControlName="cicd" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Jenkins">Jenkins</option>
                                         </select>
 
 
@@ -176,8 +176,8 @@
                                     <div class="form-group ">
                                         <label>Container Orchestration</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Kubernetes</option>
+                                        <select title="Select" formControlName="containerOrchestration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Kubernetes">Kubernetes</option>
                                         </select>
 
 
@@ -187,8 +187,8 @@
                                     <div class="form-group ">
                                         <label>Service Discovery</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Netflix</option>
+                                        <select title="Select" formControlName="serviceDiscovery" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Netflix">Netflix</option>
                                         </select>
 
 
@@ -198,9 +198,9 @@
                                     <div class="form-group ">
                                         <label>Remote Procedure Calls</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">rest</option>
-                                            <option value="2">gRPC</option>
+                                        <select title="Select" formControlName="rpc" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="rest">rest</option>
+                                            <option value="gRPC">gRPC</option>
                                         </select>
 
 
@@ -210,8 +210,8 @@
                                     <div class="form-group ">
                                         <label>Service Mesh</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Istio</option>
+                                        <select title="Select" formControlName="serviceMesh" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Istio">Istio</option>
                                         </select>
 
 
@@ -221,8 +221,8 @@
                                     <div class="form-group ">
                                         <label>API Gateway</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">Amazon</option>
+                                        <select title="Select" formControlName="apiGateway" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="Amazon">Amazon</option>
                                         </select>
 
 
@@ -243,8 +243,8 @@
                                     <div class="form-group ">
                                         <label>Host Management</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">terraform</option>
+                                        <select title="Select" formControlName="hostManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="terraform">terraform</option>
                                         </select>
 
 
@@ -254,8 +254,8 @@
                                     <div class="form-group ">
                                         <label>Container Registry</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">JFRog</option>
+                                        <select title="Select" formControlName="containerRegistry" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="JFRog">JFRog</option>
                                         </select>
 
 
@@ -265,10 +265,10 @@
                                     <div class="form-group ">
                                         <label>Security</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">JWT</option>
-                                            <option value="1">OpenID</option>
-                                            <option value="1">SAML</option>
+                                        <select title="Select" formControlName="security" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="JWT">JWT</option>
+                                            <option value="OpenID">OpenID</option>
+                                            <option value="SAML">SAML</option>
                                         </select>
 
 
@@ -278,8 +278,8 @@
                                     <div class="form-group ">
                                         <label>Key Management</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">keycloak</option>
+                                        <select title="Select" formControlName="keyManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="keycloak">keycloak</option>
                                         </select>
 
 
@@ -289,8 +289,8 @@
                                     <div class="form-group ">
                                         <label>Memory Management</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">redis</option>
+                                        <select title="Select" formControlName="memoryManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="redis">redis</option>
                                         </select>
 
 
@@ -311,9 +311,9 @@
                                     <div class="form-group ">
                                         <label>Monitoring</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">prometesis</option>
-                                            <option value="2">cloudwatch</option>
+                                        <select title="Select" formControlName="monitoring" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="prometesis">prometesis</option>
+                                            <option value="cloudwatch">cloudwatch</option>
                                         </select>
 
 
@@ -323,8 +323,8 @@
                                     <div class="form-group ">
                                         <label>Logging</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">log4j</option>
+                                        <select title="Select" formControlName="logging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="log4j">log4j</option>
                                         </select>
 
 
@@ -334,8 +334,8 @@
                                     <div class="form-group ">
                                         <label>Tracing</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">zipkin</option>
+                                        <select title="Select" formControlName="tracing" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="zipkin">zipkin</option>
                                         </select>
 
 
@@ -345,8 +345,8 @@
                                     <div class="form-group ">
                                         <label>API Analytics</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">apigee</option>
+                                        <select title="Select" formControlName="apiAnalytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="apigee">apigee</option>
                                         </select>
 
 
@@ -356,8 +356,8 @@
                                     <div class="form-group ">
                                         <label>Alerts</label>
 
-                                        <select title="Select" formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="1">aws</option>
+                                        <select title="Select" formControlName="alerts" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="aws">aws</option>
                                         </select>
 
 

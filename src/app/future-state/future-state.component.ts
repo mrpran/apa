@@ -31,7 +31,31 @@ export class FutureStateComponent implements OnInit {
     });
 
     this.sampleForm = this.formBuilder.group({
-      collection: []
+      platform: [],
+      database: [],
+      analytics: [],
+      streaming: [],
+      messaging: [],
+      serverless: [],
+      integration: [],
+      schemaDefinition: [],
+      imageBuild: [],
+      cicd: [],
+      containerOrchestration: [],
+      serviceDiscovery: [],
+      rpc: [],
+      serviceMesh: [],
+      apiGateway: [],
+      hostManagement: [],
+      containerRegistry: [],
+      security: [],
+      keyManagement: [],
+      memoryManagement: [],
+      monitoring: [],
+      logging: [],
+      tracing: [],
+      apiAnalytics: [],
+      alerts:[]
     });
   }
 
