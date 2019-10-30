@@ -1,0 +1,365 @@
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a href="index3.html" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        Portfolio Details
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        {{username}}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                        Sign out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="height:100%; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+            </div>
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content">
+            <div class="container">
+                <div class="card card-default">
+                    <form [formGroup]="appliationEstateForm" (ngSubmit)="onSubmit()">
+                        <div class="card-header">
+                            <h4>Application Stack</h4>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-4">
+
+                                    <label>Language Frontend & Version</label>
+                                    <div class="input-group">
+                                        <input formControlName="LangaugeFrontEnd" type="text" class="form-control">
+                                        <div class="input-group-append" style="width: 100px">
+                                            <input formControlName="LangaugeVersion" class="form-control" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                    <label>Language Backend & Version</label>
+                                    <div class="input-group">
+                                        <input formControlName="LangageBackEnd" type="text" class="form-control">
+                                        <div class="input-group-append" style="width: 100px">
+                                            <input formControlName="Version" class="form-control" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 mb-2">
+
+                                    <label>Database & Version</label>
+                                    <div class="input-group">
+                                        <input formControlName="Database" type="text" class="form-control">
+                                        <div class="input-group-append" style="width: 100px">
+                                            <input formControlName="DatabaseVersion" class="form-control" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>App Servers & version</label>
+                                        <div class="input-group">
+                                            <input formControlName="AppServers" type="text" class="form-control">
+                                            <div class="input-group-append" style="width: 100px">
+                                                <input formControlName="AppVersion" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Integration Layer</label>
+                                        <input formControlName="IntegrationLayer" type="text" class="form-control" placeholder="Integration Layer">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>API Gateway</label>
+                                        <input formControlName="ApiGateway" type="text" class="form-control" placeholder="API Gateway">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Total lines of code</label>
+                                        <input formControlName="LinesOfCode" type="text" class="form-control" placeholder="Lines of code">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>DB</label>
+                                        <input formControlName="DatabaseStack" type="text" class="form-control" placeholder="DB">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Backend</label>
+                                        <input formControlName="BackEndStack" type="text" class="form-control" placeholder="Backend">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Frontend</label>
+                                        <input formControlName="FrontEndStack" type="text" class="form-control" placeholder="Frontend">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Platform</label>
+                                        <input formControlName="Platform" type="text" class="form-control" placeholder="Platform">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Package Software</label>
+                                        <input formControlName="PackageSoftware" type="text" class="form-control" placeholder="Package Software">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Infrastructure</label>
+                                        <input formControlName="Infrastructure" type="text" class="form-control" placeholder="Infrastructure">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Operating System</label>
+                                        <input formControlName="OperatingSystem" type="text" class="form-control" placeholder="Operating System">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Application Insight</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Description</label>
+                                        <input formControlName="ApplicationDescription" type="text" class="form-control" placeholder="Application Description">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Classfication</label>
+                                        <input formControlName="ApplicationClassification" type="text" class="form-control" placeholder="Application Classfication">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Support hours Time Zone</label>
+                                        <input formControlName="ApplicationSupportHours" type="text" class="form-control" placeholder="Application Support hours  Time Zone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Age of Application</label>
+                                        <input formControlName="AgeOfApplication" type="text" class="form-control" placeholder="Age of Application ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Documents Availability</label>
+                                        <input formControlName="ApplicactionDocumentsAvailability" type="text" class="form-control" placeholder="Application Documents Availability ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Region</label>
+                                        <input formControlName="Region" type="text" class="form-control" placeholder="Region ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Global or Local Application?</label>
+                                        <input formControlName="GlobalLocal" type="text" class="form-control" placeholder="Global or Local Application? ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Population range(users)</label>
+                                        <input formControlName="ApplicationPopulation" type="text" class="form-control" placeholder="Application Population range(users) ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Number of Total tickets (yearly)</label>
+                                        <input formControlName="NumberOfTicketsYearly" type="text" class="form-control" placeholder="Number of Total tickets (yearly)">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Incident Request (yearly)</label>
+                                        <input formControlName="IncidentRequestYearly" type="text" class="form-control" placeholder="Incident Request (yearly) ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Service Request (yearly)</label>
+                                        <input formControlName="ServiceRequestYearly" type="text" class="form-control" placeholder="Service Request (yearly) ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Change Request (yearly)</label>
+                                        <input formControlName="ChangeRequestYearly" type="text" class="form-control" placeholder="Change Request (yearly)">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Bought Solution or Inhouse developed</label>
+                                        <input formControlName="SolutionModel" type="text" class="form-control" placeholder="Bought Solution or Inhouse developed ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Application Language dependency</label>
+                                        <input formControlName="AplicationLanguageDependecny" type="text" class="form-control" placeholder="Application Language dependency ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Is onsite support presence /support needed?</label>
+                                        <input formControlName="IsOnSupportPresent" type="text" class="form-control" placeholder="Is onsite support presence /support needed?">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Is this application planned for Sunset?</label>
+                                        <input formControlName="IsApplicationPlannedSunset" type="text" class="form-control" placeholder="Is this application planned for Sunset?">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Is this application planned to be hosted in Cloud</label>
+                                        <input formControlName="IsApplicationTobeOnCloud" type="text" class="form-control" placeholder="Is this application planned to be hosted in Cloud ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Sunset date (if applicable)</label>
+                                        <input formControlName="SunsetDate" type="text" class="form-control" placeholder="Sunset date (if applicable) ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Is this application planned to be rationalised?</label>
+                                        <input formControlName="IsApplicationRationalized" type="text" class="form-control" placeholder="Is this application planned to be rationalised? ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Is this application part of shadow IT?</label>
+                                        <input formControlName="IsAppShadowIT" type="text" class="form-control" placeholder="Is this application part of shadow IT? ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Business Unit Discovery Spoc</label>
+                                        <input formControlName="BusinessUnitDiscoverySpoc" type="text" class="form-control" placeholder="Business Unit Discovery Spoc ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Regional Discovery Spoc</label>
+                                        <input formControlName="RegionalDiscoverySpoc" type="text" class="form-control" placeholder="Regional Discovery Spoc ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header">
+                            <h4>Process Tools</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Process</label>
+                                        <input formControlName="Process" type="text" class="form-control" placeholder="Process">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Tools</label>
+                                        <input formControlName="ProcessTools" type="text" class="form-control" placeholder="Tools">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>CI/CD</label>
+                                        <input formControlName="CICDProcess" type="text" class="form-control" placeholder="CI/CD">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Tools</label>
+                                        <input formControlName="CICD" type="text" class="form-control" placeholder="Tools">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Release Cycle</label>
+                                        <input formControlName="ReleaseCycle" type="text" class="form-control" placeholder="Release Cycle">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Any other Comments</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter comments ..."></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer d-none">
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+    </footer>
+</div>

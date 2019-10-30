@@ -1,0 +1,75 @@
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a href="index3.html" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        Portfolio Details
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                        Sign out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="height:1000px; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+            </div>
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content">
+            <div class="container">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4>Future State</h4>
+                    </div>
+                    <div class="card-body">
+                            <div class="form-group ">
+                                    <label>BU</label>
+                                    <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+                                        <select title="BU"  formControlName="collection" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                            <option value="1">Mustard</option>
+                                            <option value="2">Ketchup</option>
+                                            <option value="3">Relish</option>
+                                            <option value="4">Mustard</option>
+                                        </select>
+                                        <button>submit</button>
+                                    </form>
+
+                                </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer d-none">
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+    </footer>
+</div>
