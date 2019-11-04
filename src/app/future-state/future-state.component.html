@@ -1,390 +1,390 @@
 <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
-        <div class="container">
-            <a href="index3.html" class="navbar-brand">
-                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
-            </a>
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
-                        Portfolio Details
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
-                        Sign out
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- /.navbar -->
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="height:100%; background: light ">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
             <div class="container">
+                <a href="index3.html" class="navbar-brand">
+                    <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+                </a>
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                            Portfolio Details
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+    
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                            Sign out
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <!-- /.content-header -->
-        <!-- Main content -->
-        <div class="content">
-            <div class="container">
-                <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Application Devlopment</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Platform</label>
-
-                                        <select  title="Select" formControlName="platform" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="aws">aws</option>
-                                            <option value="azure">azure</option>
-                                            <option value="on-premise">on-premise</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Database</label>
-
-                                        <select title="Select" formControlName="database" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="DynamoDB">DynamoDB</option>
-                                            <option value="Oracle">Oracle</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Analytics</label>
-
-                                        <select title="Select" formControlName="analytics" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="analytics">analytics</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Streaming</label>
-
-                                        <select title="Select" formControlName="streaming" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="kafka">kafka</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Messaging</label>
-
-                                        <select title="Select" formControlName="messaging" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Rabbit MQ">Rabbit MQ</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Serverless</label>
-
-                                        <select title="Select" formControlName="serverless" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Lamda">Lamda</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Integration</label>
-
-                                        <select title="Select" formControlName="integration" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Mulesoft">Mulesoft</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Schema Definition</label>
-
-                                        <select title="Select" formControlName="schemaDefinition" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="rami">rami</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Image Build</label>
-
-                                        <select title="Select" formControlName="imageBuild" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Fabric8">Fabric8</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>CI/CD</label>
-
-                                        <select title="Select" formControlName="cicd" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Jenkins">Jenkins</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Orchestration & Management</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Container Orchestration</label>
-
-                                        <select title="Select" formControlName="containerOrchestration" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Kubernetes">Kubernetes</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Service Discovery</label>
-
-                                        <select title="Select" formControlName="serviceDiscovery" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Netflix">Netflix</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Remote Procedure Calls</label>
-
-                                        <select title="Select" formControlName="rpc" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="rest">rest</option>
-                                            <option value="gRPC">gRPC</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Service Mesh</label>
-
-                                        <select title="Select" formControlName="serviceMesh" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Istio">Istio</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>API Gateway</label>
-
-                                        <select title="Select" formControlName="apiGateway" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Amazon">Amazon</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Provisioning</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Host Management</label>
-
-                                        <select title="Select" formControlName="hostManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="terraform">terraform</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Container Registry</label>
-
-                                        <select title="Select" formControlName="containerRegistry" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="JFRog">JFRog</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Security</label>
-
-                                        <select title="Select" formControlName="security" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="JWT">JWT</option>
-                                            <option value="OpenID">OpenID</option>
-                                            <option value="SAML">SAML</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Key Management</label>
-
-                                        <select title="Select" formControlName="keyManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="keycloak">keycloak</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Memory Management</label>
-
-                                        <select title="Select" formControlName="memoryManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="redis">redis</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Governance</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Monitoring</label>
-
-                                        <select title="Select" formControlName="monitoring" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="prometesis">prometesis</option>
-                                            <option value="cloudwatch">cloudwatch</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Logging</label>
-
-                                        <select title="Select" formControlName="logging" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="log4j">log4j</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Tracing</label>
-
-                                        <select title="Select" formControlName="tracing" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="zipkin">zipkin</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>API Analytics</label>
-
-                                        <select title="Select" formControlName="apiAnalytics" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="apigee">apigee</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Alerts</label>
-
-                                        <select title="Select" formControlName="alerts" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="aws">aws</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-2 ">
-                        <button type="button" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
-
-                    </div>
-                    <div class="p-4">
-
-                    </div>
-                </form>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="height:100%; background: light ">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container">
+                </div>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content">
+                <div class="container">
+                    <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Application Devlopment</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Platform</label>
+    
+                                            <select  title="Select" formControlName="platform" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="aws">aws</option>
+                                                <option value="azure">azure</option>
+                                                <option value="on-premise">on-premise</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Database</label>
+    
+                                            <select title="Select" formControlName="database" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="DynamoDB">DynamoDB</option>
+                                                <option value="Oracle">Oracle</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Analytics</label>
+    
+                                            <select title="Select" formControlName="analytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="analytics">analytics</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Streaming</label>
+    
+                                            <select title="Select" formControlName="streaming" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="kafka">kafka</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Messaging</label>
+    
+                                            <select title="Select" formControlName="messaging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Rabbit MQ">Rabbit MQ</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Serverless</label>
+    
+                                            <select title="Select" formControlName="serverless" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Lamda">Lamda</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Integration</label>
+    
+                                            <select title="Select" formControlName="integration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Mulesoft">Mulesoft</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Schema Definition</label>
+    
+                                            <select title="Select" formControlName="schemaDefinition" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="rami">rami</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Image Build</label>
+    
+                                            <select title="Select" formControlName="imageBuild" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Fabric8">Fabric8</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>CI/CD</label>
+    
+                                            <select title="Select" formControlName="cicd" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Jenkins">Jenkins</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Orchestration & Management</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Container Orchestration</label>
+    
+                                            <select title="Select" formControlName="containerOrchestration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Kubernetes">Kubernetes</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Service Discovery</label>
+    
+                                            <select title="Select" formControlName="serviceDiscovery" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Netflix">Netflix</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Remote Procedure Calls</label>
+    
+                                            <select title="Select" formControlName="rpc" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="rest">rest</option>
+                                                <option value="gRPC">gRPC</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Service Mesh</label>
+    
+                                            <select title="Select" formControlName="serviceMesh" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Istio">Istio</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>API Gateway</label>
+    
+                                            <select title="Select" formControlName="apiGateway" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Amazon">Amazon</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Provisioning</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Host Management</label>
+    
+                                            <select title="Select" formControlName="hostManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="terraform">terraform</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Container Registry</label>
+    
+                                            <select title="Select" formControlName="containerRegistry" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="JFRog">JFRog</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Security</label>
+    
+                                            <select title="Select" formControlName="security" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="JWT">JWT</option>
+                                                <option value="OpenID">OpenID</option>
+                                                <option value="SAML">SAML</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Key Management</label>
+    
+                                            <select title="Select" formControlName="keyManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="keycloak">keycloak</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Memory Management</label>
+    
+                                            <select title="Select" formControlName="memoryManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="redis">redis</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Governance</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Monitoring</label>
+    
+                                            <select title="Select" formControlName="monitoring" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="prometesis">prometesis</option>
+                                                <option value="cloudwatch">cloudwatch</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Logging</label>
+    
+                                            <select title="Select" formControlName="logging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="log4j">log4j</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Tracing</label>
+    
+                                            <select title="Select" formControlName="tracing" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="zipkin">zipkin</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>API Analytics</label>
+    
+                                            <select title="Select" formControlName="apiAnalytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="apigee">apigee</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Alerts</label>
+    
+                                            <select title="Select" formControlName="alerts" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="aws">aws</option>
+                                            </select>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="p-2 ">
+                            <button type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+    
+                        </div>
+                        <div class="p-4">
+    
+                        </div>
+                    </form>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer d-none">
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+        </footer>
     </div>
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer d-none">
-        <div class="float-right d-none d-sm-inline">
-            Anything you want
-        </div>
-    </footer>
-</div>

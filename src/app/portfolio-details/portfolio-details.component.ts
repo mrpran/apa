@@ -15,12 +15,16 @@ export class PortfolioDetailsComponent implements OnInit {
   portfolioDetailsForm: FormGroup;
   loading = false;
   sampleData1 = {
-    "Bu": "",
-    "Vertical": "",
-    "Account": "",
-    "Bo": "",
-    "AppName": "",
-    "WiproAL": "",
+    "bu": "",
+    "vertical": "",
+    "account": "",
+    "bo": "",
+    "appName": "",
+    "wiproAL": "",
+    "entity" : "",
+    "asIs" : "",
+    "toBe" : ""
+
   };
 
   constructor(
@@ -35,23 +39,25 @@ export class PortfolioDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.portfolioDetailsForm = this.formBuilder.group({
-      Bu: ['BU'],
-      Vertical: ['Vertical'],
-      Account: ['Account'],
-      Bo: ['BO'],
-      AppName: ['App Moderanization'],
-      WiproAL: ['WiproAL']
+      bu: ['BFSI'],
+      vertical: ['Vertical'],
+      account: ['DTCC'],
+      bo: ['Dinesh'],
+      appName: ['App Moderanization'],
+      wiproAL: ['test@wipro.com']
     });
   }
   get f() { return this.portfolioDetailsForm.controls; }
 
   onSubmit() {
-    this.sampleData1.Bu = this.f.Bu.value;
-    this.sampleData1.Vertical = this.f.Vertical.value;
-    this.sampleData1.Account = this.f.Account.value;
-    this.sampleData1.Bo = this.f.Bo.value;
-    this.sampleData1.AppName = this.f.AppName.value;
-    this.sampleData1.WiproAL = this.f.WiproAL.value;
+    this.sampleData1.bu = this.f.bu.value;
+    this.sampleData1.vertical = this.f.vertical.value;
+    this.sampleData1.account = this.f.account.value;
+    this.sampleData1.bo = this.f.bo.value;
+    this.sampleData1.appName = this.f.appName.value;
+    this.sampleData1.wiproAL = this.f.wiproAL.value;
+
+    this.sampleData1.entity = "PortfolioAsIs";
 
     this.authenticationService.save1(this.sampleData1);
     this.router.navigate(['application-estate']);

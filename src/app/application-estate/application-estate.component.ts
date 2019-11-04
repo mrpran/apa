@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 export class ApplicationEstateComponent implements OnInit {
   username = "";
   appliationEstateForm: FormGroup;
-  sampleData2 = {
+  asIs = {
     "ApplicationDescription": "This app preserves legal Entities",
     "ApplicationClassification": "This will hold App classification",
     "OperatingSystem": "Windows 2012",
@@ -117,56 +117,59 @@ export class ApplicationEstateComponent implements OnInit {
   }
   get f() { return this.appliationEstateForm.controls; }
   onSubmit() {
-    this.sampleData2.ApplicationDescription = this.f.ApplicationDescription.value;
-    this.sampleData2.ApplicationClassification = this.f.ApplicationClassification.value;
-    this.sampleData2.OperatingSystem = this.f.OperatingSystem.value;
-    this.sampleData2.PackageSoftware = this.f.PackageSoftware.value;
-    this.sampleData2.Platform = this.f.Platform.value;
-    this.sampleData2.ApplicationSupportHours = this.f.ApplicationSupportHours.value;
-    this.sampleData2.AgeOfApplication = this.f.AgeOfApplication.value;
-    this.sampleData2.ApplicactionDocumentsAvailability = this.f.ApplicactionDocumentsAvailability.value;
-    this.sampleData2.Region = this.f.Region.value;
-    this.sampleData2.GlobalLocal = this.f.GlobalLocal.value;
-    this.sampleData2.ApplicationPopulation = this.f.ApplicationPopulation.value;
-    this.sampleData2.NumberOfTicketsYearly = this.f.NumberOfTicketsYearly.value;
-    this.sampleData2.IncidentRequestYearly = this.f.IncidentRequestYearly.value;
-    this.sampleData2.ServiceRequestYearly = this.f.ServiceRequestYearly.value;
-    this.sampleData2.ChangeRequestYearly = this.f.ChangeRequestYearly.value;
-    this.sampleData2.SolutionModel = this.f.SolutionModel.value;
-    this.sampleData2.AplicationLanguageDependecny = this.f.AplicationLanguageDependecny.value;
-    this.sampleData2.IsOnSupportPresent = this.f.IsOnSupportPresent.value;
-    this.sampleData2.IsApplicationPlannedSunset = this.f.IsApplicationPlannedSunset.value;
-    this.sampleData2.IsApplicationTobeOnCloud = this.f.IsApplicationTobeOnCloud.value;
-    this.sampleData2.SunsetDate = this.f.SunsetDate.value;
-    this.sampleData2.IsApplicationRationalized = this.f.IsApplicationRationalized.value;
-    this.sampleData2.IsAppShadowIT = this.f.IsAppShadowIT.value;
-    this.sampleData2.BusinessUnitDiscoverySpoc = this.f.BusinessUnitDiscoverySpoc.value;
-    this.sampleData2.AppServers = this.f.AppServers.value;
-    this.sampleData2.AppVersion = this.f.AppVersion.value;
-    this.sampleData2.IntegrationLayer = this.f.IntegrationLayer.value;
-    this.sampleData2.ApiGateway = this.f.ApiGateway.value;
-    this.sampleData2.Database = this.f.Database.value;
-    this.sampleData2.DatabaseVersion = this.f.DatabaseVersion.value;
-    this.sampleData2.LinesOfCode = this.f.LinesOfCode.value;
-    this.sampleData2.BackEndStack = this.f.BackEndStack.value;
-    this.sampleData2.FrontEndStack = this.f.FrontEndStack.value;
-    this.sampleData2.DatabaseStack = this.f.DatabaseStack.value;
-    this.sampleData2.Infrastructure = this.f.Infrastructure.value;
-    this.sampleData2.ReleaseCycle = this.f.ReleaseCycle.value;
-    this.sampleData2.Process = this.f.Process.value;
-    this.sampleData2.ProcessTools = this.f.ProcessTools.value;
-    this.sampleData2.CICDProcess = this.f.CICDProcess.value;
-    this.sampleData2.CICD = this.f.CICD.value;
-    this.sampleData2.LangageBackEnd = this.f.LangageBackEnd.value;
-    this.sampleData2.Version = this.f.Version.value;
-    this.sampleData2.LangaugeFrontEnd = this.f.LangaugeFrontEnd.value;
-    this.sampleData2.LangaugeVersion = this.f.LangaugeVersion.value;
-    this.sampleData2.RegionalDiscoverySpoc = this.f.RegionalDiscoverySpoc.value;
+    this.asIs.ApplicationDescription = this.f.ApplicationDescription.value;
+    this.asIs.ApplicationClassification = this.f.ApplicationClassification.value;
+    this.asIs.OperatingSystem = this.f.OperatingSystem.value;
+    this.asIs.PackageSoftware = this.f.PackageSoftware.value;
+    this.asIs.Platform = this.f.Platform.value;
+    this.asIs.ApplicationSupportHours = this.f.ApplicationSupportHours.value;
+    this.asIs.AgeOfApplication = this.f.AgeOfApplication.value;
+    this.asIs.ApplicactionDocumentsAvailability = this.f.ApplicactionDocumentsAvailability.value;
+    this.asIs.Region = this.f.Region.value;
+    this.asIs.GlobalLocal = this.f.GlobalLocal.value;
+    this.asIs.ApplicationPopulation = this.f.ApplicationPopulation.value;
+    this.asIs.NumberOfTicketsYearly = this.f.NumberOfTicketsYearly.value;
+    this.asIs.IncidentRequestYearly = this.f.IncidentRequestYearly.value;
+    this.asIs.ServiceRequestYearly = this.f.ServiceRequestYearly.value;
+    this.asIs.ChangeRequestYearly = this.f.ChangeRequestYearly.value;
+    this.asIs.SolutionModel = this.f.SolutionModel.value;
+    this.asIs.AplicationLanguageDependecny = this.f.AplicationLanguageDependecny.value;
+    this.asIs.IsOnSupportPresent = this.f.IsOnSupportPresent.value;
+    this.asIs.IsApplicationPlannedSunset = this.f.IsApplicationPlannedSunset.value;
+    this.asIs.IsApplicationTobeOnCloud = this.f.IsApplicationTobeOnCloud.value;
+    this.asIs.SunsetDate = this.f.SunsetDate.value;
+    this.asIs.IsApplicationRationalized = this.f.IsApplicationRationalized.value;
+    this.asIs.IsAppShadowIT = this.f.IsAppShadowIT.value;
+    this.asIs.BusinessUnitDiscoverySpoc = this.f.BusinessUnitDiscoverySpoc.value;
+    this.asIs.AppServers = this.f.AppServers.value;
+    this.asIs.AppVersion = this.f.AppVersion.value;
+    this.asIs.IntegrationLayer = this.f.IntegrationLayer.value;
+    this.asIs.ApiGateway = this.f.ApiGateway.value;
+    this.asIs.Database = this.f.Database.value;
+    this.asIs.DatabaseVersion = this.f.DatabaseVersion.value;
+    this.asIs.LinesOfCode = this.f.LinesOfCode.value;
+    this.asIs.BackEndStack = this.f.BackEndStack.value;
+    this.asIs.FrontEndStack = this.f.FrontEndStack.value;
+    this.asIs.DatabaseStack = this.f.DatabaseStack.value;
+    this.asIs.Infrastructure = this.f.Infrastructure.value;
+    this.asIs.ReleaseCycle = this.f.ReleaseCycle.value;
+    this.asIs.Process = this.f.Process.value;
+    this.asIs.ProcessTools = this.f.ProcessTools.value;
+    this.asIs.CICDProcess = this.f.CICDProcess.value;
+    this.asIs.CICD = this.f.CICD.value;
+    this.asIs.LangageBackEnd = this.f.LangageBackEnd.value;
+    this.asIs.Version = this.f.Version.value;
+    this.asIs.LangaugeFrontEnd = this.f.LangaugeFrontEnd.value;
+    this.asIs.LangaugeVersion = this.f.LangaugeVersion.value;
+    this.asIs.RegionalDiscoverySpoc = this.f.RegionalDiscoverySpoc.value;
 
-    this.authenticationService.sendData(this.sampleData2).subscribe(
-      data => {
-        console.log(data.message);
-        this.router.navigate(['future-state']);
-      });
+    this.authenticationService.save2(this.asIs);
+    this.router.navigate(['future-state']);
+
+    // this.authenticationService.sendData(this.asIs).subscribe(
+    //   data => {
+    //     console.log(data.message);
+    //     this.router.navigate(['future-state']);
+    //   });
   }
 }

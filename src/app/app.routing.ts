@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'portfolio-details', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
     { path: 'application-estate', component: ApplicationEstateComponent, canActivate: [AuthGuard] },
-    { path: 'future-state', component: FutureStateComponent },
+    { path: 'future-state', component: FutureStateComponent, canActivate: [AuthGuard] },
     { path: '**', redirectTo: '' }
 ];
 
