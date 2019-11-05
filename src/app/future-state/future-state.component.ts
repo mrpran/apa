@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
+import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs/operators';
 declare var $: any;
 @Component({
@@ -46,7 +47,8 @@ export class FutureStateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private toast: ToastrService) {
 
     this.username = JSON.parse(localStorage.getItem('username'));
 
@@ -122,10 +124,12 @@ export class FutureStateComponent implements OnInit {
 
     this.authenticationService.sendData().subscribe(
       data => {
+        this.toast.success(data.message);
         console.log(data.message);
       },
       error => {
-        console.log(error.error.message);
+        this.toast.error(error.error.message);
+        console.log(error);
       }
     );
   }

@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { routing }        from './app.routing';
+import { routing } from './app.routing';
 
-import { RouterModule, Routes} from '@angular/router';
-import { FormsModule ,ReactiveFormsModule }    from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +29,10 @@ import { FutureStateComponent } from './future-state/future-state.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    routing
+    routing,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+    })
   ],
   providers: [
     AuthGuard,
