@@ -1,0 +1,932 @@
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a href="index3.html" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        Portfolio Details
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                        Sign out
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="height:100%; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+            </div>
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+
+        <div class="content">
+            <div class="container">
+                <h3 class="text-center pb-2">Application Devlopment</h3>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm1">
+                            Platform
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Database
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Analytics
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Streaming
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Message
+                        </button>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Schema Definition
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            CI/CD
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Integration
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Serverless
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Image Build
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+                
+                <h3 class="text-center pb-2 pt-3">Orchestration & Management</h3>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Container Orchestration
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Service Discovery
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Remote Procedure Calls
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Service Mesh
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            API Gateway
+                        </button>
+                    </div>
+
+                </div>
+
+
+
+                
+                <h3 class="text-center pb-2 pt-3">Provisioning</h3>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Host Management
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Container Registry
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                           Security
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Key Management
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                           Memory Management
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <h3 class="text-center pb-2 pt-3">Governance</h3>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Monitoring
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            Logging
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                           Tracing
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                            API Analytics
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
+                           Alerts
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content">
+            <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+
+                <br>
+
+                <div class="row">
+
+                    <div class="modal fade" id="modal-sm1">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Platform</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="male" formControlName="gender1" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>AWS</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>Azure</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>Google Cloud</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>IBM Cloud</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>Digital Ocean</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>Oracle Cloud</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>Pivotal Cloud Foundry</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="pretty p-icon  p-fill">
+                                        <input value="female" formControlName="gender2" type="checkbox" />
+                                        <div class="state p-info">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label></label>
+                                        </div>
+                                    </div>
+                                    <input class="ml-n2 pl-1" type="text" placeholder="other">
+
+
+                                </div>
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Platform</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>AWS</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Azure</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Google Cloud</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>IBM Cloud</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Digital Ocean</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Oracle Cloud</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Pivotal Cloud Foundry</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1" type="text" placeholder="other">
+
+                            </div>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Messaging</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Amazon SQS</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Amazon SNS</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Mule Soft</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Integration</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Oracle</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Mulesoft</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>DellBoomi</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>IBM</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Database</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Casandra DB</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Couchbase</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>IBM DB2</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Maria DB</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>MongoDB</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>MySQL</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Dynamo DB</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Oracle Database</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Postgres SQL</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Microsoft SQL Server</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Schema Definition</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Open API</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>RAML</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Analytics</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Hadoop</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>SQL Datawarehouse</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>RedShift</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Apache Spark</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">CI/CD</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Bamboo</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Travis</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Cloud bees</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Jenkins</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Spinnaker</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Container Ops</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Wercker</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Bitbucket</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Cloud bees</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>GitHub</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>GitLab</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Visual Studio Team Services</label>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Streaming</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Amazon Kinesis</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Kafka</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Rabbit MQ</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Storm</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Serverless</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>AWS Lambda</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Fission</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Webtask</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>OperWhisk</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Kuberless</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            </div>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h4 class="m-n1">Image Build</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="male" formControlName="gender1" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Helm</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Bitnami</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>Fabric8</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="p-2 ">
+                    <button type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+                </div>
+                <div class="p-4">
+                </div>
+            </form>
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer d-none">
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+    </footer>
+</div>

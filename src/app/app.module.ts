@@ -15,6 +15,7 @@ import { AuthenticationService } from './authentication.service';
 import { ApplicationEstateComponent } from './application-estate/application-estate.component';
 import { AuthGuard } from './auth.guard';
 import { FutureStateComponent } from './future-state/future-state.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FutureStateComponent } from './future-state/future-state.component';
     LoginComponent,
     PortfolioDetailsComponent,
     ApplicationEstateComponent,
-    FutureStateComponent
+    FutureStateComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

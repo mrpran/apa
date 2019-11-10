@@ -15,6 +15,7 @@ export class FutureStateComponent implements OnInit {
   username = "";
   sampleForm: FormGroup;
   toBe = {
+    "test" : "",
     "platform": "",
     "database": "Oracle",
     "analytics": "",
@@ -53,13 +54,25 @@ export class FutureStateComponent implements OnInit {
     this.username = JSON.parse(localStorage.getItem('username'));
 
   }
+  ngAfterViewInit(){
+    $('.rm-mustard').click(function () {
+      $('.remove-example').selectpicker('val', ['Mustard','Relish']);
+      $('.remove-example').selectpicker('refresh');
+    });
+  }
+  
 
   ngOnInit() {
     $(document).ready(function () {
-      $('.selectpicker').selectpicker('val', '1');
+      $('.selectpicker').selectpicker();
+      $('.remove-example').selectpicker('val', ['Mustard','Ketchup']);
+      $('.remove-example').selectpicker('refresh');
     });
 
+    
+
     this.sampleForm = this.formBuilder.group({
+      test :[],
       platform: [],
       database: [],
       analytics: [],
@@ -88,6 +101,7 @@ export class FutureStateComponent implements OnInit {
     });
   }
 
+  
 
   get f() { return this.sampleForm.controls; }
 
