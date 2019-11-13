@@ -1,0 +1,350 @@
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a href="index3.html" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
+                        Application Estate
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        {{username}}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="height:100%; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">
+                        </h1>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content">
+            <div class="container">
+                <div class="row ">
+                    <div class="col">
+                        <div id="accordion">
+
+
+                            <div *ngFor="let data of sampleData.portfolioResponse">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h4 class="card-title float-left ">
+                                            <a class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
+                                                Project Id : {{data.projectId}}
+                                            </a>
+                                        </h4>
+                                        <button type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
+                                        <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-sm btn-warning float-right ml-2">edit</button>
+                                        <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
+
+                                    </div>
+                                    <div *ngIf="testID == data.projectId" id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        BFSI
+                                                    </strong>
+                                                    <span class="text-muted">{{data.appName}}</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        ENU
+                                                    </strong>
+                                                    <span class="text-muted">UI Design</span>
+
+                                                </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        GMT
+                                                    </strong>
+                                                    <span class="text-muted">UI Design</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        HLS
+                                                    </strong>
+                                                    <span class="text-muted">UI Design</span>
+
+                                                </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        MFG
+                                                    </strong>
+                                                    <span class="text-muted">UI Design</span>
+
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        PES
+                                                    </strong>
+                                                    <span class="text-muted">UI Design</span>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+
+
+
+
+    <div class="modal fade" id="edit">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-pills ml-auto p-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#tab_3" data-toggle="tab">Edit Current State</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab_4" data-toggle="tab">Edit Future State</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="tab-pane" id="tab_4">
+                            sdbs
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+    <div class="modal fade" id="delete">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="text-center">Are you sure ?</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+    <div class="modal fade" id="view">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h3 class="modal-title float-left"> {{id}}
+                    </h3>
+                    <ul class="nav nav-pills ml-auto p-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#tab_1" data-toggle="tab">Current State</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab_2" data-toggle="tab">Future State</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1">
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Language Frontend & Version</dt>
+                                        <dd>Angular 8.0</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Language Backend & Version</dt>
+                                        <dd>Angular 8.0</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Database & Version</dt>
+                                        <dd>Oracle 8.3</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>App Servers & version</dt>
+                                        <dd>WebSphere 9.0</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Integration Layer</dt>
+                                        <dd>9.0</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>API Gateway</dt>
+                                        <dd>8.0</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Total lines of code</dt>
+                                        <dd>-</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>DB</dt>
+                                        <dd>-</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Backend</dt>
+                                        <dd>-</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Frontend</dt>
+                                        <dd>-</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Platform</dt>
+                                        <dd>AWS</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Package Software</dt>
+                                        <dd>Java Spring Boot</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Infrastructure</dt>
+                                        <dd>-</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Operating System</dt>
+                                        <dd>Windows 2012</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab_2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <footer class="main-footer d-none">
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+    </footer>
+</div>

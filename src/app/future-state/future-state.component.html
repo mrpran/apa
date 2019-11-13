@@ -1,471 +1,578 @@
 <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
-        <div class="container">
-            <a href="index3.html" class="navbar-brand">
-                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
-            </a>
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
-                        Portfolio Details
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
-                        Sign out
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- /.navbar -->
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="height:100%; background: light ">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
             <div class="container">
+                <a href="index3.html" class="navbar-brand">
+                    <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+                </a>
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                            Portfolio Details
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+    
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                            Sign out
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <!-- /.content-header -->
-        <!-- Main content -->
-        <div class="content">
-            <div class="container">
-                <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Application Devlopment</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Platform</label>
-
-                                        <select name="platform" title="Select" formControlName="platform" class="platform selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="AWS">AWS</option>
-                                            <option value="Azure">Azure</option>
-                                            <option value="Google Cloud">Google Cloud</option>
-                                            <option value="IBM Cloud">IBM Cloud</option>
-                                            <option value="Digital Ocean">Digital Ocean</option>
-                                            <option value="Oracle Cloud">Oracle Cloud</option>
-                                            <option value="Pivotal Cloud Foundry">Pivotal Cloud Foundry</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Database</label>
-
-                                        <select title="Select" formControlName="database" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Casandra DB">Casandra DB</option>
-                                            <option value="Couchbase">Couchbase</option>
-                                            <option value="IBM DB2">IBM DB2</option>
-                                            <option value="Maria DB">Maria DB</option>
-                                            <option value="MongoDB">MongoDB</option>
-                                            <option value="MySQL">MySQL</option>
-                                            <option value="Dynamo DB">Dynamo DB</option>
-                                            <option value="Oracle Database">Oracle Database</option>
-                                            <option value="Postgres SQL">Postgres SQL</option>
-                                            <option value="Microsoft SQL Server">Microsoft SQL Server</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Analytics</label>
-
-                                        <select title="Select" formControlName="analytics" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Hadoop">Hadoop</option>
-                                            <option value="SQL Datawarehouse">SQL Datawarehouse</option>
-                                            <option value="RedShift">RedShift</option>
-                                            <option value="Apache Spark">Apache Spark</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Streaming</label>
-
-                                        <select title="Select" formControlName="streaming" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Amazon Kinesis">Amazon Kinesis</option>
-                                            <option value="Kafka">Kafka</option>
-                                            <option value="Rabbit MQ">Rabbit MQ</option>
-                                            <option value="Storm">Storm</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Messaging</label>
-
-                                        <select title="Select" formControlName="messaging" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Amazon SQS">Amazon SQS</option>
-                                            <option value="Amazon SNS">Amazon SNS</option>
-                                            <option value="Mule Soft">Mule Soft</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Serverless</label>
-
-                                        <select title="Select" formControlName="serverless" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="AWS Lambda">AWS Lambda</option>
-                                            <option value="Fission">Fission</option>
-                                            <option value="Webtask">Webtask</option>
-                                            <option value="OperWhisk">OperWhisk</option>
-                                            <option value="Kuberless">Kuberless</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Integration</label>
-
-                                        <select title="Select" formControlName="integration" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Oracle">Oracle</option>
-                                            <option value="Mulesoft">Mulesoft</option>
-                                            <option value="DellBoomi">DellBoomi</option>
-                                            <option value="IBM">IBM</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Schema Definition</label>
-
-                                        <select title="Select" formControlName="schemaDefinition" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Open API">Open API</option>
-                                            <option value="RAML">RAML</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Image Build</label>
-
-                                        <select title="Select" formControlName="imageBuild" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Helm">Helm</option>
-                                            <option value="Bitnami">Bitnami</option>
-                                            <option value="Fabric8">Fabric8</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>CI/CD</label>
-
-                                        <select title="Select" formControlName="cicd" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Bamboo">Bamboo</option>
-                                            <option value="Travis">Travis</option>
-                                            <option value="Cloud bees">Cloud bees</option>
-                                            <option value="Jenkins">Jenkins</option>
-                                            <option value="Spinnaker">Spinnaker</option>
-                                            <option value="Container Ops">Container Ops</option>
-                                            <option value="Wercker">Wercker</option>
-                                            <option value="Bitbucket">Bitbucket</option>
-                                            <option value="GitHub">GitHub</option>
-                                            <option value="GitLab">GitLab</option>
-                                            <option value="Visual Studio Team Services">Visual Studio Team Services</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Orchestration & Management</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Container Orchestration</label>
-
-                                        <select title="Select" formControlName="containerOrchestration" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Amazon ECS">Amazon ECS</option>
-                                            <option value="Kubernetes">Kubernetes</option>
-                                            <option value="Docker Swarm">Docker Swarm</option>
-                                            <option value="MESOS">MESOS</option>
-                                            <option value="Ansible">Ansible</option>
-                                            <option value="Puppet">Puppet</option>
-                                            <option value="Chef">Chef</option>
-                                            <option value="Terraform">Terraform</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Service Discovery</label>
-
-                                        <select title="Select" formControlName="serviceDiscovery" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Apache ZooKeeper">Apache ZooKeeper</option>
-                                            <option value="Consul">Consul</option>
-                                            <option value="Etcd">Etcd</option>
-                                            <option value="Netflix OSS Eureka">Netflix OSS Eureka</option>
-                                            <option value="SmartStack">SmartStack</option>
-                                            <option value="VMWare Haret">VMWare Haret</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Remote Procedure Calls</label>
-
-                                        <select title="Select" formControlName="rpc" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="gRPC">gRPC</option>
-                                            <option value="REST">REST</option>
-                                            <option value="SOAP">SOAP</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Service Mesh</label>
-
-                                        <select title="Select" formControlName="serviceMesh" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Linkerd">Linkerd</option>
-                                            <option value="Istio">Istio</option>
-                                            <option value="GRPC">GRPC</option>
-                                            <option value="Envoy">Envoy</option>
-                                            <option value="3 Scale">3 Scale</option>
-                                            <option value="F5">F5</option>
-                                            <option value="Netflix Ribbon">Netflix Ribbon</option>
-                                            <option value="Hystrix">Hystrix</option>
-                                            <option value="Netflix Zuul">Netflix Zuul</option>
-                                            <option value="Kong">Kong</option>
-                                            <option value="Nginx">Nginx</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>API Gateway</label>
-
-                                        <select title="Select" formControlName="apiGateway" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="MuleSoft">MuleSoft</option>
-                                            <option value="Amazon">Amazon</option>
-                                            <option value="Apigee">Apigee</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Provisioning</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Host Management</label>
-
-                                        <select title="Select" formControlName="hostManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Kubernetes">Kubernetes</option>
-                                            <option value="Docker Swarm">Docker Swarm</option>
-                                            <option value="Amazon ECS">Amazon ECS</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Container Registry</label>
-
-                                        <select title="Select" formControlName="containerRegistry" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Amazon ECR">Amazon ECR</option>
-                                            <option value="Azure Registry">Azure Registry</option>
-                                            <option value="Docker Registry">Docker Registry</option>
-                                            <option value="Google Registry">Google Registry</option>
-                                            <option value="JFrog Artifactory">JFrog Artifactory</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Security</label>
-
-                                        <select title="Select" formControlName="security" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Ping Identity">Ping Identity</option>
-                                            <option value="Auth0">Auth0</option>
-                                            <option value="Gigya">Gigya</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Key Management</label>
-
-                                        <select title="Select" formControlName="keyManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="CyberArk">CyberArk</option>
-                                            <option value="keycloak">keycloak</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Memory Management</label>
-
-                                        <select title="Select" formControlName="memoryManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Redis">Redis</option>
-                                            <option value="MemCache">MemCache</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
-                        <h3>Governance</h3>
-                    </div>
-                    <div class="card card-default">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Monitoring</label>
-
-                                        <select title="Select" formControlName="monitoring" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="Prometheus">Prometheus</option>
-                                            <option value="AWS CloudWatch">AWS CloudWatch</option>
-                                            <option value="Grafana">Grafana</option>
-                                            <option value="Instana">Instana</option>
-                                            <option value="Graphite">Graphite</option>
-                                            <option value="AppDynamics">AppDynamics</option>
-                                            <option value="DataDog">DataDog</option>
-                                            <option value="Signal fx">Signal fx</option>
-                                            <option value="SysDlg">SysDlg</option>
-                                            <option value="Dynatrace">Dynatrace</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Logging</label>
-
-                                        <select title="Select" formControlName="logging" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="log4j">log4j</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Tracing</label>
-
-                                        <select title="Select" formControlName="tracing" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="zipkin">zipkin</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>API Analytics</label>
-
-                                        <select title="Select" formControlName="apiAnalytics" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="apigee">apigee</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                        <label>Alerts</label>
-
-                                        <select title="Select" formControlName="alerts" class="selectpicker form-control" multiple data-selected-text-format="count">
-                                            <option value="aws">aws</option>
-                                        </select>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-2 ">
-                        <button type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
-
-                    </div>
-                    <div class="p-4">
-
-                    </div>
-                </form>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="height:100%; background: light ">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container">
+                </div>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content">
+                <div class="container">
+                    <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Application Devlopment</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Platform</label>
+    
+                                            <select  title="Select" formControlName="platform" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AWS">AWS</option>
+                                                <option value="Azure">Azure</option>
+                                                <option value="Google">Google Cloud</option>
+                                                <option value="IBM">IBM Cloud</option>
+                                                <option value="DigitalOcean">Digital Ocean</option>
+                                                <option value="Oracle">Oracle Cloud</option>
+                                                <option value="PivotalCloudFoundry">Pivotal Cloud Foundry</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.platform.value !== null && sampleForm.controls.platform.value.includes('Other')">
+                                                <input #item1 (keyup)="handlePlatformOther(item1.value);" class="form-control" type="text">
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Database</label>
+    
+                                            <select title="Select" formControlName="database" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="CassandraDB">CasandraDB</option>
+                                                <option value="Couchbase">Couchbase</option>
+                                                <option value="IBMDB2">IBM DB2</option>
+                                                <option value="MariaDB">Maria DB</option>
+                                                <option value="MongoDB">MongoDB</option>
+                                                <option value="MySQL">MySQL</option>
+                                                <option value="DynamoDB">DynamoDB</option>
+                                                <option value="Oracle">Oracle Database</option>
+                                                <option value="PostgresSQL">Postgres SQL</option>
+                                                <option value="MicrosoftSQL">Microsoft SQL Server</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.database.value !== null && sampleForm.controls.database.value.includes('Other')">
+                                                <input #item2 (keyup)="handleDatabaseOther(item2.value);" class="form-control" type="text">
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Analytics</label>
+    
+                                            <select title="Select" formControlName="analytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Hadoop">Hadoop</option>
+                                                <option value="SQLDatawarehouse">SQL Datawarehouse</option>
+                                                <option value="RedShift">RedShift</option>
+                                                <option value="ApacheSpark">Apache Spark</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.analytics.value !== null && sampleForm.controls.analytics.value.includes('Other')">
+                                                <input #item3 (keyup)="handleAnalyticsOther(item3.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Streaming</label>
+    
+                                            <select title="Select" formControlName="streaming" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AmazonKinesis">Amazon Kinesis</option>
+                                                <option value="kafka">kafka</option>
+                                                <option value="RabbitMQ">Rabbit MQ</option>
+                                                <option value="Storm">Storm</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.streaming.value !== null && sampleForm.controls.streaming.value.includes('Other')">
+                                                <input #item4 (keyup)="handleStreamingOther(item4.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Messaging</label>
+    
+                                            <select title="Select" formControlName="messaging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AmazonSQS">Amazon SQS</option>
+                                                <option value="AmazonSNS">Amazon SNS</option>
+                                                <option value="Mulesoft">MuleSoft</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.messaging.value !== null && sampleForm.controls.messaging.value.includes('Other')">
+                                                <input #item5 (keyup)="handleMessagingOther(item5.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Serverless</label>
+    
+                                            <select title="Select" formControlName="serverless" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AWSLambda">AWS Lambda</option>
+                                                <option value="Fission">Fission</option>
+                                                <option value="Webtask">Webtask</option>
+                                                <option value="OperWhisk">OperWhisk</option>
+                                                <option value="Kuberless">Kuberless</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.serverless.value !== null && sampleForm.controls.serverless.value.includes('Other')">
+                                                <input #item6 (keyup)="handleServerlessOther(item6.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Integration</label>
+    
+                                            <select title="Select" formControlName="integration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Oracle">Oracle</option>
+                                                <option value="Mulesoft">Mulesoft</option>
+                                                <option value="DellBoomi">DellBoomi</option>
+                                                <option value="IBM">IBM</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.integration.value !== null && sampleForm.controls.integration.value.includes('Other')">
+                                                <input #item7 (keyup)="handleIntegrationOther(item7.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Schema Definition</label>
+    
+                                            <select title="Select" formControlName="schemaDefinition" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="RAML">RAML</option>
+                                                <option value="OpenAPI">Open API</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.schemaDefinition.value !== null && sampleForm.controls.schemaDefinition.value.includes('Other')">
+                                                <input #item8 (keyup)="handleSchemaDefinitionOther(item8.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Image Build</label>
+    
+                                            <select title="Select" formControlName="imageBuild" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Fabric8">Fabric8</option>
+                                                <option value="Helm">Helm</option>
+                                                <option value="Bitnami">Bitnami</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.imageBuild.value !== null && sampleForm.controls.imageBuild.value.includes('Other')">
+                                                <input #item9 (keyup)="handleImageBuildOther(item9.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>CI/CD</label>
+    
+                                            <select title="Select" formControlName="cicd" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Bamboo">Bamboo</option>
+                                                <option value="Travis">Travis</option>
+                                                <option value="CloudBees">CloudBees</option>
+                                                <option value="Jenkins">Jenkins</option>
+                                                <option value="Spinnaker">Spinnaker</option>
+                                                <option value="ContainerOps">Container Ops</option>
+                                                <option value="Wercker">Wercker</option>
+                                                <option value="Bitbucket">Bitbucket</option>
+                                                <option value="GitHub">GitHub</option>
+                                                <option value="GitLab">GitLab</option>
+                                                <option value="VisualStudioTeamServices">Visual Studio Team Services</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.cicd.value !== null && sampleForm.controls.cicd.value.includes('Other')">
+                                                <input #item10 (keyup)="handleCicdOther(item10.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Orchestration & Management</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Container Orchestration</label>
+    
+                                            <select title="Select" formControlName="containerOrchestration" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AmazonECS">Amazon ECS</option>
+                                                <option value="Kubernetes">Kubernetes</option>
+                                                <option value="DockerSwarm">Docker Swarm</option>
+                                                <option value="MESOS">MESOS</option>
+                                                <option value="Ansible">Ansible</option>
+                                                <option value="Puppet">Puppet</option>
+                                                <option value="Chef">Chef</option>
+                                                <option value="Teraform">Terraform</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.containerOrchestration.value !== null && sampleForm.controls.containerOrchestration.value.includes('Other')">
+                                                <input #item11 (keyup)="handleContainerOrchestrationOther(item11.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Service Discovery</label>
+    
+                                            <select title="Select" formControlName="serviceDiscovery" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="NetflixOSSEureka">NetflixOSSEureka</option>
+                                                <option value="ApacheZookeeper">ApacheZookeeper</option>
+                                                <option value="Consul">Consul</option>
+                                                <option value="Etcd">Etcd</option>
+                                                <option value="SmartStack">SmartStack</option>
+                                                <option value="VMWareHaret">VMWareHaret</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.serviceDiscovery.value !== null && sampleForm.controls.serviceDiscovery.value.includes('Other')">
+                                                <input #item12 (keyup)="handleServiceDiscoveryOther(item12.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Remote Procedure Calls</label>
+    
+                                            <select title="Select" formControlName="rpc" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="REST">REST</option>
+                                                <option value="gRPC">gRPC</option>
+                                                <option value="SOAP">SOAP</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.rpc.value !== null && sampleForm.controls.rpc.value.includes('Other')">
+                                                <input #item13 (keyup)="handleRpcOther(item13.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Service Mesh</label>
+    
+                                            <select title="Select" formControlName="serviceMesh" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Istio">Istio</option>
+                                                <option value="Linkerd">Linkerd</option>
+                                                <option value="GRPC">GRPC</option>
+                                                <option value="Envoy">Envoy</option>
+                                                <option value="3Scale">3Scale</option>
+                                                <option value="F5">F5</option>
+                                                <option value="NetflixRibbon">NetflixRibbon</option>
+                                                <option value="Hystrix">Hystrix</option>
+                                                <option value="NetflixZuul">NetflixZuul</option>
+                                                <option value="Kong">Kong</option>
+                                                <option value="Nginx">Nginx</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.serviceMesh.value !== null && sampleForm.controls.serviceMesh.value.includes('Other')">
+                                                <input #item14 (keyup)="handleServiceMeshOther(item14.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>API Gateway</label>
+    
+                                            <select title="Select" formControlName="apiGateway" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Amazon">Amazon</option>
+                                                <option value="Apigee">Apigee</option>
+                                                <option value="Mulesoft">Mulesoft</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.apiGateway.value !== null && sampleForm.controls.apiGateway.value.includes('Other')">
+                                                <input #item15 (keyup)="handleApiGatewayOther(item15.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Provisioning</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Host Management</label>
+    
+                                            <select title="Select" formControlName="hostManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Kubernetes">Kubernetes</option>
+                                                <option value="DockerSwarm">DockerSwarm</option>
+                                                <option value="AmazonECS">AmazonECS</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.hostManagement.value !== null && sampleForm.controls.hostManagement.value.includes('Other')">
+                                                <input #item16 (keyup)="handleHostManagementOther(item16.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Container Registry</label>
+    
+                                            <select title="Select" formControlName="containerRegistry" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="JFrogArtifactory">JFrogArtifactory</option>
+                                                <option value="AmazonECR">AmazonECR</option>
+                                                <option value="AzureRegistry">AzureRegistry</option>
+                                                <option value="DockerRegistry">DockerRegistry</option>
+                                                <option value="GoogleRegistry">GoogleRegistry</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.containerRegistry.value !== null && sampleForm.controls.containerRegistry.value.includes('Other')">
+                                                <input #item17 (keyup)="handleContainerRegistryOther(item17.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Security</label>
+    
+                                            <select title="Select" formControlName="security" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="PingIdentity">PingIdentity</option>
+                                                <option value="Auth0">Auth0</option>
+                                                <option value="Gigya">Gigya</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.security.value !== null && sampleForm.controls.security.value.includes('Other')">
+                                                <input #item18 (keyup)="handleSecurityOther(item18.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Key Management</label>
+    
+                                            <select title="Select" formControlName="keyManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Keycloak">Keycloak</option>
+                                                <option value="CyberArk">CyberArk</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.keyManagement.value !== null && sampleForm.controls.keyManagement.value.includes('Other')">
+                                                <input #item19 (keyup)="handleKeyManagementOther(item19.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Memory Management</label>
+    
+                                            <select title="Select" formControlName="memoryManagement" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Redis">Redis</option>
+                                                <option value="MemCache">MemCache</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.memoryManagement.value !== null && sampleForm.controls.memoryManagement.value.includes('Other')">
+                                                <input #item20 (keyup)="handleMemoryManagementOther(item20.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-4" style="background-color:rgba(0, 0, 0, 0.05)">
+                            <h3>Governance</h3>
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Monitoring</label>
+    
+                                            <select title="Select" formControlName="monitoring" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Prometheus">Prometheus</option>
+                                                <option value="AWSCloudWatch">AWSCloudWatch</option>
+                                                <option value="Grafana">Grafana</option>
+                                                <option value="Instana">Instana</option>
+                                                <option value="Graphite">Graphite</option>
+                                                <option value="AppDynamics">AppDynamics</option>
+                                                <option value="DataDog">DataDog</option>
+                                                <option value="SignalFX">SignalFX</option>
+                                                <option value="SysDlg">SysDlg</option>
+                                                <option value="Dynatrace">Dynatrace</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.monitoring.value !== null && sampleForm.controls.monitoring.value.includes('Other')">
+                                                <input #item21 (keyup)="handleMonitoringOther(item21.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Logging</label>
+    
+                                            <select title="Select" formControlName="logging" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="fluentd">fluentd</option>
+                                                <option value="elastic">elastic</option>
+                                                <option value="splunk">splunk</option>
+                                                <option value="logz.io">logz.io</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.logging.value !== null && sampleForm.controls.logging.value.includes('Other')">
+                                                <input #item22 (keyup)="handleLoggingOther(item22.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Tracing</label>
+    
+                                            <select title="Select" formControlName="tracing" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Zipkin">Zipkin</option>
+                                                <option value="OpenTracing">OpenTracing</option>
+                                                <option value="Jaeger">Jaeger</option>
+                                                <option value="Appdash">Appdash</option>
+                                                <option value="CloudSleuth">CloudSleuth</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.tracing.value !== null && sampleForm.controls.tracing.value.includes('Other')">
+                                                <input #item23 (keyup)="handleTracingOther(item23.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>API Analytics</label>
+    
+                                            <select title="Select" formControlName="apiAnalytics" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="Amazon">Amazon</option>
+                                                <option value="Apigee">Apigee</option>
+                                                <option value="Mulesoft">Mulesoft</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.apiAnalytics.value !== null && sampleForm.controls.apiAnalytics.value.includes('Other')">
+                                                <input #item24 (keyup)="handleApiAnalyticsOther(item24.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group ">
+                                            <label>Alerts</label>
+    
+                                            <select title="Select" formControlName="alerts" class="selectpicker form-control" multiple data-selected-text-format="count">
+                                                <option value="AWS">AWS</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <div *ngIf="sampleForm.controls.alerts.value !== null && sampleForm.controls.alerts.value.includes('Other')">
+                                                <input #item25 (keyup)="handleAlertsOther(item25.value);" class="form-control" type="text">
+                                            </div>
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="p-2 ">
+                            <button type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+    
+                        </div>
+                        <div class="p-4">
+    
+                        </div>
+                    </form>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer d-none">
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+        </footer>
     </div>
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer d-none">
-        <div class="float-right d-none d-sm-inline">
-            Anything you want
-        </div>
-    </footer>
-</div>

@@ -16,6 +16,7 @@ import { ApplicationEstateComponent } from './application-estate/application-est
 import { AuthGuard } from './auth.guard';
 import { FutureStateComponent } from './future-state/future-state.component';
 import { TestComponent } from './test/test.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TestComponent } from './test/test.component';
     PortfolioDetailsComponent,
     ApplicationEstateComponent,
     FutureStateComponent,
-    TestComponent
+    TestComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,
