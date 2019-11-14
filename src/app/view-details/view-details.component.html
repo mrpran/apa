@@ -57,6 +57,8 @@
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <h4 class="card-title float-left ">
+                                                <i  *ngIf="!(testID == data.projectId)" class="fas fa-angle-right"></i>
+                                                <i *ngIf="testID == data.projectId" class="fas fa-angle-down"></i>
                                             <a class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
                                                 Project Id : {{data.projectId}}
                                             </a>

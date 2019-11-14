@@ -11,6 +11,8 @@ import { first } from 'rxjs/operators';
 })
 export class PortfolioDetailsComponent implements OnInit {
 
+
+  isOrgAdmin = false;
   username = "";
   portfolioDetailsForm: FormGroup;
   loading = false;
@@ -21,9 +23,9 @@ export class PortfolioDetailsComponent implements OnInit {
     "bo": "",
     "appName": "",
     "wiproAL": "",
-    "entity" : "",
-    "asIs" : "",
-    "toBe" : ""
+    "entity": "",
+    "asIs": "",
+    "toBe": ""
 
   };
 
@@ -38,14 +40,21 @@ export class PortfolioDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    let role = localStorage.getItem('role').toUpperCase();
     this.portfolioDetailsForm = this.formBuilder.group({
-      bu: ['BFSI'],
+      bu: [role],
       vertical: ['Vertical'],
       account: ['DTCC'],
       bo: ['Dinesh'],
       appName: ['App Moderanization'],
       wiproAL: ['test@wipro.com']
     });
+    if (role == "ORG_ADMIN") {
+      this.isOrgAdmin = true;
+    }
+    else {
+      this.portfolioDetailsForm.get('bu').disable();
+    }
   }
   get f() { return this.portfolioDetailsForm.controls; }
 

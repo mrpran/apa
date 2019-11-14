@@ -29,7 +29,7 @@ export class AuthenticationService {
 
   sendData() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.post<any>('http://13.127.38.55:8088/portfolio', this.data, {
+    return this.http.post<any>('http://15.206.122.208:8088/portfolio', this.data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.token}`

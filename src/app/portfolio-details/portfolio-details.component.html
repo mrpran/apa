@@ -70,20 +70,19 @@
                                             <div class="form-group">
                                                 <label>BU</label>
                                             
-                                                <select formControlName="bu" class="form-control">
+                                                <select *ngIf="isOrgAdmin" formControlName="bu" class="form-control">
                                                     <option value="BFSI">BFSI</option>
                                                     <option value="ENU">ENU</option>
                                                     <option value="GMT">GMT</option>
                                                     <option value="HLS">HLS</option>
                                                     <option value="MFG">MFG</option>
                                                     <option value="PES">PES</option>
-                                               
                                                     <option value="RCTG">RCTG</option>
-                                               
                                                     <option value="ORG_ADMIN">ORG_ADMIN</option>
                                                
                                                 </select>
-
+                                                <input *ngIf="!isOrgAdmin" formControlName="bu" type="text" class="form-control" id="exampleInputEmail1" placeholder="Vertical">
+                                           
                                             </div>
                                         </div>
                                         <div class="col-md-6">

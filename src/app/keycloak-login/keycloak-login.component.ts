@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
-import { typeofExpr } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-keycloak-login',
@@ -20,6 +20,7 @@ export class KeycloakLoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private toast: ToastrService,
     private authenticationService: AuthenticationService
   ) { }
 
@@ -44,11 +45,24 @@ export class KeycloakLoginComponent implements OnInit {
           console.log(data);
           localStorage.setItem('username', this.f.username.value );
           localStorage.setItem('currentUser', JSON.stringify(data));
+          
+          if(this.f.username.value == "userbfsi") localStorage.setItem('role', "bfsi" );
+          if(this.f.username.value == "userenu") localStorage.setItem('role', "enu" );
+          if(this.f.username.value == "usergmt") localStorage.setItem('role', "gmt" );
+          if(this.f.username.value == "userhls") localStorage.setItem('role', "hls" );
+          if(this.f.username.value == "usermfg") localStorage.setItem('role', "mfg" );
+          if(this.f.username.value == "userpes") localStorage.setItem('role', "pes" );
+          if(this.f.username.value == "userrctg") localStorage.setItem('role', "rctg" );
+          if(this.f.username.value == "orgadmin") localStorage.setItem('role', "ORG_ADMIN" );
+          
           this.router.navigate(['portfolio-details']);
+
+
+
         },
         error => {
           console.log(error);
-          this.errorMessage = error.error.error_description;
+          this.toast.error(error.error.error_description ? error.error.error_description : error.message);
           this.loading = false;
         });
   }

@@ -106,33 +106,34 @@ export class FutureStateComponent implements OnInit {
   get f() { return this.sampleForm.controls; }
 
   onSubmit() {
-    this.toBe.platform = this.f.platform.value.toString();
-    this.toBe.database = this.f.database.value.toString();
-    this.toBe.analytics = this.f.analytics.value.toString();
-    this.toBe.streaming = this.f.streaming.value.toString();
-    this.toBe.messaging = this.f.messaging.value.toString();
-    this.toBe.serverless = this.f.serverless.value.toString();
-    this.toBe.integration = this.f.integration.value.toString();
-    this.toBe.schemaDefinition = this.f.schemaDefinition.value.toString();
-    this.toBe.imageBuild = this.f.imageBuild.value.toString();
-    this.toBe.cicd = this.f.cicd.value.toString();
-    this.toBe.containerOrchestration = this.f.containerOrchestration.value.toString();
-    this.toBe.serviceDiscovery = this.f.serviceDiscovery.value.toString();
-    this.toBe.rpc = this.f.rpc.value.toString();
-    this.toBe.serviceMesh = this.f.serviceMesh.value.toString();
-    this.toBe.apiGateway = this.f.apiGateway.value.toString();
-    this.toBe.hostManagement = this.f.hostManagement.value.toString();
-    this.toBe.containerRegistry = this.f.containerRegistry.value.toString();
-    this.toBe.security = this.f.security.value.toString();
-    this.toBe.keyManagement = this.f.keyManagement.value.toString();
-    this.toBe.memoryManagement = this.f.memoryManagement.value.toString();
-    this.toBe.monitoring = this.f.monitoring.value.toString();
-    this.toBe.logging = this.f.logging.value.toString();
-    this.toBe.tracing = this.f.tracing.value.toString();
-    this.toBe.apiAnalytics = this.f.apiAnalytics.value.toString();
-    this.toBe.alerts = this.f.alerts.value.toString();
+    this.toBe.platform = this.f.platform.value ?  this.f.platform.value.toString() : "";
+    this.toBe.database = this.f.database.value ?  this.f.database.value.toString() : "";
+    this.toBe.analytics = this.f.analytics.value?  this.f.analytics.value.toString() : "";
+    this.toBe.streaming = this.f.streaming.value?  this.f.streaming.value.toString() : "";
+    this.toBe.messaging = this.f.messaging.value?  this.f.messaging.value.toString() : "";
+    this.toBe.serverless = this.f.serverless.value?  this.f.serverless.value.toString() : "";
+    this.toBe.integration = this.f.integration.value?  this.f.integration.value.toString() : "";
+    this.toBe.schemaDefinition = this.f.schemaDefinition.value?  this.f.schemaDefinition.value.toString() : "";
+    this.toBe.imageBuild = this.f.imageBuild.value?  this.f.imageBuild.value.toString() : "";
+    this.toBe.cicd = this.f.cicd.value?  this.f.cicd.value.toString() : "";
+    this.toBe.containerOrchestration = this.f.containerOrchestration.value?  this.f.containerOrchestration.value.toString() : "";
+    this.toBe.serviceDiscovery = this.f.serviceDiscovery.value?  this.f.serviceDiscovery.value.toString() : "";
+    this.toBe.rpc = this.f.rpc.value?  this.f.rpc.value.toString() : "";
+    this.toBe.serviceMesh = this.f.serviceMesh.value?  this.f.serviceMesh.value.toString() : "";
+    this.toBe.apiGateway = this.f.apiGateway.value?  this.f.apiGateway.value.toString() : "";
+    this.toBe.hostManagement = this.f.hostManagement.value?  this.f.hostManagement.value.toString() : "";
+    this.toBe.containerRegistry = this.f.containerRegistry.value?  this.f.containerRegistry.value.toString() : "";
+    this.toBe.security = this.f.security.value?  this.f.platsecurityform.value.toString() : "";
+    this.toBe.keyManagement = this.f.keyManagement.value?  this.f.keyManagement.value.toString() : "";
+    this.toBe.memoryManagement = this.f.memoryManagement.value?  this.f.memoryManagement.value.toString() : "";
+    this.toBe.monitoring = this.f.monitoring.value?  this.f.monitoring.value.toString() : "";
+    this.toBe.logging = this.f.logging.value?  this.f.logging.value.toString() : "";
+    this.toBe.tracing = this.f.tracing.value?  this.f.tracing.value.toString() : "";
+    this.toBe.apiAnalytics = this.f.apiAnalytics.value?  this.f.apiAnalytics.value.toString() : "";
+    this.toBe.alerts = this.f.alerts.value?  this.f.alerts.value.toString() : "";
 
 
+    console.log(this.toBe);
     this.authenticationService.save3(this.toBe);
     //this.router.navigate(['future-state']);
 
