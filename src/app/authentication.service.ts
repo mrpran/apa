@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule,HttpParams, HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule, HttpParams, HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
@@ -8,8 +8,8 @@ export class AuthenticationService {
     // "Header": "",
     // "Data": "",
     // "Entity": "PortfolioAsIs"
-    "asIs" : "",
-    "toBe" : ""
+    "asIs": "",
+    "toBe": ""
   };
 
   constructor(private http: HttpClient) { }
@@ -18,10 +18,10 @@ export class AuthenticationService {
     this.data = sampleData1;
   }
   save2(sampleData2) {
-    this.data.asIs=sampleData2;
+    this.data.asIs = sampleData2;
   }
   save3(sampleData3) {
-    this.data.toBe=sampleData3;
+    this.data.toBe = sampleData3;
     console.log(this.data);
   }
 
@@ -54,18 +54,27 @@ export class AuthenticationService {
 
 
   keycloak_login(username: string, password: string) {
+    const url = "http://35.244.33.205:8080/auth/realms/master/protocol/openid-connect/token";
     const body = new HttpParams()
-    .set('username', username)
-    .set('password', password);
-    .set('client_id', "app-portfolio");
-    return this.http.post<any>('http://13.127.38.55:8085/authenticate', { username: username, password: password })
-      .pipe(map(user => {
-        if (user && user.token) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          localStorage.setItem('username', JSON.stringify(username));
-        }
-        return user;
-      }));
+      .set('client_id', "app-portfolio")
+      .set('password', password)
+      .set('grant_type', "password")
+      .set('username', username);
+    return this.http.post<any>(url, body.toString(),
+      {
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded')
+      });
+  }
+  
+  sendData1() {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.post<any>('http://13.127.38.55:8088/portfolio', this.data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${currentUser.access_token}`
+      })
+    });
   }
 
 

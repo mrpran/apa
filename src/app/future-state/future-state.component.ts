@@ -51,7 +51,7 @@ export class FutureStateComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private toast: ToastrService) {
 
-    this.username = JSON.parse(localStorage.getItem('username'));
+    this.username = localStorage.getItem('username');
 
   }
   ngAfterViewInit(){

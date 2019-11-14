@@ -64,7 +64,7 @@ export class ApplicationEstateComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
-    this.username = JSON.parse(localStorage.getItem('username'));
+    this.username = localStorage.getItem('username');
   }
   ngOnInit() {
     this.appliationEstateForm = this.formBuilder.group({

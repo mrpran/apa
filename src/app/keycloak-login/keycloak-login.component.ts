@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
+import { typeofExpr } from '../../../node_modules/@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-keycloak-login',
@@ -37,13 +38,17 @@ export class KeycloakLoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.keycloak_login(this.f.username.value, this.f.password.value)
       .subscribe(
         data => {
+          console.log(data);
+          localStorage.setItem('username', this.f.username.value );
+          localStorage.setItem('currentUser', JSON.stringify(data));
           this.router.navigate(['portfolio-details']);
         },
         error => {
-          this.errorMessage = error.error.message;
+          console.log(error);
+          this.errorMessage = error.error.error_description;
           this.loading = false;
         });
   }
