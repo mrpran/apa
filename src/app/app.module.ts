@@ -17,6 +17,7 @@ import { AuthGuard } from './auth.guard';
 import { FutureStateComponent } from './future-state/future-state.component';
 import { TestComponent } from './test/test.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
+import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
     ApplicationEstateComponent,
     FutureStateComponent,
     TestComponent,
-    ViewDetailsComponent
+    ViewDetailsComponent,
+    KeycloakLoginComponent
   ],
   imports: [
     BrowserModule,

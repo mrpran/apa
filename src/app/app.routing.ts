@@ -6,6 +6,7 @@ import { FutureStateComponent } from './future-state/future-state.component';
 import { AuthGuard } from './auth.guard';
 import { TestComponent } from './test/test.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
+import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
 
 const appRoutes: Routes = [
     { path: '', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'future-state', component: FutureStateComponent },
     { path: 'view-details', component: ViewDetailsComponent },
     { path: 'test', component: TestComponent },
+    { path: 'keycloak-login', component: KeycloakLoginComponent },
     { path: '**', redirectTo: '' }
 ];
 

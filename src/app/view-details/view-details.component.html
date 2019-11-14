@@ -61,7 +61,7 @@
                                                 Project Id : {{data.projectId}}
                                             </a>
                                         </h4>
-                                        <button type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
+                                        <button  (click)="deleteData(data)"  type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
                                         <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-sm btn-warning float-right ml-2">edit</button>
                                         <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
 
@@ -188,7 +188,7 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p class="text-center">Are you sure ?</p>
+                    <p class="text-center">Are you sure to delete {{_id}} ?</p>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>

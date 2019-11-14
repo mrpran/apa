@@ -11,6 +11,7 @@ export class ViewDetailsComponent implements OnInit {
 
 
   id;
+  _id;
   sampleData = {
     "code": "OK",
     "message": "Record Fetch Completed",
@@ -480,13 +481,17 @@ export class ViewDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  testID : string;
+  testID: string;
   collapsible(id) {
     this.testID = id;
   }
   retriveData(data) {
 
     this.id = data.projectId;
+
+  }
+  deleteData(data) {
+    this._id = data.projectId;
 
   }
 

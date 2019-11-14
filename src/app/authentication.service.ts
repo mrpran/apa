@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClientModule,HttpParams, HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 
@@ -50,6 +50,28 @@ export class AuthenticationService {
         return user;
       }));
   }
+
+
+
+  keycloak_login(username: string, password: string) {
+    const body = new HttpParams()
+    .set('username', username)
+    .set('password', password);
+    .set('client_id', "app-portfolio");
+    return this.http.post<any>('http://13.127.38.55:8085/authenticate', { username: username, password: password })
+      .pipe(map(user => {
+        if (user && user.token) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          localStorage.setItem('username', JSON.stringify(username));
+        }
+        return user;
+      }));
+  }
+
+
+
+
+
 
   logout() {
     localStorage.removeItem('currentUser');
