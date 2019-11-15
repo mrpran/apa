@@ -1,0 +1,10 @@
+<div class="card text-center m-3">
+    <h3 class="card-header">Angular 8 Pagination Example</h3>
+    <div class="card-body">
+        <div *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }">{{ item }}</div>
+
+    </div>
+    <div class="card-footer pb-0 pt-3">
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

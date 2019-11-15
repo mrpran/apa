@@ -55,7 +55,7 @@ export class KeycloakLoginComponent implements OnInit {
           if(this.f.username.value == "userrctg") localStorage.setItem('role', "rctg" );
           if(this.f.username.value == "orgadmin") localStorage.setItem('role', "ORG_ADMIN" );
           
-          this.router.navigate(['portfolio-details']);
+          this.router.navigate(['view-details']);
 
 
 

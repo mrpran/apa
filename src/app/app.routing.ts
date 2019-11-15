@@ -7,9 +7,10 @@ import { AuthGuard } from './auth.guard';
 import { TestComponent } from './test/test.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const appRoutes: Routes = [
-    { path: '', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
+    { path: '', component: ViewDetailsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'portfolio-details', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
     { path: 'application-estate', component: ApplicationEstateComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'view-details', component: ViewDetailsComponent },
     { path: 'test', component: TestComponent },
     { path: 'keycloak-login', component: KeycloakLoginComponent },
+    { path: 'pagination', component: PaginationComponent },
     { path: '**', redirectTo: '' }
 ];
 

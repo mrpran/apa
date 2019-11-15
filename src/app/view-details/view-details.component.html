@@ -5,22 +5,39 @@
             <a href="index3.html" class="navbar-brand">
                 <span class="brand-text font-weight-light">App Portfolio Assessment</span>
             </a>
-            <!-- Right navbar links -->
+            <!-- <ul class="navbar-nav">
+                <li class="ml-5 nav-item d-none d-sm-inline-block">
+                    <a class="nav-link" [routerLink]="['/portfolio-details']">
+                        Create
+                    </a>
+                </li>
+            </ul> -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
                 <!-- Notifications Dropdown Menu -->
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
-                        Application Estate
+
+                    <a class="nav-link active disabled"  data-toggle="dropdown" [routerLink]="['/view-details']">
+                        <i class="fas fa-tasks mr-2"></i>
+                        All Projects
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        <i class="fas fa-edit mr-1"></i>
+                        Create
+                    </a>
+                </li>
+                <li class="nav-item dropdown disabled">
+                    <a class="nav-link " data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-1"></i>
                         {{username}}
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
                         Logout
                     </a>
                 </li>
@@ -34,9 +51,8 @@
         <div class="content-header">
             <div class="container">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">
-                        </h1>
+                    <div class="col">
+                        <h1 class="m-0 text-dark text-center">List of Projects</h1>
                     </div>
                     <!-- /.col -->
                 </div>
@@ -53,17 +69,17 @@
                         <div id="accordion">
 
 
-                            <div *ngFor="let data of sampleData.portfolioResponse">
+                            <div *ngFor="let data of sampleData.portfolioResponse | paginate: { itemsPerPage: 5, currentPage: p}">
                                 <div class="card card-default">
                                     <div class="card-header">
                                         <h4 class="card-title float-left ">
-                                                <i  *ngIf="!(testID == data.projectId)" class="fas fa-angle-right"></i>
-                                                <i *ngIf="testID == data.projectId" class="fas fa-angle-down"></i>
-                                            <a class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
-                                                Project Id : {{data.projectId}}
+                                            <i *ngIf="!(testID == data.projectId)" class="fas fa-angle-right"></i>
+                                            <i *ngIf="testID == data.projectId" class="fas fa-angle-down"></i>
+                                            <a id="a1" class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
+                                                {{data.appName}}
                                             </a>
                                         </h4>
-                                        <button  (click)="deleteData(data)"  type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
+                                        <button (click)="deleteData(data)" type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
                                         <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-sm btn-warning float-right ml-2">edit</button>
                                         <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
 
@@ -73,39 +89,39 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <strong class="mr-3">
-                                                        BFSI
+                                                        BU
+                                                    </strong>
+                                                    <span class="text-muted">{{data.bu}}</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        Vertical
+                                                    </strong>
+                                                    <span class="text-muted">{{data.vertical}}</span>
+
+                                                </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        Account
+                                                    </strong>
+                                                    <span class="text-muted">{{data.account}}</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        BO
+                                                    </strong>
+                                                    <span class="text-muted">{{data.bo}}</span>
+
+                                                </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        AL
+                                                    </strong>
+                                                    <span class="text-muted">{{data.al}}</span>
+
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        App Name
                                                     </strong>
                                                     <span class="text-muted">{{data.appName}}</span>
-                                                    <hr>
-                                                    <strong class="mr-3">
-                                                        ENU
-                                                    </strong>
-                                                    <span class="text-muted">UI Design</span>
-
-                                                </div>
-                                                <div class="col">
-                                                    <strong class="mr-3">
-                                                        GMT
-                                                    </strong>
-                                                    <span class="text-muted">UI Design</span>
-                                                    <hr>
-                                                    <strong class="mr-3">
-                                                        HLS
-                                                    </strong>
-                                                    <span class="text-muted">UI Design</span>
-
-                                                </div>
-                                                <div class="col">
-                                                    <strong class="mr-3">
-                                                        MFG
-                                                    </strong>
-                                                    <span class="text-muted">UI Design</span>
-
-                                                    <hr>
-                                                    <strong class="mr-3">
-                                                        PES
-                                                    </strong>
-                                                    <span class="text-muted">UI Design</span>
 
                                                 </div>
 
@@ -116,13 +132,10 @@
                             </div>
 
 
+                        </div>
 
-
-
-
-
-
-
+                        <div class="text-center" style="position: fixed;left:0;bottom: 0;width: 100%;">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </div>
                     </div>
                 </div>
@@ -190,11 +203,11 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p class="text-center">Are you sure to delete {{_id}} ?</p>
+                    <p class="text-center">Are you sure to delete {{deleteId}} ?</p>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
+                    <button (click)="deleteRecord()" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -345,8 +358,8 @@
     </div>
 
     <footer class="main-footer d-none">
-        <div class="float-right d-none d-sm-inline">
-            Anything you want
+        <div class="text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
     </footer>
 </div>

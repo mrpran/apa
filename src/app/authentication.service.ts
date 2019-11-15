@@ -37,6 +37,27 @@ export class AuthenticationService {
     });
   }
 
+  getRecords() {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.get<any>('http://13.232.245.23:8088/portfolio', {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${currentUser.access_token}`
+      })
+    });
+  }
+
+  deleteRecord(id){
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.delete<any>('http://13.232.245.23:8088/portfolio/' + id, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${currentUser.access_token}`
+      })
+    });
+
+  }
+
 
 
   login(username: string, password: string) {
@@ -54,7 +75,7 @@ export class AuthenticationService {
 
 
   keycloak_login(username: string, password: string) {
-    const url = "http://35.244.33.205:8080/auth/realms/master/protocol/openid-connect/token";
+    const url = "http://13.232.245.23:8080/auth/realms/master/protocol/openid-connect/token";
     const body = new HttpParams()
       .set('client_id', "app-portfolio")
       .set('password', password)

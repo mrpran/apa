@@ -19,8 +19,14 @@ import { TestComponent } from './test/test.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
 
+import { JwPaginationComponent } from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+import { PaginationComponent } from './pagination/pagination.component';
+
 @NgModule({
   declarations: [
+    JwPaginationComponent,
     AppComponent,
     LoginComponent,
     PortfolioDetailsComponent,
@@ -28,9 +34,11 @@ import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.componen
     FutureStateComponent,
     TestComponent,
     ViewDetailsComponent,
-    KeycloakLoginComponent
+    KeycloakLoginComponent,
+    PaginationComponent
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

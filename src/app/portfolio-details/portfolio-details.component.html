@@ -10,17 +10,42 @@
                 <!-- Messages Dropdown Menu -->
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
-                        Application Estate
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/view-details']">
+                        <i class="fas fa-tasks mr-2"></i>
+                        All Projects
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+
+                        <a class="nav-link active disabled " data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Header
+                        </a>
+                    </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Current
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/future-state']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Future
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active disabled" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-1"></i>
                         {{username}}
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
                         Logout
                     </a>
                 </li>
@@ -34,9 +59,8 @@
         <div class="content-header">
             <div class="container">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">
-                        </h1>
+                    <div class="col">
+                        <h1 class="m-0 text-dark text-center">Create a project [1/3]</h1>
                     </div>
                     <!-- /.col -->
                 </div>
@@ -47,14 +71,15 @@
         <!-- /.content-header -->
         <!-- Main content -->
         <div class="content">
-            <div class="container">
+            <div class="container ">
                 <div class="row ">
                     <div class="col-md-3">
+
                     </div>
                     <div class="col-md-6">
                         <div class="card card-default">
                             <form [formGroup]="portfolioDetailsForm" (ngSubmit)="onSubmit()">
-                                <div class="card-header">
+                                <div class="card-header text">
                                     <h3 class="card-title">Portfolio Details</h3>
                                 </div>
                                 <div class="card-body">
@@ -62,14 +87,14 @@
 
 
 
-                                           
+
 
 
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>BU</label>
-                                            
+
                                                 <select *ngIf="isOrgAdmin" formControlName="bu" class="form-control">
                                                     <option value="BFSI">BFSI</option>
                                                     <option value="ENU">ENU</option>
@@ -79,10 +104,10 @@
                                                     <option value="PES">PES</option>
                                                     <option value="RCTG">RCTG</option>
                                                     <option value="ORG_ADMIN">ORG_ADMIN</option>
-                                               
+
                                                 </select>
                                                 <input *ngIf="!isOrgAdmin" formControlName="bu" type="text" class="form-control" id="exampleInputEmail1" placeholder="Vertical">
-                                           
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
