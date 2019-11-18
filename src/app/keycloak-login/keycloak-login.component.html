@@ -1,50 +1,62 @@
 <div class="login-box " style="background: #17a2b8">
-        <div class="login-logo " style="font-size:30px; margin-top: 100px; padding-top: 20px">
-            <a href="../../index2.html">
-                <b style="color: #f4f6f9">App Portfolio Assessment</b>
-            </a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-    
-                <div *ngIf="errorMessage" class="alert alert-danger">
-                    <h5>
-                        <i class="icon fas fa-ban"></i>{{errorMessage}}</h5>
-                </div>
-                <p class="login-box-msg">Sign in to start your session</p>
-    
-    
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                    <div class="input-group mb-3">
-                        <input formControlName="username" type="text" class="form-control " placeholder="Username">
-                        <div class="input-group-append input-group-text">
-                            <span class="fas fa-user"></span>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input formControlName="password" type="password" class="form-control" placeholder="Password">
-                        <div class="input-group-append input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-info btn-block btn-flat">Sign In</button>
-                        </div>
-                        <div class="col-4">
-                            <img *ngIf="loading" height="40px" width="40px" src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" />
-    
-                        </div>
-                    </div>
-                </form>
-    
-                <br>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
-            </div>
-            <!-- /.login-card-body -->
-        </div>
+    <div class="login-logo " style="font-size:30px; margin-top: 100px; padding-top: 20px">
+        <a href="../../index2.html">
+            <b style="color: #f4f6f9">App Portfolio Assessment</b>
+        </a>
     </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+
+            <div *ngIf="errorMessage" class="alert alert-danger">
+                <h5>
+                    <i class="icon fas fa-ban"></i>{{errorMessage}}</h5>
+            </div>
+            <p class="login-box-msg">Sign in to start your session</p>
+
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="input-group mb-3">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.username.errors }" formControlName="username" type="text" class="form-control "
+                        placeholder="Username">
+                    <div class="input-group-append ">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">username is required</div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" formControlName="password" type="password" class="form-control"
+                        placeholder="Password">
+                    <div class="input-group-append ">
+                        <span class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">password is required</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-info btn-block btn-flat">Sign In</button>
+                    </div>
+                    <div class="col-4">
+                        <img *ngIf="loading" height="40px" width="40px" src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" />
+
+                    </div>
+                </div>
+            </form>
+
+            <br>
+            <p class="mb-0">
+                <a href="register.html" class="text-center">Register a new membership</a>
+            </p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
