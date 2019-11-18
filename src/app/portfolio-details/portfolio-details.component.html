@@ -2,7 +2,7 @@
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
         <div class="container">
-            <a href="index3.html" class="navbar-brand">
+            <a [routerLink]="['/view-details']" class="navbar-brand">
                 <span class="brand-text font-weight-light">App Portfolio Assessment</span>
             </a>
             <!-- Right navbar links -->
@@ -18,11 +18,11 @@
                 </li>
                 <li class="nav-item dropdown">
 
-                        <a class="nav-link active disabled " data-toggle="dropdown" [routerLink]="['/portfolio-details']">
-                            <i class="fas fa-file-alt mr-2"></i>
-                            Header
-                        </a>
-                    </li>
+                    <a class="nav-link active disabled " data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Header
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
 
                     <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
@@ -113,30 +113,50 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Vertical</label>
-                                                <input formControlName="vertical" type="text" class="form-control" id="exampleInputEmail1" placeholder="Vertical">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.vertical.errors }" formControlName="vertical" type="text" class="form-control"
+                                                    id="exampleInputEmail1" placeholder="Vertical">
+                                                <div *ngIf="submitted && f.vertical.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.vertical.errors.required">vertical is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Account</label>
-                                                <input formControlName="account" type="text" class="form-control" id="exampleInputEmail1" placeholder="Account">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.account.errors }" formControlName="account" type="text" class="form-control"
+                                                    id="exampleInputEmail1" placeholder="Account">
+                                                <div *ngIf="submitted && f.account.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.account.errors.required">account is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>BO</label>
-                                                <input formControlName="bo" type="text" class="form-control" id="exampleInputEmail1" placeholder="BO">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.bo.errors }" formControlName="bo" type="text" class="form-control" id="exampleInputEmail1"
+                                                    placeholder="BO">
+                                                <div *ngIf="submitted && f.bo.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.bo.errors.required">bo is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>App Name</label>
-                                                <input formControlName="appName" type="text" class="form-control" id="exampleInputEmail1" placeholder="App Name"> </div>
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.appName.errors }" formControlName="appName" type="text" class="form-control"
+                                                    id="exampleInputEmail1" placeholder="App Name"> </div>
+                                            <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
+                                                <div *ngIf="f.appName.errors.required">appName is required</div>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Wipro AL</label>
-                                                <input formControlName="wiproAL" type="text" class="form-control" id="exampleInputEmail1" placeholder="Wipro AL">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.wiproAL.errors }" formControlName="wiproAL" type="text" class="form-control"
+                                                    id="exampleInputEmail1" placeholder="Wipro AL">
+                                                <div *ngIf="submitted && f.wiproAL.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.wiproAL.errors.required">wiproAL is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

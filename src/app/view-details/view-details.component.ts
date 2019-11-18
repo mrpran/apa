@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute,NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
 @Component({
@@ -10,8 +10,8 @@ import { AuthenticationService } from '../authentication.service';
 export class ViewDetailsComponent implements OnInit {
 
   username;
-  id;
-  deleteId;
+
+
   testID: string;
   // sampleData = {
   //   "code": "OK",
@@ -562,7 +562,7 @@ export class ViewDetailsComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
-    
+
     this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
         this.router.navigated = false;
@@ -570,21 +570,110 @@ export class ViewDetailsComponent implements OnInit {
       }
     });
   }
-
+  currentUser;
   ngOnInit() {
-    this.authenticationService.getRecords().subscribe(records => this.sampleData = records);
+    this.currentUser =JSON.parse(localStorage.getItem('currentUser'));
+    console.log(this.currentUser.access_token);
+    this.authenticationService.getRecords().subscribe(
+      records => this.sampleData = records,
+      error => { 
+        this.router.navigate(['keycloak-login']);
+      }
+
+    );
   }
 
 
   collapsible(id) {
     this.testID = id;
   }
+
+  current_project = {
+    "projectId": "",
+    "bu": "",
+    "vertical": "",
+    "account": "",
+    "bo": "",
+    "al": "",
+    "appName": "",
+    "asIs": {
+      "ageOfApplication": "",
+      "aplicationLanguageDependecny": "",
+      "applicactionDocumentsAvailability": "",
+      "applicationClassification": "",
+      "applicationDescription": "",
+      "applicationSupportHours": "",
+      "appServers": "",
+      "appVersion": "",
+      "backEndStack": "",
+      "businessUnitDiscoverySpoc": "",
+      "changeRequestYearly": "",
+      "cicd": "",
+      "cicdProcess": "",
+      "database": "",
+      "databaseVersion": "",
+      "frontEndStack": "",
+      "globalLocal": "",
+      "incidentRequestYearly": "",
+      "infrastructure": "",
+      "isApplicationPlannedSunset": "",
+      "isApplicationRationalized": "",
+      "isApplicationTobeOnCloud": "",
+      "isAppShadowIT": "",
+      "isOnSupportPresent": "",
+      "languageBackEnd": "",
+      "langaugeFrontEnd": "",
+      "languageVersion": "",
+      "operatingSystem": "",
+      "packageSoftware": "",
+      "platform": "",
+      "process": "",
+      "processTools": "",
+      "region": "",
+      "regionalDiscoverySpoc": "",
+      "releaseCycle": "",
+      "serviceRequestYearly": "",
+      "solutionModel": "",
+      "version": "",
+    },
+    "toBe": {
+      "platform": "",
+      "database": "",
+      "analytics": "",
+      "streaming": "",
+      "messaging": "",
+      "serverless": "",
+      "integration": "",
+      "schemaDefinition": "",
+      "imageBuild": "",
+      "cicd": "",
+      "containerOrchestration": "",
+      "serviceDiscovery": "",
+      "rpc": "",
+      "serviceMesh": "",
+      "apiGateway": "",
+      "hostManagement": "",
+      "containerRegistry": "",
+      "security": "",
+      "keyManagement": "",
+      "memoryManagement": "",
+      "monitoring": "",
+      "logging": "",
+      "tracing": "",
+      "apiAnalytics": "",
+      "alerts": "",
+    }
+  };
   retriveData(data) {
-    this.id = data.projectId;
+    this.current_project = data;
+    console.log(this.current_project);
   }
+
+  deleteId;
   deleteData(data) {
     this.deleteId = data.projectId;
   }
+
   deleteRecord() {
     this.authenticationService.deleteRecord(this.deleteId).subscribe(
       () => {

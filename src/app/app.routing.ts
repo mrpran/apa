@@ -9,10 +9,11 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
 import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
+// , canActivate: [AuthGuard] 
 const appRoutes: Routes = [
     { path: '', component: ViewDetailsComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'portfolio-details', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
+    { path: 'portfolio-details', component: PortfolioDetailsComponent},
     { path: 'application-estate', component: ApplicationEstateComponent },
     { path: 'future-state', component: FutureStateComponent },
     { path: 'view-details', component: ViewDetailsComponent },

@@ -15,7 +15,6 @@ export class PortfolioDetailsComponent implements OnInit {
   isOrgAdmin = false;
   username = "";
   portfolioDetailsForm: FormGroup;
-  loading = false;
   sampleData1 = {
     "bu": "",
     "vertical": "",
@@ -29,6 +28,7 @@ export class PortfolioDetailsComponent implements OnInit {
 
   };
 
+  submitted = false;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -43,11 +43,11 @@ export class PortfolioDetailsComponent implements OnInit {
     let role = localStorage.getItem('role').toUpperCase();
     this.portfolioDetailsForm = this.formBuilder.group({
       bu: [role],
-      vertical: ['Vertical'],
-      account: ['DTCC'],
-      bo: ['Dinesh'],
-      appName: ['App Moderanization'],
-      wiproAL: ['test@wipro.com']
+      vertical: ['Vertical', Validators.required],
+      account: ['DTCC', Validators.required],
+      bo: ['Dinesh', Validators.required],
+      appName: ['App Moderanization', Validators.required],
+      wiproAL: ['test@wipro.com', Validators.required]
     });
     if (role == "ORG_ADMIN") {
       this.isOrgAdmin = true;
@@ -59,6 +59,11 @@ export class PortfolioDetailsComponent implements OnInit {
   get f() { return this.portfolioDetailsForm.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.portfolioDetailsForm.invalid) {
+        return;
+    }
+
     this.sampleData1.bu = this.f.bu.value;
     this.sampleData1.vertical = this.f.vertical.value;
     this.sampleData1.account = this.f.account.value;
