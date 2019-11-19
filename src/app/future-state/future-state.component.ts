@@ -350,6 +350,7 @@ export class FutureStateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private toast: ToastrService,
     private authenticationService: AuthenticationService) {
 
     this.sampleForm = this.formBuilder.group({
@@ -382,6 +383,10 @@ export class FutureStateComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.authenticationService.sampleData1 == null) {
+      this.toast.error("Please submit portfolio details first ");
+      this.router.navigate(['portfolio-details']);
+    }
 
     this.platformList = this.authenticationService.platformList;
     this.databaseList = this.authenticationService.databaseList;
