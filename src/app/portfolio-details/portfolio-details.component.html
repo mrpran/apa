@@ -141,13 +141,14 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>App Name</label>
-                                                <input [ngClass]="{ 'is-invalid': submitted && f.appName.errors }" formControlName="appName" type="text" class="form-control"
-                                                    id="exampleInputEmail1" placeholder="App Name"> </div>
-                                            <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
-                                                <div *ngIf="f.appName.errors.required">appName is required</div>
-                                            </div>
+                                                <div class="form-group">
+                                                        <label>App Name</label>
+                                                        <input [ngClass]="{ 'is-invalid': submitted && f.appName.errors }" formControlName="appName" type="text" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="appName">
+                                                        <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.appName.errors.required">app name is required</div>
+                                                        </div>
+                                                    </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -162,7 +163,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-info">Next</button>
+                                    <button type="submit" class="btn btn-info">Next <i class="fas fa-arrow-right ml-2"></i></button>
                                 </div>
                             </form>
                         </div>

@@ -7,18 +7,46 @@
             </a>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
-                        Portfolio Details
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/view-details']">
+                        <i class="fas fa-tasks mr-2"></i>
+                        All Projects
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+
+                    <a class="nav-link " data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Header
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/login']">
-                        Sign out
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/application-estate']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Current
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link active disabled" data-toggle="dropdown" [routerLink]="['/future-state']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Future
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active disabled" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-1"></i>
+                        {{username}}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
+                        Logout
                     </a>
                 </li>
             </ul>
@@ -27,903 +55,1247 @@
     <!-- /.navbar -->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="height:100%; background: light ">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark text-center">Create a project [3/3]</h1>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
             </div>
+            <!-- /.container-fluid -->
         </div>
-        <!-- /.content-header -->
-        <!-- Main content -->
 
         <div class="content">
             <div class="container">
-                <h3 class="text-center pb-2">Application Devlopment</h3>
-                <div class="row">
-                    <div class="col">
-                        <label>Platform</label>
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm1">
-                            Click to select
-                        </button>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Application Devlopment</h4>
                     </div>
-                    <div class="col">
-                            <label>Platform</label>
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Database
-                        </button>
-                    </div>
-                    <div class="col">
-                            <label>Platform</label>
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Analytics
-                        </button>
-                    </div>
-                    <div class="col">
-                            <label>Platform</label>
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Streaming
-                        </button>
-                    </div>
-                    <div class="col">
-                            <label>Platform</label>
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Message
-                        </button>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <label>Platform :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Platform">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Database :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Database">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Analytics</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Analytics">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Streaming :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Streaming">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Message :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Message">
+                                    Click to Select >>
+                                </button>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <label>Schema Definition :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#SchemaDefinition">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>CI/CD :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#cicd">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Integration :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Integration">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Serverless :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Serverless">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Image Build :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ImageBuild">
+                                    Click to Select >>
+                                </button>
+                            </div>
+
+                        </div>
                     </div>
 
+
+
+                    <div class="card-header">
+                        <h4>Orchestration & Management</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <label>Container Orchestration :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerOrchestration">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Service Discovery :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceDiscovery">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Remote Procedure Calls :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#rpc">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Service Mesh :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceMesh">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>API Gateway :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIGateway">
+                                    Click to Select >>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-header">
+                        <h4>Provisioning</h4>
+                    </div>
+                    <div class="card-body">
+
+
+                        <div class="row">
+                            <div class="col">
+                                <label>Host Management :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#HostManagement">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Container Registry :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerRegistry">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Security :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Security">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Key Management :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#KeyManagement">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Memory Management :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#MemoryManagement">
+                                    Click to Select >>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card-header">
+                        <h4>Governance</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <label>Monitoring :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Monitoring">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Logging :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Logging">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Tracing :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Tracing">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>API Analytics :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIAnalytics">
+                                    Click to Select >>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <label>Alerts :</label>
+                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Alerts">
+                                    Click to Select >>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-footer">
+                        <button (click)="onSubmit()" type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+                    </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Schema Definition
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            CI/CD
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Integration
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Serverless
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Image Build
-                        </button>
-                    </div>
 
-                </div>
-
-
-
-                
-                <h3 class="text-center pb-2 pt-3">Orchestration & Management</h3>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Container Orchestration
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Service Discovery
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Remote Procedure Calls
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Service Mesh
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            API Gateway
-                        </button>
-                    </div>
-
-                </div>
-
-
-
-                
-                <h3 class="text-center pb-2 pt-3">Provisioning</h3>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Host Management
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Container Registry
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                           Security
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Key Management
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                           Memory Management
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <h3 class="text-center pb-2 pt-3">Governance</h3>
-                <div class="row">
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Monitoring
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            Logging
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                           Tracing
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                            API Analytics
-                        </button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#modal-sm">
-                           Alerts
-                        </button>
-                    </div>
-
-                </div>
             </div>
         </div>
 
 
 
         <div class="content">
-            <form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
 
-                <br>
+            <br>
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="modal fade" id="modal-sm1">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Platform</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="male" formControlName="gender1" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>AWS</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>Azure</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>Google Cloud</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>IBM Cloud</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>Digital Ocean</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>Oracle Cloud</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label>Pivotal Cloud Foundry</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="pretty p-icon  p-fill">
-                                        <input value="female" formControlName="gender2" type="checkbox" />
-                                        <div class="state p-info">
-                                            <i class="icon mdi mdi-check"></i>
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <input class="ml-n2 pl-1" type="text" placeholder="other">
-
-
-                                </div>
-                                <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
-                                </div>
+                <div class="modal fade" id="Platform">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Platform</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <!-- /.modal-content -->
-                        </div>
-                        <!-- /.modal-dialog -->
-                    </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col  p-fill" *ngFor="let item of platformList;">
+                                    <input value={{item}} type="checkbox" (click)="handlePlatform(item);" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon p-fill">
+                                    <input value="Other" type="checkbox" #p (click)="handlePlatform(p.value);" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
 
+                                </div>
+                                <input [disabled]="!p.checked" class="ml-n2 pl-1" [(ngModel)]="platformOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
                 </div>
 
-
-
-
-
-                <div class="row">
-                    <div class="col">
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Platform</h4>
+                <div class="modal fade" id="Database">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Database</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of databaseList;">
+                                    <input value={{item}} (click)="handleDatabase(item);" type="checkbox" />
                                     <div class="state p-info">
                                         <i class="icon mdi mdi-check"></i>
-                                        <label>AWS</label>
+                                        <label>{{item}}</label>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Azure</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Google Cloud</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>IBM Cloud</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Digital Ocean</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Oracle Cloud</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Pivotal Cloud Foundry</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
+                                    <input value="Other" #d type="checkbox" (click)="handleDatabase(d.value);" />
                                     <div class="state p-info">
                                         <i class="icon mdi mdi-check"></i>
                                         <label></label>
                                     </div>
                                 </div>
-                                <input class="ml-n2 pl-1" type="text" placeholder="other">
+                                <input [disabled]="!d.checked" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="databaseOther" type="text"
+                                    placeholder="Other" />
+
 
                             </div>
-                        </div>
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Messaging</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Amazon SQS</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Amazon SNS</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Mule Soft</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
                             </div>
                         </div>
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Integration</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Oracle</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Mulesoft</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>DellBoomi</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>IBM</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                            </div>
-                        </div>
+                        <!-- /.modal-content -->
                     </div>
-                    <div class="col">
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Database</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Casandra DB</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Couchbase</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>IBM DB2</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Maria DB</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>MongoDB</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>MySQL</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Dynamo DB</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Oracle Database</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Postgres SQL</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Microsoft SQL Server</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Schema Definition</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Open API</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>RAML</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Analytics</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Hadoop</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>SQL Datawarehouse</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>RedShift</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Apache Spark</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                            </div>
-                        </div>
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">CI/CD</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Bamboo</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Travis</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Cloud bees</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Jenkins</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Spinnaker</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Container Ops</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Wercker</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Bitbucket</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Cloud bees</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>GitHub</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>GitLab</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Visual Studio Team Services</label>
-                                    </div>
-                                </div>
-                                <br>
-
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Streaming</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Amazon Kinesis</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Kafka</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Rabbit MQ</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Storm</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                            </div>
-                        </div>
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Serverless</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>AWS Lambda</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Fission</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Webtask</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>OperWhisk</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Kuberless</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                            </div>
-                        </div>
-                        <div class="card card-default">
-                            <div class="card-header">
-                                <h4 class="m-n1">Image Build</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="male" formControlName="gender1" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Helm</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Bitnami</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label>Fabric8</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="pretty p-icon  p-fill">
-                                    <input value="female" formControlName="gender2" type="checkbox" />
-                                    <div class="state p-info">
-                                        <i class="icon mdi mdi-check"></i>
-                                        <label></label>
-                                    </div>
-                                </div>
-                                <input class="ml-n2 pl-1 mt-1" type="text" placeholder="other">
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- /.modal-dialog -->
                 </div>
-                <div class="p-2 ">
-                    <button type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+
+                <div class="modal fade" id="Analytics">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Analytics</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of analyticsList;">
+                                    <input value={{item}} (click)="handleAnalytics(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #an (click)="handleAnalytics(an.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!an.checked" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="analyticsOther" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
                 </div>
-                <div class="p-4">
+
+                <div class="modal fade" id="Streaming">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Streaming</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of streamingList;">
+                                    <input value={{item}} (click)="handleStreaming(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #st (click)="handleStreaming(st.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!st.checked" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="streamingOther" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
                 </div>
-            </form>
+
+                <div class="modal fade" id="Message">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Message</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of messagingList;">
+                                    <input value={{item}} (click)="handleMessaging(item)" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #msg (click)="handleMessaging(msg.value)" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!msg.checked" class="ml-n2 pl-1" [(ngModel)]="messagingOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="SchemaDefinition">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Schema Definition</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of schemaDefinitionList;">
+                                    <input value={{item}} (click)="handleSchemaDefinition(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #sd (click)="handleSchemaDefinition(sd.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!sd.checked" class="ml-n2 pl-1" [(ngModel)]="schemaDefinitionOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="cicd">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">CI/CD</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of cicdList;">
+                                    <input value={{item}} (click)="handleCICD(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #cicd (click)="handleCICD(cicd.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!cicd.checked" class="ml-n2 pl-1" [(ngModel)]="cicdOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Integration">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Integration</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of integrationList;">
+                                    <input value={{item}} (click)="handleIntegration(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #int (click)="handleIntegration(int.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!int.checked" class="ml-n2 pl-1" [(ngModel)]="integrationOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Serverless">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Serverless</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of serverlessList;">
+                                    <input value={{item}} (click)="handleServerless(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon p-fill">
+                                    <input value="Other" #sl (click)="handleServerless(sl.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!sl.checked" class="ml-n2 pl-1" [(ngModel)]="serverlessOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="ImageBuild">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">ImageBuild</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of imageBuildList;">
+                                    <input value={{item}} (click)="handleImageBuild(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #img (click)="handleImageBuild(img.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!img.checked" class="ml-n2 pl-1" [(ngModel)]="imageBuildOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="ContainerOrchestration">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Container Orchestration</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of containerOrchestrationList;">
+                                    <input value={{item}} (click)="handleContainerOrchestration(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #co (click)="handleContainerOrchestration(co.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!co.checked" class="ml-n2 pl-1" [(ngModel)]="containerOrchestrationOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="ServiceDiscovery">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Service Discovery</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of serviceDiscoveryList;">
+                                    <input value={{item}} (click)="handleServiceDiscovery(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #sd (click)="handleServiceDiscovery(sd.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!sd.checked" class="ml-n2 pl-1" [(ngModel)]="serviceDiscoveryOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="rpc">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Remote Procedure Calls</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of remoteProcedureCellsList;">
+                                    <input value={{item}} (click)="handleRpc(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #rpc (click)="handleRpc(rpc.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!rpc.checked" class="ml-n2 pl-1" [(ngModel)]="rpcOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="ServiceMesh">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Service Mesh</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of serviceMeshList;">
+                                    <input value={{item}} (click)="handleServiceMesh(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #sm (click)="handleServiceMesh(sm.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!sm.checked" class="ml-n2 pl-1" [(ngModel)]="serviceMeshOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="APIGateway">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">API Gateway</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of apiGatewayList;">
+                                    <input value={{item}} (click)="handleApiGateway(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #ag (click)="handleApiGateway(ag.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!ag.checked" class="ml-n2 pl-1" [(ngModel)]="apiGatewayOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="HostManagement">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Host Management</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of hostManagementList;">
+                                    <input value={{item}} (click)="handleHostManagement(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #hm (click)="handleHostManagement(hm.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!hm.checked" class="ml-n2 pl-1" [(ngModel)]="hostManagementOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="ContainerRegistry">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Container Registry</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of containerRegistryList;">
+                                    <input value={{item}} (click)="handleContainerRegistry(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #cr (click)="handleContainerRegistry(cr.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!cr.checked" class="ml-n2 pl-1" [(ngModel)]="containerRegistryOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Security">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Security</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of securityList;">
+                                    <input value={{item}} (click)="handleSecurity(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #se (click)="handleSecurity(se.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!se.checked" class="ml-n2 pl-1" [(ngModel)]="securityOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="KeyManagement">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Key Management</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of keyManagementList;">
+                                    <input value={{item}} (click)="handleKeyManagement(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #km (click)="handleKeyManagement(km.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!km.checked" class="ml-n2 pl-1" [(ngModel)]="keyManagementOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="MemoryManagement">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Memory Management</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of memoryManagementList;">
+                                    <input value={{item}} (click)="handleMemoryManagement(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #mm (click)="handleMemoryManagement(mm.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!mm.checked" class="ml-n2 pl-1" [(ngModel)]="memoryManagementOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Monitoring">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Monitoring</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of monitoringList;">
+                                    <input value={{item}} (click)="handleMonitoring(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #mon (click)="handleMonitoring(mon.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!mon.checked" class="ml-n2 pl-1" [(ngModel)]="monitoringOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Logging">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Logging</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of loggingList;">
+                                    <input value={{item}} (click)="handleLogging(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #log (click)="handleLogging(log.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!log.checked" class="ml-n2 pl-1" [(ngModel)]="loggingOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Tracing">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Tracing</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of tracingList;">
+                                    <input value={{item}} (click)="handleTracing(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #t (click)="handleTracing(t.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!t.checked" class="ml-n2 pl-1" [(ngModel)]="tracingOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="APIAnalytics">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">API Analytics</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of apiAnalyticsList;">
+                                    <input value={{item}} (click)="handleApiAnalytics(item);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #apian (click)="handleApiAnalytics(apian.value);" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!apian.checked" class="ml-n2 pl-1" [(ngModel)]="apiAnalyticsOther" [ngModelOptions]="{standalone: true}"
+                                    type="text" placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+                <div class="modal fade" id="Alerts">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Alerts</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="pretty p-icon col p-fill" *ngFor="let item of alertsList;">
+                                    <input value={{item}} (click)="handleAlerts(item)" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label>{{item}}</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="pretty p-icon  p-fill">
+                                    <input value="Other" #al (click)="handleAlerts(al.value)" type="checkbox" />
+                                    <div class="state p-info">
+                                        <i class="icon mdi mdi-check"></i>
+                                        <label></label>
+                                    </div>
+                                </div>
+                                <input [disabled]="!al.checked" class="ml-n2 pl-1" [(ngModel)]="alertsOther" [ngModelOptions]="{standalone: true}" type="text"
+                                    placeholder="Other">
+
+
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="p-4">
+            </div>
         </div>
         <!-- /.content -->
     </div>

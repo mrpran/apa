@@ -62,7 +62,7 @@ export class KeycloakLoginComponent implements OnInit {
         },
         error => {
           console.log(error);
-          this.toast.error(error.error.error_description ? error.error.error_description : error.message);
+          this.toast.error(error.error.error_description ? error.error.error_description : error.statusText);
           this.loading = false;
         });
   }

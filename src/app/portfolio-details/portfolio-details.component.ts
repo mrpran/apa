@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
+import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -33,6 +34,7 @@ export class PortfolioDetailsComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
+    private toast: ToastrService,
     private authenticationService: AuthenticationService) {
 
     this.username = localStorage.getItem('username');
@@ -40,13 +42,14 @@ export class PortfolioDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authenticationService.sampleData1=null;
     let role = localStorage.getItem('role').toUpperCase();
     this.portfolioDetailsForm = this.formBuilder.group({
       bu: [role],
       vertical: ['Vertical', Validators.required],
       account: ['DTCC', Validators.required],
       bo: ['Dinesh', Validators.required],
-      appName: ['App Moderanization', Validators.required],
+      appName: ['App Modernization', Validators.required],
       wiproAL: ['test@wipro.com', Validators.required]
     });
     if (role == "ORG_ADMIN") {
