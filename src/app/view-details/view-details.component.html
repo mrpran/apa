@@ -1,365 +1,759 @@
 <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
-            <div class="container">
-                <a [routerLink]="['/view-details']" class="navbar-brand">
-                    <span class="brand-text font-weight-light">App Portfolio Assessment</span>
-                </a>
-                <!-- <ul class="navbar-nav">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a [routerLink]="['/view-details']" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- <ul class="navbar-nav">
                     <li class="ml-5 nav-item d-none d-sm-inline-block">
                         <a class="nav-link" [routerLink]="['/portfolio-details']">
                             Create
                         </a>
                     </li>
                 </ul> -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Messages Dropdown Menu -->
-                    <!-- Notifications Dropdown Menu -->
-    
-                    <li class="nav-item dropdown">
-    
-                        <a class="nav-link active disabled"  data-toggle="dropdown" [routerLink]="['/view-details']">
-                            <i class="fas fa-tasks mr-2"></i>
-                            All Projects
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
-                            <i class="fas fa-edit mr-1"></i>
-                            Create
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown disabled">
-                        <a class="nav-link " data-toggle="dropdown" href="#">
-                            <i class="fas fa-user mr-1"></i>
-                            {{username}}
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
-                            <i class="fas fa-sign-out-alt mr-1"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- /.navbar -->
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="height:100%; background: light ">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container">
-                    <div class="row mb-1">
-                        <div class="col">
-                            <h1 class="m-0 text-dark text-center">List of Projects</h1>
-                        </div>
-                        <!-- /.col -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                <!-- Notifications Dropdown Menu -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link active disabled" data-toggle="dropdown" [routerLink]="['/view-details']">
+                        <i class="fas fa-tasks mr-2"></i>
+                        All Projects
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        <i class="fas fa-edit mr-1"></i>
+                        Create
+                    </a>
+                </li>
+                <li class="nav-item dropdown disabled">
+                    <a class="nav-link " data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-1"></i>
+                        {{username}}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="height:100%; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+                <div class="row mb-1">
+                    <div class="col">
+                        <h1 class="m-0 text-dark text-center">List of Projects</h1>
                     </div>
-                    <!-- /.row -->
+                    <!-- /.col -->
                 </div>
-                <!-- /.container-fluid -->
+                <!-- /.row -->
             </div>
-            <!-- /.content-header -->
-            <!-- Main content -->
-            <div class="content">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col">
-                            <div id="accordion">
-    
-    
-                                <div *ngFor="let data of sampleData.portfolioResponse | paginate: { itemsPerPage: 5, currentPage: p}">
-                                    <div class="card card-default">
-                                        <div class="card-header">
-                                            <h4 class="card-title float-left ">
-                                                <i *ngIf="!(testID == data.projectId)" class="fas fa-angle-right"></i>
-                                                <i *ngIf="testID == data.projectId" class="fas fa-angle-down"></i>
-                                                <a id="a1" class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
-                                                    {{data.appName}}
-                                                </a>
-                                            </h4>
-                                            <button (click)="deleteData(data)" type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
-                                            <button type="button" data-toggle="modal" data-target="#edit" class="btn btn-sm btn-warning float-right ml-2">edit</button>
-                                            <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
-    
-                                        </div>
-                                        <div *ngIf="testID == data.projectId" id="collapseOne" class="panel-collapse collapse in">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <strong class="mr-3">
-                                                            BU
-                                                        </strong>
-                                                        <span class="text-muted">{{data.bu}}</span>
-                                                        <hr>
-                                                        <strong class="mr-3">
-                                                            Vertical
-                                                        </strong>
-                                                        <span class="text-muted">{{data.vertical}}</span>
-    
-                                                    </div>
-                                                    <div class="col">
-                                                        <strong class="mr-3">
-                                                            Account
-                                                        </strong>
-                                                        <span class="text-muted">{{data.account}}</span>
-                                                        <hr>
-                                                        <strong class="mr-3">
-                                                            BO
-                                                        </strong>
-                                                        <span class="text-muted">{{data.bo}}</span>
-    
-                                                    </div>
-                                                    <div class="col">
-                                                        <strong class="mr-3">
-                                                            AL
-                                                        </strong>
-                                                        <span class="text-muted">{{data.al}}</span>
-    
-                                                        <hr>
-                                                        <strong class="mr-3">
-                                                            App Name
-                                                        </strong>
-                                                        <span class="text-muted">{{data.appName}}</span>
-    
-                                                    </div>
-    
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content">
+            <div class="container">
+                <div class="row ">
+                    <div class="col">
+                        <div id="accordion">
+
+
+                            <div *ngFor="let data of sampleData.portfolioResponse | paginate: { itemsPerPage: 5, currentPage: p}">
+                                <div class="card card-default">
+                                    <div class="card-header">
+                                        <h4 class="card-title float-left ">
+                                            <i *ngIf="!(testID == data.projectId)" class="fas fa-angle-right"></i>
+                                            <i *ngIf="testID == data.projectId" class="fas fa-angle-down"></i>
+                                            <a id="a1" class="text-dark" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="collapsible(data.projectId);">
+                                                {{data.appName}}
+                                            </a>
+                                        </h4>
+                                        <button (click)="deleteData(data)" type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
+                                        <button (click)="editData(data)"  type="button" class="btn btn-sm btn-warning float-right ml-2">edit</button>
+                                        <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
+
+                                    </div>
+                                    <div *ngIf="testID == data.projectId" id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        BU
+                                                    </strong>
+                                                    <span class="text-muted">{{data.bu}}</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        Vertical
+                                                    </strong>
+                                                    <span class="text-muted">{{data.vertical}}</span>
+
                                                 </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        Account
+                                                    </strong>
+                                                    <span class="text-muted">{{data.account}}</span>
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        BO
+                                                    </strong>
+                                                    <span class="text-muted">{{data.bo}}</span>
+
+                                                </div>
+                                                <div class="col">
+                                                    <strong class="mr-3">
+                                                        AL
+                                                    </strong>
+                                                    <span class="text-muted">{{data.al}}</span>
+
+                                                    <hr>
+                                                    <strong class="mr-3">
+                                                        App Name
+                                                    </strong>
+                                                    <span class="text-muted">{{data.appName}}</span>
+
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-    
-    
                             </div>
-    
-                            <div class="bg-dark text-center pt-2" style="position: fixed;left:0;bottom: 0;width: 100%; height: 7%">
-                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-                            </div>
+
+
                         </div>
-                    </div>
-    
-    
-                </div>
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <!-- Main Footer -->
-    
-    
-    
-    
-        <div class="modal fade" id="edit">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <ul class="nav nav-pills ml-auto p-2">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#tab_3" data-toggle="tab">Edit Current State</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab_4" data-toggle="tab">Edit Future State</a>
-                            </li>
-                        </ul>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="tab_3">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                            </div>
-                            <div class="tab-pane" id="tab_4">
-                                sdbs
-                            </div>
+
+                        <div class="bg-dark text-center pt-2" style="position: fixed;left:0;bottom: 0;width: 100%; height: 7%">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </div>
                     </div>
                 </div>
-                <!-- /.modal-content -->
+
+
             </div>
-            <!-- /.modal-dialog -->
+            <!-- /.container-fluid -->
         </div>
-    
-    
-    
-        <div class="modal fade" id="delete">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <p class="text-center">Are you sure to delete {{deleteId}} ?</p>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                        <button (click)="deleteRecord()" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-    
-    
-    
-        <div class="modal fade" id="view">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-    
-                        <h3 class="modal-title float-left"> {{id}}
-                        </h3>
-                        <ul class="nav nav-pills ml-auto p-2">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#tab_1" data-toggle="tab">Current State</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#tab_2" data-toggle="tab">Future State</a>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </li>
-                        </ul>
-    
-                    </div>
-                    <div class="modal-body">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="tab_1">
-                                <div class="row">
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Language Frontend & Version</dt>
-                                            <dd>{{current_project.asIs.langaugeFrontEnd}}</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Language Backend & Version</dt>
-                                            <dd>Angular 8.0</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Database & Version</dt>
-                                            <dd>Oracle 8.3</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>App Servers & version</dt>
-                                            <dd>WebSphere 9.0</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Integration Layer</dt>
-                                            <dd>9.0</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>API Gateway</dt>
-                                            <dd>8.0</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Total lines of code</dt>
-                                            <dd>-</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>DB</dt>
-                                            <dd>-</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Backend</dt>
-                                            <dd>-</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Frontend</dt>
-                                            <dd>-</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Platform</dt>
-                                            <dd>AWS</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Package Software</dt>
-                                            <dd>Java Spring Boot</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Infrastructure</dt>
-                                            <dd>-</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt>Operating System</dt>
-                                            <dd>Windows 2012</dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt></dt>
-                                            <dd></dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col">
-                                        <dl class="dl-horizontal">
-                                            <dt></dt>
-                                            <dd></dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab_2">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-    
-        <footer class="main-footer d-none">
-            <div class="text-center">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div>
-        </footer>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="delete">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="text-center">Are you sure to delete {{deleteId}} ?</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    <button (click)="deleteRecord()" type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+
+    <div class="modal fade" id="view">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h3 class="modal-title float-left"> {{current_project.appName}}
+                    </h3>
+                    <ul class="nav nav-pills ml-auto p-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#tab_1" data-toggle="tab">Current State</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab_2" data-toggle="tab">Future State</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content text-center">
+                        <div class="tab-pane active" id="tab_1">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Application Stack</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Language Frontend & Version</dt>
+                                        <dd>{{current_project.asIs.languageFrontEnd}} {{' '+ current_project.asIs.languageFEVersion}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Language Backend & Version</dt>
+                                        <dd>{{current_project.asIs.languageBackEnd}} {{' '+current_project.asIs.languageBEVersion}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Database & Version</dt>
+                                        <dd>{{current_project.asIs.database}} {{' '+current_project.asIs.databaseVersion}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>App Servers & version</dt>
+                                        <dd>{{current_project.asIs.appServers}} {{' '+current_project.asIs.appVersion}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Integration Layer</dt>
+                                        <dd>{{current_project.asIs.integrationLayer}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>API Gateway</dt>
+                                        <dd>{{current_project.asIs.apiGateway}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Total lines of code</dt>
+                                        <dd>{{current_project.asIs.totalLoc}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>DB</dt>
+                                        <dd>{{current_project.asIs.dbLoc}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Backend</dt>
+                                        <dd>{{current_project.asIs.backEndLoc}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Frontend</dt>
+                                        <dd>{{current_project.asIs.frontEndLoc}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Platform</dt>
+                                        <dd>{{current_project.asIs.platform}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Package Software</dt>
+                                        <dd>{{current_project.asIs.packageSoftware}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Infrastructure</dt>
+                                        <dd>{{current_project.asIs.infrastructure}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Operating System</dt>
+                                        <dd>{{current_project.asIs.operatingSystem}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Application Insight</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Description</dt>
+                                        <dd>{{current_project.asIs.applicationDescription}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Classfication/dt>
+                                            <dd>{{current_project.asIs.applicationClassification}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Support hours Time Zone</dt>
+                                        <dd>{{current_project.asIs.applicationSupportHours}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Age of Application</dt>
+                                        <dd>{{current_project.asIs.ageOfApplication}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Documents Availability</dt>
+                                        <dd>{{current_project.asIs.applicationDocumentsAvailability}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Region</dt>
+                                        <dd>{{current_project.asIs.region}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Global or Local Application?</dt>
+                                        <dd>{{current_project.asIs.globalLocal}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Population range(users)</dt>
+                                        <dd>{{current_project.asIs.applicationPopulation}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Number of Total tickets (yearly)</dt>
+                                        <dd>{{current_project.asIs.totalRequestYearly}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Incident Request (yearly)</dt>
+                                        <dd>{{current_project.asIs.incidentRequestYearly}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Service Request (yearly)</dt>
+                                        <dd>{{current_project.asIs.serviceRequestYearly}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Change Request (yearly)</dt>
+                                        <dd>{{current_project.asIs.changeRequestYearly}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Bought Solution or Inhouse developed</dt>
+                                        <dd>{{current_project.asIs.solutionModel}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Application Language dependency</dt>
+                                        <dd>{{current_project.asIs.applicationLanguageDependency}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Is onsite support presence /support needed?</dt>
+                                        <dd>{{current_project.asIs.isApplicationPlannedSunset}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Is this application planned to be hosted in Cloud</dt>
+                                        <dd>{{current_project.asIs.isApplicationTobeOnCloud}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Sunset date (if applicable)</dt>
+                                        <dd>{{current_project.asIs.sunsetDate}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Is this application planned to be rationalised?</dt>
+                                        <dd>{{current_project.asIs.isApplicationRationalized}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Is this application part of shadow IT?</dt>
+                                        <dd>{{current_project.asIs.isAppShadowIT}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Business Unit Discovery Spoc</dt>
+                                        <dd>{{current_project.asIs.businessUnitDiscoverySpoc}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Regional Discovery Spoc</dt>
+                                        <dd>{{current_project.asIs.regionalDiscoverySpoc}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Process Tools</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Process</dt>
+                                        <dd>{{current_project.asIs.process}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Tools</dt>
+                                        <dd>{{current_project.asIs.processTools}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>CI/CD</dt>
+                                        <dd>{{current_project.asIs.cicd}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Tools</dt>
+                                        <dd>{{current_project.asIs.cicdTools}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Release Cycle</dt>
+                                        <dd>{{current_project.asIs.releaseCycle}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt></dt>
+                                        <dd></dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane text-center" id="tab_2">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Application Devlopment</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Platform</dt>
+                                        <dd>{{current_project.toBe.platform}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Database</dt>
+                                        <dd>{{current_project.toBe.database}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Analytics</dt>
+                                        <dd>{{current_project.toBe.analytics}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Streaming</dt>
+                                        <dd>{{current_project.toBe.streaming}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Messaging</dt>
+                                        <dd>{{current_project.toBe.messaging}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Serverless</dt>
+                                        <dd>{{current_project.toBe.serverless}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Integration</dt>
+                                        <dd>{{current_project.toBe.integration}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Schema Definition</dt>
+                                        <dd>{{current_project.toBe.schemaDefinition}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Image Build</dt>
+                                        <dd>{{current_project.toBe.imageBuild}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>CI/CD</dt>
+                                        <dd>{{current_project.toBe.cicd}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Orchestration & Management</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Container Orchestration</dt>
+                                        <dd>{{current_project.toBe.containerOrchestration}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Service Discovery</dt>
+                                        <dd>{{current_project.toBe.serviceDiscovery}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Remote Procedure Calls</dt>
+                                        <dd>{{current_project.toBe.rpc}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Service Mesh</dt>
+                                        <dd>{{current_project.toBe.serviceMesh}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>API Gateway</dt>
+                                        <dd>{{current_project.toBe.apiGateway}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Provisioning</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Host Management</dt>
+                                        <dd>{{current_project.toBe.hostManagement}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Container Registry</dt>
+                                        <dd>{{current_project.toBe.containerRegistry}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Security</dt>
+                                        <dd>{{current_project.toBe.security}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Key Management</dt>
+                                        <dd>{{current_project.toBe.keyManagement}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Memory Management</dt>
+                                        <dd>{{current_project.toBe.memoryManagement}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-header">
+                                        <h4>Governance</h4>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Monitoring</dt>
+                                        <dd>{{current_project.toBe.monitoring}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Logging</dt>
+                                        <dd>{{current_project.toBe.logging}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Tracing</dt>
+                                        <dd>{{current_project.toBe.tracing}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>API Analytics</dt>
+                                        <dd>{{current_project.toBe.apiAnalytics}}</dd>
+                                    </dl>
+                                </div>
+
+                                <div class="col">
+                                    <dl class="dl-horizontal">
+                                        <dt>Alerts</dt>
+                                        <dd>{{current_project.toBe.alerts}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <footer class="main-footer d-none">
+        <div class="text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </footer>
+</div>

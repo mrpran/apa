@@ -42,7 +42,6 @@ export class KeycloakLoginComponent implements OnInit {
     this.authenticationService.keycloak_login(this.f.username.value, this.f.password.value)
       .subscribe(
         data => {
-          console.log(data);
           localStorage.setItem('username', this.f.username.value );
           localStorage.setItem('currentUser', JSON.stringify(data));
           

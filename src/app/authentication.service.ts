@@ -41,7 +41,7 @@ export class AuthenticationService {
     "asIs": "",
     "toBe": ""
   };
-  sampleData1 ;
+  sampleData1;
 
   constructor(private http: HttpClient) { }
 
@@ -67,6 +67,27 @@ export class AuthenticationService {
       })
     });
   }
+  updateData(data) {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.put<any>('http://13.127.205.103:8088/portfolio', data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${currentUser.token}`
+      })
+    });
+  }
+
+
+  getRecord(editId) {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return this.http.get<any>('http://35.154.177.80:8088/portfolio/' + editId, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${currentUser.access_token}`
+      })
+    });
+
+  }
 
   getRecords() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -78,7 +99,7 @@ export class AuthenticationService {
     });
   }
 
-  deleteRecord(id){
+  deleteRecord(id) {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return this.http.delete<any>('http://35.154.177.80:8088/portfolio/' + id, {
       headers: new HttpHeaders({
@@ -118,7 +139,7 @@ export class AuthenticationService {
           .set('Content-Type', 'application/x-www-form-urlencoded')
       });
   }
-  
+
   sendData1() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return this.http.post<any>('http://35.154.177.80:8088/portfolio', this.data, {

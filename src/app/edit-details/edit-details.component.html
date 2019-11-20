@@ -1,0 +1,1861 @@
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+        <div class="container">
+            <a [routerLink]="['/view-details']" class="navbar-brand">
+                <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+            </a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/view-details']">
+                        <i class="fas fa-tasks mr-2"></i>
+                        All Projects
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link " data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Header
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link active disabled" data-toggle="dropdown" [routerLink]="['/application-estate']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Current
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/future-state']">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Future
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active disabled" data-toggle="dropdown" href="#">
+                        <i class="fas fa-user mr-1"></i>
+                        {{username}}
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                        <i class="fas fa-sign-out-alt mr-1"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper mb-4" style="height:100%; background: light ">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col">
+                        <h1 class="m-0 text-dark text-center">Edit</h1>
+                    </div>
+                    <!-- /.col -->
+                </div>
+
+
+
+
+
+
+
+
+
+                <div>
+                    <ul class="nav nav-pills ml-auto p-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#tab_3" data-toggle="tab">Edit Current State</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab_4" data-toggle="tab">Edit Future State</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_3">
+                            <div class="content ">
+                                <div class="container ">
+                                    <div class="card card-default">
+                                        <form [formGroup]="appliationEstateForm" (ngSubmit)="onNext()">
+                                            <div class="card-header">
+                                                <h4>Application Stack</h4>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <!-- form start -->
+                                            <div class="card-body">
+                                                <div class="row">
+
+                                                    <div class="col-md-4">
+
+                                                        <label>Language Frontend & Version</label>
+                                                        <div class="input-group">
+                                                            <input formControlName="languageFrontEnd" type="text" class="form-control">
+                                                            <div class="input-group-append" style="width: 100px">
+                                                                <input formControlName="languageFEVersion" class="form-control" type="text">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+
+                                                        <label>Language Backend & Version</label>
+                                                        <div class="input-group">
+                                                            <input formControlName="languageBackEnd" type="text" class="form-control">
+                                                            <div class="input-group-append" style="width: 100px">
+                                                                <input formControlName="languageBEVersion" class="form-control" type="text">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-4 mb-2">
+
+                                                        <label>Database & Version</label>
+                                                        <div class="input-group">
+                                                            <input formControlName="database" type="text" class="form-control">
+                                                            <div class="input-group-append" style="width: 100px">
+                                                                <input formControlName="databaseVersion" class="form-control" type="text">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>App Servers & version</label>
+                                                            <div class="input-group">
+                                                                <input formControlName="appServers" type="text" class="form-control">
+                                                                <div class="input-group-append" style="width: 100px">
+                                                                    <input formControlName="appVersion" class="form-control" type="text">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Integration Layer</label>
+                                                            <input formControlName="integrationLayer" type="text" class="form-control" placeholder="Integration Layer">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>API Gateway</label>
+                                                            <input formControlName="apiGateway" type="text" class="form-control" placeholder="API Gateway">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Total lines of code</label>
+                                                            <input formControlName="totalLoc" type="text" class="form-control" placeholder="Lines of code">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>DB</label>
+                                                            <input formControlName="dbLoc" type="text" class="form-control" placeholder="DB">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Backend</label>
+                                                            <input formControlName="backEndLoc" type="text" class="form-control" placeholder="Backend">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Frontend</label>
+                                                            <input formControlName="frontEndLoc" type="text" class="form-control" placeholder="Frontend">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Platform</label>
+                                                            <input formControlName="platform" type="text" class="form-control" placeholder="Platform">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Package Software</label>
+                                                            <input formControlName="packageSoftware" type="text" class="form-control" placeholder="Package Software">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Infrastructure</label>
+                                                            <input formControlName="infrastructure" type="text" class="form-control" placeholder="Infrastructure">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Operating System</label>
+                                                            <input formControlName="operatingSystem" type="text" class="form-control" placeholder="Operating System">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header">
+                                                <h4>Application Insight</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Description</label>
+                                                            <input formControlName="applicationDescription" type="text" class="form-control" placeholder="Application Description">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Classfication</label>
+                                                            <input formControlName="applicationClassification" type="text" class="form-control" placeholder="Application Classfication">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Support hours Time Zone</label>
+                                                            <input formControlName="applicationSupportHours" type="text" class="form-control" placeholder="Application Support hours  Time Zone">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Age of Application</label>
+                                                            <input formControlName="ageOfApplication" type="text" class="form-control" placeholder="Age of Application ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Documents Availability</label>
+                                                            <input formControlName="applicationDocumentsAvailability" type="text" class="form-control" placeholder="Application Documents Availability ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Region</label>
+                                                            <input formControlName="region" type="text" class="form-control" placeholder="Region ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Global or Local Application?</label>
+                                                            <input formControlName="globalLocal" type="text" class="form-control" placeholder="Global or Local Application? ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Population range(users)</label>
+                                                            <input formControlName="applicationPopulation" type="text" class="form-control" placeholder="Application Population range(users) ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Number of Total tickets (yearly)</label>
+                                                            <input formControlName="totalRequestYearly" type="text" class="form-control" placeholder="Number of Total tickets (yearly)">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Incident Request (yearly)</label>
+                                                            <input formControlName="incidentRequestYearly" type="text" class="form-control" placeholder="Incident Request (yearly) ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Service Request (yearly)</label>
+                                                            <input formControlName="serviceRequestYearly" type="text" class="form-control" placeholder="Service Request (yearly) ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Change Request (yearly)</label>
+                                                            <input formControlName="changeRequestYearly" type="text" class="form-control" placeholder="Change Request (yearly)">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Bought Solution or Inhouse developed</label>
+                                                            <input formControlName="solutionModel" type="text" class="form-control" placeholder="Bought Solution or Inhouse developed ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Application Language dependency</label>
+                                                            <input formControlName="applicationLanguageDependency" type="text" class="form-control" placeholder="Application Language dependency ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Is onsite support presence /support needed?</label>
+                                                            <input formControlName="isOnSupportPresent" type="text" class="form-control" placeholder="Is onsite support presence /support needed?">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Is this application planned for Sunset?</label>
+                                                            <input formControlName="isApplicationPlannedSunset" type="text" class="form-control" placeholder="Is this application planned for Sunset?">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Is this application planned to be hosted in Cloud</label>
+                                                            <input formControlName="isApplicationTobeOnCloud" type="text" class="form-control" placeholder="Is this application planned to be hosted in Cloud ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Sunset date (if applicable)</label>
+                                                            <input formControlName="sunsetDate" type="text" class="form-control" placeholder="Sunset date (if applicable) ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Is this application planned to be rationalised?</label>
+                                                            <input formControlName="isApplicationRationalized" type="text" class="form-control" placeholder="Is this application planned to be rationalised? ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Is this application part of shadow IT?</label>
+                                                            <input formControlName="isAppShadowIT" type="text" class="form-control" placeholder="Is this application part of shadow IT? ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Business Unit Discovery Spoc</label>
+                                                            <input formControlName="businessUnitDiscoverySpoc" type="text" class="form-control" placeholder="Business Unit Discovery Spoc ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Regional Discovery Spoc</label>
+                                                            <input formControlName="regionalDiscoverySpoc" type="text" class="form-control" placeholder="Regional Discovery Spoc ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header">
+                                                <h4>Process Tools</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>Process</label>
+                                                            <input formControlName="process" type="text" class="form-control" placeholder="Process">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group">
+                                                            <label>Tools</label>
+                                                            <input formControlName="processTools" type="text" class="form-control" placeholder="Tools">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>CI/CD</label>
+                                                            <input formControlName="cicd" type="text" class="form-control" placeholder="CI/CD">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-group">
+                                                            <label>Tools</label>
+                                                            <input formControlName="cicdTools" type="text" class="form-control" placeholder="Tools">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group">
+                                                            <label>Release Cycle</label>
+                                                            <input formControlName="releaseCycle" type="text" class="form-control" placeholder="Release Cycle">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Any other Comments</label>
+                                                            <textarea formControlName="comment" class="form-control" rows="3" placeholder="Enter comments ..."></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-info">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- /.container-fluid -->
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="tab-pane" id="tab_4">
+                            <div class="content-wrapper" style="height:100%; background: light ">
+                                <div class="content">
+                                    <div class="container">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4>Application Devlopment</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Platform :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Platform">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Database :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Database">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Analytics</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Analytics">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Streaming :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Streaming">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Message :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Message">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Schema Definition :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#SchemaDefinition">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>CI/CD :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#cicd">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Integration :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Integration">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Serverless :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Serverless">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Image Build :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ImageBuild">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="card-header">
+                                                <h4>Orchestration & Management</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Container Orchestration :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerOrchestration">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Service Discovery :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceDiscovery">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Remote Procedure Calls :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#rpc">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Service Mesh :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceMesh">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>API Gateway :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIGateway">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="card-header">
+                                                <h4>Provisioning</h4>
+                                            </div>
+                                            <div class="card-body">
+
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Host Management :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#HostManagement">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Container Registry :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerRegistry">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Security :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Security">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Key Management :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#KeyManagement">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Memory Management :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#MemoryManagement">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="card-header">
+                                                <h4>Governance</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label>Monitoring :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Monitoring">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Logging :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Logging">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Tracing :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Tracing">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>API Analytics :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIAnalytics">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col">
+                                                        <label>Alerts :</label>
+                                                        <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Alerts">
+                                                            Click to Select >>
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="card-footer">
+                                                <button (click)="onSubmit()" type="submit" class="btn btn-block btn-primary " style="width: 100px">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="content">
+
+                                    <br>
+
+                                    <div class="row">
+
+                                        <div class="modal fade" id="Platform">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Platform</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col  p-fill" *ngFor="let item of platformList;">
+                                                            <input *ngIf="platformSelected.includes(item)" checked value={{item}} type="checkbox" (change)="handlePlatform(item, $event.target.checked);"
+                                                            />
+                                                            <input *ngIf="!platformSelected.includes(item)" value={{item}} type="checkbox" (change)="handlePlatform(item, $event.target.checked);"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon p-fill">
+                                                            <input *ngIf="platformSelected.includes('Other')" checked value="Other" type="checkbox" #p (change)="handlePlatform(p.value, $event.target.checked);"
+                                                            />
+                                                            <input *ngIf="!platformSelected.includes('Other')" value="Other" type="checkbox" #p (change)="handlePlatform(p.value, $event.target.checked);"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+
+                                                        </div>
+                                                        <input [disabled]="!platformSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="platformOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Database">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Database</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of databaseList;">
+                                                            <input *ngIf="databaseSelected.includes(item)" checked value={{item}} (change)="handleDatabase(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!databaseSelected.includes(item)" value={{item}} (change)="handleDatabase(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon p-fill">
+                                                            <input *ngIf="!databaseSelected.includes('Other')" type="checkbox" (change)="handleDatabase('Other', $event.target.checked);"
+                                                            />
+                                                            <input *ngIf="databaseSelected.includes('Other')" checked type="checkbox" (change)="handleDatabase('Other', $event.target.checked);"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!databaseSelected.includes('Other')" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="databaseOther"
+                                                            type="text" placeholder="Other" />
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Analytics">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Analytics</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of analyticsList;">
+                                                            <input *ngIf="analyticsSelected.includes(item)" checked value={{item}} (change)="handleAnalytics(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!analyticsSelected.includes(item)" value={{item}} (change)="handleAnalytics(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="analyticsSelected.includes('Other')" (change)="handleAnalytics('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!analyticsSelected.includes('Other')" (change)="handleAnalytics('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!analyticsSelected.includes('Other')" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="analyticsOther"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Streaming">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Streaming</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of streamingList;">
+                                                            <input checked *ngIf="streamingSelected.includes(item)" value={{item}} (change)="handleStreaming(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!streamingSelected.includes(item)" value={{item}} (change)="handleStreaming(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="streamingSelected.includes('Other')" (change)="handleStreaming('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!streamingSelected.includes('Other')" (change)="handleStreaming('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!streamingSelected.includes('Other')" class="ml-n2 pl-1" [ngModelOptions]="{standalone: true}" [(ngModel)]="streamingOther"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Message">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Message</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of messagingList;">
+                                                            <input checked *ngIf="messagingSelected.includes(item)" value={{item}} (change)="handleMessaging(item, $event.target.checked)"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!messagingSelected.includes(item)" value={{item}} (change)="handleMessaging(item, $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="messagingSelected.includes('Other')" (change)="handleMessaging('Other', $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!messagingSelected.includes('Other')" (change)="handleMessaging('Other', $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!messagingSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="messagingOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="SchemaDefinition">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Schema Definition</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of schemaDefinitionList;">
+                                                            <input *ngIf="schemaDefinitionSelected.includes(item)" checked value={{item}} (change)="handleSchemaDefinition(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!schemaDefinitionSelected.includes(item)" value={{item}} (change)="handleSchemaDefinition(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input value="Other" checked *ngIf="schemaDefinitionSelected.includes('Other')" (change)="handleSchemaDefinition('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input value="Other" *ngIf="!schemaDefinitionSelected.includes('Other')" (change)="handleSchemaDefinition('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!schemaDefinitionSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="schemaDefinitionOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="cicd">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">CI/CD</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of cicdList;">
+                                                            <input checked *ngIf="cicdSelected.includes(item)" value={{item}} (change)="handleCICD(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!cicdSelected.includes(item)" value={{item}} (change)="handleCICD(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input *ngIf="!cicdSelected.includes('Other')" (change)="handleCICD('Other', $event.target.checked);" type="checkbox" />
+                                                            <input checked *ngIf="cicdSelected.includes('Other')" (change)="handleCICD('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!cicdSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="cicdOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Integration">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Integration</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of integrationList;">
+                                                            <input checked *ngIf="integrationSelected.includes(item)" value={{item}} (change)="handleIntegration(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!integrationSelected.includes(item)" value={{item}} (change)="handleIntegration(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="integrationSelected.includes('Other')" (change)="handleIntegration('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!integrationSelected.includes('Other')" (change)="handleIntegration('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!integrationSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="integrationOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Serverless">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Serverless</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of serverlessList;">
+                                                            <input checked *ngIf="serverlessSelected.includes(item)" value={{item}} (change)="handleServerless(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!serverlessSelected.includes(item)" value={{item}} (change)="handleServerless(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon p-fill">
+                                                            <input checked *ngIf="serverlessSelected.includes('Other')" (change)="handleServerless('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!serverlessSelected.includes('Other')" (change)="handleServerless('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!serverlessSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="serverlessOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="ImageBuild">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">ImageBuild</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of imageBuildList;">
+                                                            <input checked *ngIf="imageBuildSelected.includes(item)" value={{item}} (change)="handleImageBuild(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!imageBuildSelected.includes(item)" value={{item}} (change)="handleImageBuild(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="imageBuildSelected.includes(item)" (change)="handleImageBuild('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!imageBuildSelected.includes(item)" (change)="handleImageBuild('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!imageBuildSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="imageBuildOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="ContainerOrchestration">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Container Orchestration</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of containerOrchestrationList;">
+                                                            <input checked *ngIf="containerOrchestrationSelected.includes(item)" value={{item}} (change)="handleContainerOrchestration(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!containerOrchestrationSelected.includes(item)" value={{item}} (change)="handleContainerOrchestration(item, $event.target.checked);"
+                                                                type="checkbox" />
+
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="containerOrchestrationSelected.includes('Other')" value="Other" #co (change)="handleContainerOrchestration(co.value, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!containerOrchestrationSelected.includes('Other')" value="Other" #co (change)="handleContainerOrchestration(co.value, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!containerOrchestrationSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="containerOrchestrationOther"
+                                                            [ngModelOptions]="{standalone: true}" type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="ServiceDiscovery">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Service Discovery</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of serviceDiscoveryList;">
+                                                            <input checked *ngIf="serviceDiscoverySelected.includes(item)" value={{item}} (change)="handleServiceDiscovery(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!serviceDiscoverySelected.includes(item)" value={{item}} (change)="handleServiceDiscovery(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked value="Other" *ngIf="serviceDiscoverySelected.includes('Other')" #sd (change)="handleServiceDiscovery(sd.value, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input value="Other" #sd *ngIf="!serviceDiscoverySelected.includes('Other')" (change)="!handleServiceDiscovery(sd.value, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!serviceDiscoverySelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="serviceDiscoveryOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="rpc">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Remote Procedure Calls</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of remoteProcedureCellsList;">
+                                                            <input checked *ngIf="remoteProcedureCellsSelected.includes(item)" value={{item}} (change)="handleRpc(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!remoteProcedureCellsSelected.includes(item)" value={{item}} (change)="handleRpc(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input *ngIf="!remoteProcedureCellsSelected.includes(item)" (change)="handleRpc('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input checked *ngIf="remoteProcedureCellsSelected.includes(item)" (change)="handleRpc('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!remoteProcedureCellsSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="rpcOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="ServiceMesh">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Service Mesh</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of serviceMeshList;">
+                                                            <input checked *ngIf="serviceMeshSelected.includes(item)" value={{item}} (change)="handleServiceMesh(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!serviceMeshSelected.includes(item)" value={{item}} (change)="handleServiceMesh(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="serviceMeshSelected.includes('Other')" (change)="handleServiceMesh('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!serviceMeshSelected.includes('Other')" (change)="handleServiceMesh('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!serviceMeshSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="serviceMeshOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="APIGateway">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">API Gateway</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of apiGatewayList;">
+                                                            <input checked *ngIf="apiGatewaySelected.includes(item)" value={{item}} (change)="handleApiGateway(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!apiGatewaySelected.includes(item)" value={{item}} (change)="handleApiGateway(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="apiGatewaySelected.includes('Other')" (change)="handleApiGateway('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!apiGatewaySelected.includes('Other')" (change)="handleApiGateway('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!apiGatewaySelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="apiGatewayOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="HostManagement">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Host Management</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of hostManagementList;">
+                                                            <input checked *ngIf="hostManagementSelected.includes(item)" value={{item}} (change)="handleHostManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!hostManagementSelected.includes(item)" value={{item}} (change)="handleHostManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="hostManagementSelected.includes('Other')" (change)="handleHostManagement('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!hostManagementSelected.includes('Other')" (change)="handleHostManagement('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!hostManagementSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="hostManagementOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="ContainerRegistry">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Container Registry</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of containerRegistryList;">
+                                                            <input checked *ngIf="containerRegistrySelected.includes(item)" value={{item}} (change)="handleContainerRegistry(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!containerRegistrySelected.includes(item)" value={{item}} (change)="handleContainerRegistry(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="containerRegistrySelected.includes('Other')" (change)="handleContainerRegistry('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!containerRegistrySelected.includes('Other')" (change)="handleContainerRegistry('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!containerRegistrySelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="containerRegistryOther"
+                                                            [ngModelOptions]="{standalone: true}" type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Security">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Security</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of securityList;">
+                                                            <input checked *ngIf="securitySelected.includes(item)" value={{item}} (change)="handleSecurity(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!securitySelected.includes(item)" value={{item}} (change)="handleSecurity(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="securitySelected.includes('Other')" (change)="handleSecurity('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!securitySelected.includes('Other')" (change)="handleSecurity('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!securitySelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="securityOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="KeyManagement">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Key Management</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of keyManagementList;">
+                                                            <input checked *ngIf="keyManagementSelected.includes(item)" value={{item}} (change)="handleKeyManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!keyManagementSelected.includes(item)" value={{item}} (change)="handleKeyManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="keyManagementSelected.includes('Other')" (change)="handleKeyManagement('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!keyManagementSelected.includes('Other')" (change)="handleKeyManagement('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!keyManagementSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="keyManagementOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="MemoryManagement">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Memory Management</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of memoryManagementList;">
+                                                            <input checked *ngIf="memoryManagementSelected.includes(item)" value={{item}} (change)="handleMemoryManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!memoryManagementSelected.includes(item)" value={{item}} (change)="handleMemoryManagement(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="memoryManagementSelected.includes('Other')" (change)="handleMemoryManagement('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!memoryManagementSelected.includes('Other')" (change)="handleMemoryManagement('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!memoryManagementSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="memoryManagementOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Monitoring">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Monitoring</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of monitoringList;">
+                                                            <input checked *ngIf="monitoringSelected.includes(item)" value={{item}} (change)="handleMonitoring(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!monitoringSelected.includes(item)" value={{item}} (change)="handleMonitoring(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="monitoringSelected.includes('Other')" (change)="handleMonitoring('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!monitoringSelected.includes('Other')" (change)="handleMonitoring('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!monitoringSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="monitoringOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Logging">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Logging</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of loggingList;">
+                                                            <input checked *ngIf="loggingSelected.includes(item)" value={{item}} (change)="handleLogging(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!loggingSelected.includes(item)" value={{item}} (change)="handleLogging(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="loggingSelected.includes('Other')" (change)="handleLogging('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!loggingSelected.includes('Other')" (change)="handleLogging('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!loggingSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="loggingOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Tracing">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Tracing</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of tracingList;">
+                                                            <input checked *ngIf="tracingSelected.includes(item)" value={{item}} (change)="handleTracing(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!tracingSelected.includes(item)" value={{item}} (change)="handleTracing(item, $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="tracingSelected.includes('Other')" (change)="handleTracing('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!tracingSelected.includes('Other')" (change)="handleTracing('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!tracingSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="tracingOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="APIAnalytics">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">API Analytics</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of apiAnalyticsList;">
+                                                            <input *ngIf="apiAnalyticsSelected.includes(item)" checked value={{item}} (change)="handleApiAnalytics(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!apiAnalyticsSelected.includes(item)" value={{item}} (change)="handleApiAnalytics(item, $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="apiAnalyticsSelected.includes('Other')" (change)="handleApiAnalytics('Other', $event.target.checked);"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!apiAnalyticsSelected.includes('Other')" (change)="handleApiAnalytics('Other', $event.target.checked);" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!apiAnalyticsSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="apiAnalyticsOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                        <div class="modal fade" id="Alerts">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Alerts</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="pretty p-icon col p-fill" *ngFor="let item of alertsList;">
+                                                            <input checked *ngIf="alertsSelected.includes(item)" value={{item}} (change)="handleAlerts(item, $event.target.checked)"
+                                                                type="checkbox" />
+                                                            <input *ngIf="!alertsSelected.includes(item)" value={{item}} (change)="handleAlerts(item, $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label>{{item}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="pretty p-icon  p-fill">
+                                                            <input checked *ngIf="alertsSelected.includes('Other')" (change)="handleAlerts('Other', $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <input *ngIf="!alertsSelected.includes('Other')" (change)="handleAlerts('Other', $event.target.checked)" type="checkbox"
+                                                            />
+                                                            <div class="state p-info">
+                                                                <i class="icon mdi mdi-check"></i>
+                                                                <label></label>
+                                                            </div>
+                                                        </div>
+                                                        <input [disabled]="!alertsSelected.includes('Other')" class="ml-n2 pl-1" [(ngModel)]="alertsOther" [ngModelOptions]="{standalone: true}"
+                                                            type="text" placeholder="Other">
+
+
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-info" data-dismiss="modal">Save changes
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+                                    <div class="p-4">
+                                    </div>
+                                </div>
+                                <!-- /.content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <div class="content ">
+            <div class="container ">
+                <div class="card card-default">
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- Main Footer -->
+    <footer class="main-footer d-none">
+        <div class="float-right d-none d-sm-inline">
+            Anything you want
+        </div>
+    </footer>
+</div>

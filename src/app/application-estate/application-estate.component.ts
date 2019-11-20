@@ -13,7 +13,7 @@ export class ApplicationEstateComponent implements OnInit {
   username = "";
   appliationEstateForm: FormGroup;
   asIs = {
-    "ageOfApplication": "4 years",
+    "ageOfApplication": "-",
     "apiGateway": "-",
     "applicationLanguageDependency": "-",
     "applicationDocumentsAvailability": "-",

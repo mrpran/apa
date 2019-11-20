@@ -23,6 +23,7 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { PaginationComponent } from './pagination/pagination.component';
+import { EditDetailsComponent } from './edit-details/edit-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     TestComponent,
     ViewDetailsComponent,
     KeycloakLoginComponent,
-    PaginationComponent
+    PaginationComponent,
+    EditDetailsComponent
   ],
   imports: [
     NgxPaginationModule,

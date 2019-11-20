@@ -663,6 +663,7 @@ export class FutureStateComponent implements OnInit {
 
       },
       error => {
+        this.toast.success(error);
         console.log(error);
       });
   }

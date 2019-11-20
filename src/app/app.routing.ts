@@ -8,6 +8,7 @@ import { TestComponent } from './test/test.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { KeycloakLoginComponent } from './keycloak-login/keycloak-login.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { EditDetailsComponent } from './edit-details/edit-details.component';
 
 // , canActivate: [AuthGuard] 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'application-estate', component: ApplicationEstateComponent },
     { path: 'future-state', component: FutureStateComponent },
     { path: 'view-details', component: ViewDetailsComponent },
+    { path: 'edit-details/:editId', component: EditDetailsComponent },
     { path: 'test', component: TestComponent },
     { path: 'keycloak-login', component: KeycloakLoginComponent },
     { path: 'pagination', component: PaginationComponent },
