@@ -45,8 +45,8 @@ export class PortfolioDetailsComponent implements OnInit {
     this.authenticationService.sampleData1=null;
     let role = localStorage.getItem('role').toUpperCase();
     this.portfolioDetailsForm = this.formBuilder.group({
-      bu: [role],
-      vertical: ['Vertical', Validators.required],
+      bu: [role == 'ORG_ADMIN' ? "BFSI" : role],
+      vertical: ['App Moderanization', Validators.required],
       account: ['DTCC', Validators.required],
       bo: ['Dinesh', Validators.required],
       appName: ['App Modernization', Validators.required],

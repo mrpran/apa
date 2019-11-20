@@ -13,7 +13,7 @@ declare var $: any;
 
 export class FutureStateComponent implements OnInit {
 
-
+  username = "";
   sampleForm: FormGroup;
   toBe = {
     "platform": "",
@@ -352,6 +352,7 @@ export class FutureStateComponent implements OnInit {
     private router: Router,
     private toast: ToastrService,
     private authenticationService: AuthenticationService) {
+    this.username = localStorage.getItem('username');
 
     this.sampleForm = this.formBuilder.group({
       platform: [],
@@ -623,36 +624,47 @@ export class FutureStateComponent implements OnInit {
 
 
 
-    if(!(this.toBe.platform)) this.toBe.platform = "-";
-    if(!(this.toBe.database)) this.toBe.database = "-";
-    if(!(this.toBe.analytics)) this.toBe.analytics = "-";
-    if(!(this.toBe.streaming)) this.toBe.streaming = "-";
-    if(!(this.toBe.messaging)) this.toBe.messaging = "-";
-    if(!(this.toBe.serverless)) this.toBe.serverless = "-";
-    if(!(this.toBe.integration)) this.toBe.integration = "-";
-    if(!(this.toBe.schemaDefinition)) this.toBe.schemaDefinition = "-";
-    
-    if(!(this.toBe.imageBuild)) this.toBe.imageBuild = "-";
-    if(!(this.toBe.cicd)) this.toBe.cicd = "-";
-    if(!(this.toBe.containerOrchestration)) this.toBe.containerOrchestration = "-";
-    if(!(this.toBe.serviceDiscovery)) this.toBe.serviceDiscovery = "-";
-    if(!(this.toBe.serviceMesh)) this.toBe.serviceMesh = "-";
-    if(!(this.toBe.apiGateway)) this.toBe.apiGateway = "-";
-    if(!(this.toBe.hostManagement)) this.toBe.hostManagement = "-";
-    if(!(this.toBe.containerRegistry)) this.toBe.containerRegistry = "-";
-    
-    if(!(this.toBe.security)) this.toBe.security = "-";
-    if(!(this.toBe.keyManagement)) this.toBe.keyManagement = "-";
-    if(!(this.toBe.memoryManagement)) this.toBe.memoryManagement = "-";
-    if(!(this.toBe.monitoring)) this.toBe.monitoring = "-";
-    if(!(this.toBe.logging)) this.toBe.logging = "-";
-    if(!(this.toBe.tracing)) this.toBe.tracing = "-";
-    if(!(this.toBe.apiAnalytics)) this.toBe.apiAnalytics = "-";
-    if(!(this.toBe.alerts)) this.toBe.alerts = "-";
+    if (!(this.toBe.platform)) this.toBe.platform = "-";
+    if (!(this.toBe.database)) this.toBe.database = "-";
+    if (!(this.toBe.analytics)) this.toBe.analytics = "-";
+    if (!(this.toBe.streaming)) this.toBe.streaming = "-";
+    if (!(this.toBe.messaging)) this.toBe.messaging = "-";
+
+    if (!(this.toBe.schemaDefinition)) this.toBe.schemaDefinition = "-";
+    if (!(this.toBe.cicd)) this.toBe.cicd = "-";
+    if (!(this.toBe.integration)) this.toBe.integration = "-";
+    if (!(this.toBe.serverless)) this.toBe.serverless = "-";
+    if (!(this.toBe.imageBuild)) this.toBe.imageBuild = "-";
+
+    if (!(this.toBe.containerOrchestration)) this.toBe.containerOrchestration = "-";
+    if (!(this.toBe.serviceDiscovery)) this.toBe.serviceDiscovery = "-";
+    if (!(this.toBe.rpc)) this.toBe.rpc = "-";
+    if (!(this.toBe.serviceMesh)) this.toBe.serviceMesh = "-";
+    if (!(this.toBe.apiGateway)) this.toBe.apiGateway = "-";
+
+    if (!(this.toBe.hostManagement)) this.toBe.hostManagement = "-";
+    if (!(this.toBe.containerRegistry)) this.toBe.containerRegistry = "-";
+    if (!(this.toBe.security)) this.toBe.security = "-";
+    if (!(this.toBe.keyManagement)) this.toBe.keyManagement = "-";
+    if (!(this.toBe.memoryManagement)) this.toBe.memoryManagement = "-";
+
+    if (!(this.toBe.monitoring)) this.toBe.monitoring = "-";
+    if (!(this.toBe.logging)) this.toBe.logging = "-";
+    if (!(this.toBe.tracing)) this.toBe.tracing = "-";
+    if (!(this.toBe.apiAnalytics)) this.toBe.apiAnalytics = "-";
+    if (!(this.toBe.alerts)) this.toBe.alerts = "-";
 
 
     this.authenticationService.save3(this.toBe);
-    this.authenticationService.sendData1().subscribe
+    this.authenticationService.sendData1().subscribe(
+      data => {
+        this.toast.success(data.message);
+        this.router.navigate(['view-details']);
+
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

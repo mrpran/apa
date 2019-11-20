@@ -54,7 +54,6 @@ export class AuthenticationService {
   }
   save3(sampleData3) {
     this.data.toBe = sampleData3;
-    console.log(this.data);
   }
 
 
@@ -71,7 +70,7 @@ export class AuthenticationService {
 
   getRecords() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.get<any>('http://15.206.100.251:8088/portfolio', {
+    return this.http.get<any>('http://35.154.177.80:8088/portfolio', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -81,7 +80,7 @@ export class AuthenticationService {
 
   deleteRecord(id){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.delete<any>('http://15.206.100.251:8088/portfolio' + id, {
+    return this.http.delete<any>('http://35.154.177.80:8088/portfolio/' + id, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -107,7 +106,7 @@ export class AuthenticationService {
 
 
   keycloak_login(username: string, password: string) {
-    const url = "http://15.206.100.251:8080/auth/realms/master/protocol/openid-connect/token";
+    const url = "http://35.154.177.80:8080/auth/realms/master/protocol/openid-connect/token";
     const body = new HttpParams()
       .set('client_id', "app-portfolio")
       .set('password', password)
@@ -122,7 +121,7 @@ export class AuthenticationService {
   
   sendData1() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.post<any>('http://15.206.100.251:8088/portfolio', this.data, {
+    return this.http.post<any>('http://35.154.177.80:8088/portfolio', this.data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
