@@ -12,6 +12,7 @@ import Portfolio from "../model";
 })
 export class EditDetailsComponent implements OnInit {
 
+  username;
   editId;
   project: Portfolio;
 
@@ -449,7 +450,7 @@ export class EditDetailsComponent implements OnInit {
     private toast: ToastrService,
     private authenticationService: AuthenticationService) {
 
-
+      this.username = localStorage.getItem('username');
     this.project = new Portfolio();
 
     this.appliationEstateForm = this.formBuilder.group({
@@ -563,15 +564,13 @@ export class EditDetailsComponent implements OnInit {
     this.platformSelected = this.toBeSelected.platform.split(',');
     this.platformOther = this.platformSelected.filter(e => !this.platformList.includes(e)).toString();
     this.platformOther != '' ? this.platformSelected.splice(this.platformSelected.indexOf(this.platformOther), 1, 'Other') : {};
-    console.log(this.platformSelected);
-    console.log(this.platformOther);
+   
     //
     this.databaseSelected = this.toBeSelected.database.split(',');
     this.databaseOther = this.databaseSelected.filter(e => !this.databaseList.includes(e)).toString();
     this.databaseOther != '' ? this.databaseSelected.splice(this.databaseSelected.indexOf(this.databaseOther), 1, 'Other') : {};
     //
     this.streamingSelected = this.toBeSelected.streaming.split(',');
-    console.log(this.streamingSelected);
     this.streamingOther = this.streamingSelected.filter(e => !this.streamingList.includes(e)).toString();
     this.streamingOther != '' ? this.streamingSelected.splice(this.streamingSelected.indexOf(this.streamingOther), 1, 'Other') : {};
     //
@@ -765,7 +764,7 @@ export class EditDetailsComponent implements OnInit {
     this.asIs.comment = this.f.comment.value.toString();
 
     //this.authenticationService.save2(this.asIs);
-    //console.log(this.asIs);
+    console.log(this.asIs);
 
   }
 
@@ -964,10 +963,11 @@ export class EditDetailsComponent implements OnInit {
     this.toBe.alerts = this.alertsSelected.toString();
 
 
-    //console.log(this.toBe);
+    console.log(this.toBe);
 
     this.project.asIs = this.asIs;
     this.project.toBe = this.toBe;
+    this.project.entity = "PortfolioAsIs";
 
     console.log(JSON.stringify(this.project));
 
@@ -981,7 +981,7 @@ export class EditDetailsComponent implements OnInit {
 
       },
       error => {
-        this.toast.success(error);
+        this.toast.error(error);
         console.log(error);
       });
 

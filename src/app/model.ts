@@ -8,6 +8,7 @@ export default class Portfolio {
     appName : string;
     asIs : any;
     toBe : any;
+    entity : any;
 
     constructor(projectId?, bu?, vertical?, account?, bo?, al?, appName?, asIs?, toBe?) {
         this.projectId = projectId;

@@ -26,8 +26,8 @@ export class KeycloakLoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['orgadmin', Validators.required],
+      password: ['password', Validators.required]
     });
     this.authenticationService.logout();
   }
