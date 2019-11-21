@@ -977,7 +977,7 @@ export class EditDetailsComponent implements OnInit {
 
     this.project.asIs = this.asIs;
     this.project.toBe = this.toBe;
-    this.project.entity = "PortfolioAsIs";
+    this.project.entity = "Portfolio";
 
     console.log(JSON.stringify(this.project));
 

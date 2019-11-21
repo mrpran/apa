@@ -24,6 +24,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 import { PaginationComponent } from './pagination/pagination.component';
 import { EditDetailsComponent } from './edit-details/edit-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditDetailsComponent } from './edit-details/edit-details.component';
     ViewDetailsComponent,
     KeycloakLoginComponent,
     PaginationComponent,
-    EditDetailsComponent
+    EditDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     NgxPaginationModule,

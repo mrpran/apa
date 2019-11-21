@@ -74,7 +74,7 @@ export class PortfolioDetailsComponent implements OnInit {
     this.sampleData1.appName = this.f.appName.value;
     this.sampleData1.al = this.f.al.value;
 
-    this.sampleData1.entity = "PortfolioAsIs";
+    this.sampleData1.entity = "Portfolio";
 
     this.authenticationService.save1(this.sampleData1);
     this.router.navigate(['application-estate']);

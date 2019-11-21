@@ -1,0 +1,109 @@
+<div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-info   border-bottom">
+            <div class="container">
+                <a [routerLink]="['/view-details']" class="navbar-brand">
+                    <span class="brand-text font-weight-light">App Portfolio Assessment</span>
+                </a>
+                <!-- <ul class="navbar-nav">
+                        <li class="ml-5 nav-item d-none d-sm-inline-block">
+                            <a class="nav-link" [routerLink]="['/portfolio-details']">
+                                Create
+                            </a>
+                        </li>
+                    </ul> -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Messages Dropdown Menu -->
+                    <!-- Notifications Dropdown Menu -->
+    
+                    <li class="nav-item dropdown">
+    
+                        <a class="nav-link active disabled" data-toggle="dropdown" [routerLink]="['/view-details']">
+                            <i class="fas fa-tasks mr-2"></i>
+                            All Projects
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/portfolio-details']">
+                            <i class="fas fa-edit mr-1"></i>
+                            Create
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown disabled">
+                        <a class="nav-link " data-toggle="dropdown" href="#">
+                            <i class="fas fa-user mr-1"></i>
+                            {{username}}
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" [routerLink]="['/keycloak-login']">
+                            <i class="fas fa-sign-out-alt mr-1"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="height:100%; background: light ">
+    
+            <div class="content">
+                <div class="container">
+                        <section class="content mt-5">
+                                <div class="error-page">
+                                  <h2 class="headline text-warning"> 404</h2>
+                          
+                                  <div class="error-content">
+                                      <div class="pt-3">
+                                            <h3 ><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+                          
+                                            <p>
+                                              We could not find the page you were looking for.
+                                              Meanwhile, you may <a  [routerLink]="['/view-details']">return to dashboard</a> 
+                                            </p>
+                                  
+                                            <form class="search-form d-none">
+                                              <div class="input-group">
+                                                <input type="text" name="search" class="form-control" placeholder="Search">
+                                  
+                                                <div class="input-group-append">
+                                                  <button type="submit" name="submit" class="btn btn-warning"><i class="fas fa-search"></i>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <!-- /.input-group -->
+                                            </form>
+                                      </div>
+                                   
+                                  </div>
+                                  <!-- /.error-content -->
+                                </div>
+                                <!-- /.error-page -->
+                              </section>
+    
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+    
+    
+    
+    
+    
+    
+    
+    
+       
+    
+    
+        
+        <footer class="main-footer d-none">
+            <div class="text-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </footer>
+    </div>
