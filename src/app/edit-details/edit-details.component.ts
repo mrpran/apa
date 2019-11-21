@@ -676,7 +676,7 @@ export class EditDetailsComponent implements OnInit {
            console.log(this.project);
           },
         error => {
-          console.log(error);
+          console.log(error.message);
         }
       );
 

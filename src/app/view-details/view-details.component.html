@@ -47,6 +47,11 @@
     <!-- /.navbar -->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper" style="height:100%; background: light ">
+
+
+
+
+
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container">
@@ -59,6 +64,11 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+        </div>
+
+
+        <div class="text-center" *ngIf="loading">
+            <img src="../../assets/dist/img/Spinner-1s-177px.gif" />
         </div>
         <!-- /.content-header -->
         <!-- Main content -->
@@ -80,7 +90,7 @@
                                             </a>
                                         </h4>
                                         <button (click)="deleteData(data)" type="button" data-toggle="modal" data-target="#delete" class="btn btn-sm btn-danger float-right ml-2">delete</button>
-                                        <button (click)="editData(data)"  type="button" class="btn btn-sm btn-warning float-right ml-2">edit</button>
+                                        <button (click)="editData(data)" type="button" class="btn btn-sm btn-warning float-right ml-2">edit</button>
                                         <button (click)="retriveData(data)" type="button" data-toggle="modal" data-target="#view" class="btn btn-sm btn-info float-right">view</button>
 
                                     </div>

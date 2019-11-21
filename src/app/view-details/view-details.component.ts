@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../authentication.service';
 @Component({
@@ -10,6 +11,7 @@ import { AuthenticationService } from '../authentication.service';
 export class ViewDetailsComponent implements OnInit {
 
   username;
+  loading = true;
   testID: string;
   sampleData = {};
 
@@ -17,6 +19,7 @@ export class ViewDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private toast: ToastrService,
     private authenticationService: AuthenticationService) {
     this.username = localStorage.getItem('username');
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -35,7 +38,10 @@ export class ViewDetailsComponent implements OnInit {
     this.currentUser =JSON.parse(localStorage.getItem('currentUser'));
     console.log(this.currentUser.access_token);
     this.authenticationService.getRecords().subscribe(
-      records => this.sampleData = records,
+      records =>{
+        this.sampleData = records;
+        this.loading = false;
+      } ,
       error => { 
         this.router.navigate(['keycloak-login']);
       }
@@ -45,7 +51,13 @@ export class ViewDetailsComponent implements OnInit {
 
 
   collapsible(id) {
-    this.testID = id;
+    if(this.testID==id){
+      this.testID = null;
+    }
+    else{
+      this.testID = id;
+    }
+    
   }
 
   current_project = {
@@ -154,9 +166,13 @@ export class ViewDetailsComponent implements OnInit {
   deleteRecord() {
     this.authenticationService.deleteRecord(this.deleteId).subscribe(
       () => {
+        this.toast.warning(this.deleteId + " deleted !");
         this.router.navigate(["view-details"]);
-      });
-    console.log(this.deleteId + " deleted !");
+      },
+      error =>{
+        console.log(error);
+      }
+    );
   }
 
 }

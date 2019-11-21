@@ -114,17 +114,17 @@ export class AuthenticationService {
 
 
 
-  // login(username: string, password: string) {
-  //   return this.http.post<any>('http://13.127.38.55:8085/authenticate', { username: username, password: password })
-  //     .pipe(map(user => {
-  //       if (user && user.token) {
-  //         // store user details and jwt token in local storage to keep user logged in between page refreshes
-  //         localStorage.setItem('currentUser', JSON.stringify(user));
-  //         localStorage.setItem('username', JSON.stringify(username));
-  //       }
-  //       return user;
-  //     }));
-  // }
+  login(username: string, password: string) {
+    return this.http.post<any>('http://13.127.38.55:8085/authenticate', { username: username, password: password })
+      .pipe(map(user => {
+        if (user && user.token) {
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          localStorage.setItem('username', JSON.stringify(username));
+        }
+        return user;
+      }));
+  }
 
 
 
