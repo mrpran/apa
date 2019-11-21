@@ -22,7 +22,7 @@ export class PortfolioDetailsComponent implements OnInit {
     "account": "",
     "bo": "",
     "appName": "",
-    "wiproAL": "",
+    "al": "",
     "entity": "",
     "asIs": "",
     "toBe": ""
@@ -50,7 +50,7 @@ export class PortfolioDetailsComponent implements OnInit {
       account: ['DTCC', Validators.required],
       bo: ['Dinesh', Validators.required],
       appName: ['App Modernization', Validators.required],
-      wiproAL: ['test@wipro.com', Validators.required]
+      al: ['test@wipro.com', Validators.required]
     });
     if (role == "ORG_ADMIN") {
       this.isOrgAdmin = true;
@@ -72,7 +72,7 @@ export class PortfolioDetailsComponent implements OnInit {
     this.sampleData1.account = this.f.account.value;
     this.sampleData1.bo = this.f.bo.value;
     this.sampleData1.appName = this.f.appName.value;
-    this.sampleData1.wiproAL = this.f.wiproAL.value;
+    this.sampleData1.al = this.f.al.value;
 
     this.sampleData1.entity = "PortfolioAsIs";
 

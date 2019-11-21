@@ -12,61 +12,69 @@ import Portfolio from "../model";
 })
 export class EditDetailsComponent implements OnInit {
 
+
+  hideFuture = true;
+
+  showCurrent() {
+    window.scroll(0, 0);
+    this.hideFuture = !this.hideFuture;
+  }
+
   username;
   editId;
   project: Portfolio;
 
 
   toBeSelected: any;
-  asIsSelected = 
+  asIsSelected =
     {
-    "ageOfApplication": "-",
-    "apiGateway": "-",
-    "applicationLanguageDependency": "-",
-    "applicationDocumentsAvailability": "-",
-    "applicationClassification": "-",
-    "applicationDescription": "-",
-    "applicationPopulation": "-",
-    "applicationSupportHours": "-",
-    "appServers": "-",
-    "appVersion": "-",
-    "businessUnitDiscoverySpoc": "-",
-    "changeRequestYearly": "-",
-    "cicd": "-",
-    "cicdTools": "-",
-    "database": "-",
-    "databaseVersion": "-",
-    "globalLocal": "-",
-    "incidentRequestYearly": "-",
-    "totalRequestYearly": "-",
-    "infrastructure": "-",
-    "integrationLayer": "-",
-    "isApplicationPlannedSunset": "-",
-    "isApplicationRationalized": "-",
-    "isApplicationTobeOnCloud": "-",
-    "isAppShadowIT": "-",
-    "isOnSupportPresent": "-",
-    "languageBackEnd": "-",
-    "languageFrontEnd": "-",
-    "languageBEVersion": "-",
-    "languageFEVersion": "-",
-    "totalLoc": "-",
-    "frontEndLoc": "-",
-    "dbLoc": "-",
-    "backEndLoc": "-",
-    "operatingSystem": "-",
-    "packageSoftware": "-",
-    "platform": "-",
-    "process": "-",
-    "processTools": "-",
-    "region": "-",
-    "regionalDiscoverySpoc": "-",
-    "releaseCycle": "-",
-    "serviceRequestYearly": "-",
-    "solutionModel": "-",
-    "sunsetDate": "-",
-    "comment": "-"
-  } ;
+      "ageOfApplication": "-",
+      "apiGateway": "-",
+      "applicationLanguageDependency": "-",
+      "applicationDocumentsAvailability": "-",
+      "applicationClassification": "-",
+      "applicationDescription": "-",
+      "applicationPopulation": "-",
+      "applicationSupportHours": "-",
+      "appServers": "-",
+      "appVersion": "-",
+      "businessUnitDiscoverySpoc": "-",
+      "changeRequestYearly": "-",
+      "cicd": "-",
+      "cicdTools": "-",
+      "database": "-",
+      "databaseVersion": "-",
+      "globalLocal": "-",
+      "incidentRequestYearly": "-",
+      "totalRequestYearly": "-",
+      "infrastructure": "-",
+      "integrationLayer": "-",
+      "isApplicationPlannedSunset": "-",
+      "isApplicationRationalized": "-",
+      "isApplicationTobeOnCloud": "-",
+      "isAppShadowIT": "-",
+      "isOnSupportPresent": "-",
+      "languageBackEnd": "-",
+      "languageFrontEnd": "-",
+      "languageBEVersion": "-",
+      "languageFEVersion": "-",
+      "totalLoc": "-",
+      "frontEndLoc": "-",
+      "dbLoc": "-",
+      "backEndLoc": "-",
+      "operatingSystem": "-",
+      "packageSoftware": "-",
+      "platform": "-",
+      "process": "-",
+      "processTools": "-",
+      "region": "-",
+      "regionalDiscoverySpoc": "-",
+      "releaseCycle": "-",
+      "serviceRequestYearly": "-",
+      "solutionModel": "-",
+      "sunsetDate": "-",
+      "comment": "-"
+    };
 
   platformOther = "";
   databaseOther = "";
@@ -450,7 +458,7 @@ export class EditDetailsComponent implements OnInit {
     private toast: ToastrService,
     private authenticationService: AuthenticationService) {
 
-      this.username = localStorage.getItem('username');
+    this.username = localStorage.getItem('username');
     this.project = new Portfolio();
 
     this.appliationEstateForm = this.formBuilder.group({
@@ -506,7 +514,7 @@ export class EditDetailsComponent implements OnInit {
 
   }
 
-  
+
 
   patchForm() {
     this.appliationEstateForm.patchValue({
@@ -564,7 +572,7 @@ export class EditDetailsComponent implements OnInit {
     this.platformSelected = this.toBeSelected.platform.split(',');
     this.platformOther = this.platformSelected.filter(e => !this.platformList.includes(e)).toString();
     this.platformOther != '' ? this.platformSelected.splice(this.platformSelected.indexOf(this.platformOther), 1, 'Other') : {};
-   
+
     //
     this.databaseSelected = this.toBeSelected.database.split(',');
     this.databaseOther = this.databaseSelected.filter(e => !this.databaseList.includes(e)).toString();
@@ -666,19 +674,19 @@ export class EditDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.editId = this.route.snapshot.paramMap.get('editId');
-      this.authenticationService.getRecord(this.editId).subscribe(
-        data => {
-           this.project = data.portfolioResponse[0];
-           this.asIsSelected = this.project.asIs;
-           this.patchForm();
-           this.toBeSelected = this.project.toBe;
-           this.toBePatch();
-           console.log(this.project);
-          },
-        error => {
-          console.log(error.message);
-        }
-      );
+    this.authenticationService.getRecord(this.editId).subscribe(
+      data => {
+        this.project = data.portfolioResponse[0];
+        this.asIsSelected = this.project.asIs;
+        this.patchForm();
+        this.toBeSelected = this.project.toBe;
+        this.toBePatch();
+        console.log(this.project);
+      },
+      error => {
+        console.log(error.message);
+      }
+    );
 
 
     this.platformList = this.authenticationService.platformList;
@@ -711,6 +719,8 @@ export class EditDetailsComponent implements OnInit {
   get f() { return this.appliationEstateForm.controls; }
 
   onNext() {
+    window.scroll(0,0);
+    this.hideFuture = false;
 
     //Application-state-form
 
