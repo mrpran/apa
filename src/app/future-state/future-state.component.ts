@@ -55,9 +55,13 @@ export class FutureStateComponent implements OnInit {
     }
   }
 
-  xyz : string;
-  handleSavePlatform() {
-    this.xyz = (this.platformSelected.toString().replace('Other',this.platformOther)).replace(/,/g,", ");
+  handleSave(data : string[], input1) {
+    if(input1 == "") {
+      return (data.toString().replace(',Other', '').replace('Other,','').replace('Other', '').replace(/,/g,", "));
+    }
+    else {
+      return (data.toString().replace('Other',input1)).replace(/,/g,", ");
+    }
   }
 
 

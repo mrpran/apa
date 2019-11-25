@@ -33,6 +33,11 @@ export class ViewDetailsComponent implements OnInit {
       }
     });
   }
+
+  handleView(data : string) {
+    return data.replace(/,/g, ', ');
+  }
+
   currentUser;
   ngOnInit() {
     this.currentUser =JSON.parse(localStorage.getItem('currentUser'));

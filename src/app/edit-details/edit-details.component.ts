@@ -13,6 +13,7 @@ import Portfolio from "../model";
 export class EditDetailsComponent implements OnInit {
 
 
+  
   hideFuture = true;
 
   showCurrent() {
@@ -570,107 +571,139 @@ export class EditDetailsComponent implements OnInit {
   toBePatch() {
     //
     this.platformSelected = this.toBeSelected.platform.split(',');
-    this.platformSelected.splice(this.platformSelected.indexOf('-'),1);
+    this.platformSelected.includes('-') ? this.platformSelected.splice(this.platformSelected.indexOf('-'),1) : {};
     this.platformOther = this.platformSelected.filter(e => !this.platformList.includes(e)).toString();
     this.platformOther != '' ? this.platformSelected.splice(this.platformSelected.indexOf(this.platformOther), 1, 'Other') : {};
-
     //
     this.databaseSelected = this.toBeSelected.database.split(',');
+    this.databaseSelected.includes('-') ? this.databaseSelected.splice(this.databaseSelected.indexOf('-'),1) : {};
     this.databaseOther = this.databaseSelected.filter(e => !this.databaseList.includes(e)).toString();
     this.databaseOther != '' ? this.databaseSelected.splice(this.databaseSelected.indexOf(this.databaseOther), 1, 'Other') : {};
     //
     this.streamingSelected = this.toBeSelected.streaming.split(',');
+    this.streamingSelected.includes('-') ? this.streamingSelected.splice(this.streamingSelected.indexOf('-'),1) : {};
     this.streamingOther = this.streamingSelected.filter(e => !this.streamingList.includes(e)).toString();
     this.streamingOther != '' ? this.streamingSelected.splice(this.streamingSelected.indexOf(this.streamingOther), 1, 'Other') : {};
     //
     this.analyticsSelected = this.toBeSelected.analytics.split(',');
+    this.analyticsSelected.includes('-') ? this.analyticsSelected.splice(this.analyticsSelected.indexOf('-'),1) : {};
     this.analyticsOther = this.analyticsSelected.filter(e => !this.analyticsList.includes(e)).toString();
     this.analyticsOther != '' ? this.analyticsSelected.splice(this.analyticsSelected.indexOf(this.analyticsOther), 1, 'Other') : {};
     //
     this.messagingSelected = this.toBeSelected.messaging.split(',');
+    this.messagingSelected.includes('-') ? this.messagingSelected.splice(this.messagingSelected.indexOf('-'),1) : {};
     this.messagingOther = this.messagingSelected.filter(e => !this.messagingList.includes(e)).toString();
     this.messagingOther != '' ? this.messagingSelected.splice(this.messagingSelected.indexOf(this.messagingOther), 1, 'Other') : {};
     //
     this.serverlessSelected = this.toBeSelected.serverless.split(',');
+    this.serverlessSelected.includes('-') ? this.serverlessSelected.splice(this.serverlessSelected.indexOf('-'),1) : {};
     this.serverlessOther = this.serverlessSelected.filter(e => !this.serverlessList.includes(e)).toString();
     this.serverlessOther != '' ? this.serverlessSelected.splice(this.serverlessSelected.indexOf(this.serverlessOther), 1, 'Other') : {};
     //
     this.integrationSelected = this.toBeSelected.integration.split(',');
+    this.integrationSelected.includes('-') ? this.integrationSelected.splice(this.integrationSelected.indexOf('-'),1) : {};
     this.integrationOther = this.integrationSelected.filter(e => !this.integrationList.includes(e)).toString();
     this.integrationOther != '' ? this.integrationSelected.splice(this.integrationSelected.indexOf(this.integrationOther), 1, 'Other') : {};
     //
     this.schemaDefinitionSelected = this.toBeSelected.schemaDefinition.split(',');
+    this.schemaDefinitionSelected.includes('-') ? this.schemaDefinitionSelected.splice(this.schemaDefinitionSelected.indexOf('-'),1) : {};
     this.schemaDefinitionOther = this.streamingSelected.filter(e => !this.schemaDefinitionList.includes(e)).toString();
     this.schemaDefinitionOther != '' ? this.schemaDefinitionSelected.splice(this.schemaDefinitionSelected.indexOf(this.schemaDefinitionOther), 1, 'Other') : {};
     //
     this.imageBuildSelected = this.toBeSelected.imageBuild.split(',');
+    this.imageBuildSelected.includes('-') ? this.imageBuildSelected.splice(this.imageBuildSelected.indexOf('-'),1) : {};
     this.imageBuildOther = this.imageBuildSelected.filter(e => !this.imageBuildList.includes(e)).toString();
     this.imageBuildOther != '' ? this.imageBuildSelected.splice(this.imageBuildSelected.indexOf(this.imageBuildOther), 1, 'Other') : {};
     //
     this.cicdSelected = this.toBeSelected.cicd.split(',');
+    this.cicdSelected.includes('-') ? this.cicdSelected.splice(this.cicdSelected.indexOf('-'),1) : {};
     this.cicdOther = this.cicdSelected.filter(e => !this.cicdList.includes(e)).toString();
     this.cicdOther != '' ? this.cicdSelected.splice(this.cicdSelected.indexOf(this.cicdOther), 1, 'Other') : {};
     //
     this.containerOrchestrationSelected = this.toBeSelected.containerOrchestration.split(',');
+    this.containerOrchestrationSelected.includes('-') ? this.containerOrchestrationSelected.splice(this.containerOrchestrationSelected.indexOf('-'),1) : {};
     this.containerOrchestrationOther = this.containerOrchestrationSelected.filter(e => !this.containerOrchestrationList.includes(e)).toString();
     this.containerOrchestrationOther != '' ? this.containerOrchestrationSelected.splice(this.containerOrchestrationSelected.indexOf(this.containerOrchestrationOther), 1, 'Other') : {};
     //
     this.serviceDiscoverySelected = this.toBeSelected.serviceDiscovery.split(',');
+    this.serviceDiscoverySelected.includes('-') ? this.serviceDiscoverySelected.splice(this.serviceDiscoverySelected.indexOf('-'),1) : {};
     this.serviceDiscoveryOther = this.serviceDiscoverySelected.filter(e => !this.serviceDiscoveryList.includes(e)).toString();
     this.serviceDiscoveryOther != '' ? this.serviceDiscoverySelected.splice(this.serviceDiscoverySelected.indexOf(this.serviceDiscoveryOther), 1, 'Other') : {};
     //
     this.remoteProcedureCellsSelected = this.toBeSelected.rpc.split(',');
+    this.remoteProcedureCellsSelected.includes('-') ? this.remoteProcedureCellsSelected.splice(this.remoteProcedureCellsSelected.indexOf('-'),1) : {};
     this.rpcOther = this.remoteProcedureCellsSelected.filter(e => !this.remoteProcedureCellsList.includes(e)).toString();
     this.rpcOther != '' ? this.remoteProcedureCellsSelected.splice(this.remoteProcedureCellsSelected.indexOf(this.rpcOther), 1, 'Other') : {};
     //
     this.serviceMeshSelected = this.toBeSelected.serviceMesh.split(',');
+    this.serviceMeshSelected.includes('-') ? this.serviceMeshSelected.splice(this.serviceMeshSelected.indexOf('-'),1) : {};
     this.serviceMeshOther = this.serviceMeshSelected.filter(e => !this.serviceMeshList.includes(e)).toString();
     this.serviceMeshOther != '' ? this.serviceMeshSelected.splice(this.serviceMeshSelected.indexOf(this.serviceMeshOther), 1, 'Other') : {};
     //
     this.apiGatewaySelected = this.toBeSelected.apiGateway.split(',');
+    this.apiGatewaySelected.includes('-') ? this.apiGatewaySelected.splice(this.apiGatewaySelected.indexOf('-'),1) : {};
     this.apiGatewayOther = this.apiGatewaySelected.filter(e => !this.apiGatewayList.includes(e)).toString();
     this.apiGatewayOther != '' ? this.apiGatewaySelected.splice(this.apiGatewaySelected.indexOf(this.apiGatewayOther), 1, 'Other') : {};
     //
     this.hostManagementSelected = this.toBeSelected.hostManagement.split(',');
+    this.hostManagementSelected.includes('-') ? this.hostManagementSelected.splice(this.hostManagementSelected.indexOf('-'),1) : {};
     this.hostManagementOther = this.hostManagementSelected.filter(e => !this.hostManagementList.includes(e)).toString();
     this.hostManagementOther != '' ? this.hostManagementSelected.splice(this.hostManagementSelected.indexOf(this.hostManagementOther), 1, 'Other') : {};
     //
     this.containerRegistrySelected = this.toBeSelected.containerRegistry.split(',');
+    this.containerRegistrySelected.includes('-') ? this.containerRegistrySelected.splice(this.containerRegistrySelected.indexOf('-'),1) : {};
     this.containerRegistryOther = this.containerRegistrySelected.filter(e => !this.containerRegistryList.includes(e)).toString();
     this.containerRegistryOther != '' ? this.containerRegistrySelected.splice(this.containerRegistrySelected.indexOf(this.containerRegistryOther), 1, 'Other') : {};
     //
     this.securitySelected = this.toBeSelected.security.split(',');
+    this.securitySelected.includes('-') ? this.securitySelected.splice(this.securitySelected.indexOf('-'),1) : {};
     this.securityOther = this.securitySelected.filter(e => !this.securityList.includes(e)).toString();
     this.securityOther != '' ? this.securitySelected.splice(this.securitySelected.indexOf(this.securityOther), 1, 'Other') : {};
     //
     this.keyManagementSelected = this.toBeSelected.keyManagement.split(',');
+    this.keyManagementSelected.includes('-') ? this.keyManagementSelected.splice(this.keyManagementSelected.indexOf('-'),1) : {};
     this.keyManagementOther = this.keyManagementSelected.filter(e => !this.keyManagementList.includes(e)).toString();
     this.keyManagementOther != '' ? this.keyManagementSelected.splice(this.keyManagementSelected.indexOf(this.keyManagementOther), 1, 'Other') : {};
     //
     this.monitoringSelected = this.toBeSelected.monitoring.split(',');
+    this.monitoringSelected.includes('-') ? this.monitoringSelected.splice(this.monitoringSelected.indexOf('-'),1) : {};
     this.monitoringOther = this.monitoringSelected.filter(e => !this.monitoringList.includes(e)).toString();
     this.monitoringOther != '' ? this.monitoringSelected.splice(this.monitoringSelected.indexOf(this.monitoringOther), 1, 'Other') : {};
     //
     this.loggingSelected = this.toBeSelected.logging.split(',');
+    this.loggingSelected.includes('-') ? this.loggingSelected.splice(this.loggingSelected.indexOf('-'),1) : {};
     this.loggingOther = this.loggingSelected.filter(e => !this.loggingList.includes(e)).toString();
     this.loggingOther != '' ? this.loggingSelected.splice(this.loggingSelected.indexOf(this.loggingOther), 1, 'Other') : {};
     //
     this.tracingSelected = this.toBeSelected.tracing.split(',');
+    this.tracingSelected.includes('-') ? this.tracingSelected.splice(this.tracingSelected.indexOf('-'),1) : {};
     this.tracingOther = this.tracingSelected.filter(e => !this.tracingList.includes(e)).toString();
     this.tracingOther != '' ? this.tracingSelected.splice(this.tracingSelected.indexOf(this.tracingOther), 1, 'Other') : {};
     //
     this.apiAnalyticsSelected = this.toBeSelected.apiAnalytics.split(',');
+    this.apiAnalyticsSelected.includes('-') ? this.apiAnalyticsSelected.splice(this.apiAnalyticsSelected.indexOf('-'),1) : {};
     this.apiAnalyticsOther = this.apiAnalyticsSelected.filter(e => !this.apiAnalyticsList.includes(e)).toString();
     this.apiAnalyticsOther != '' ? this.apiAnalyticsSelected.splice(this.apiAnalyticsSelected.indexOf(this.apiAnalyticsOther), 1, 'Other') : {};
     //
     this.alertsSelected = this.toBeSelected.alerts.split(',');
+    this.alertsSelected.includes('-') ? this.alertsSelected.splice(this.alertsSelected.indexOf('-'),1) : {};
     this.alertsOther = this.alertsSelected.filter(e => !this.alertsList.includes(e)).toString();
     this.alertsOther != '' ? this.alertsSelected.splice(this.alertsSelected.indexOf(this.alertsOther), 1, 'Other') : {};
     //
     this.memoryManagementSelected = this.toBeSelected.memoryManagement.split(',');
+    this.memoryManagementSelected.includes('-') ? this.memoryManagementSelected.splice(this.memoryManagementSelected.indexOf('-'),1) : {};
     this.memoryManagementOther = this.memoryManagementSelected.filter(e => !this.memoryManagementList.includes(e)).toString();
     this.memoryManagementOther != '' ? this.memoryManagementSelected.splice(this.memoryManagementSelected.indexOf(this.memoryManagementOther), 1, 'Other') : {};
 
+  }
+
+  handleSave(data : string[], input1) {
+    if(input1 == "") {
+      return (data.toString().replace(',Other', '').replace('Other,','').replace('Other', '').replace(/,/g,", "));
+    }
+    else {
+      return (data.toString().replace('Other',input1)).replace(/,/g,", ");
+    }
   }
 
   ngOnInit() {
@@ -973,6 +1006,35 @@ export class EditDetailsComponent implements OnInit {
     //this.sampleForm.controls['alerts'].setValue(this.alertsSelected);
     this.toBe.alerts = this.alertsSelected.toString();
 
+    if (!(this.toBe.platform)) this.toBe.platform = "-";
+    if (!(this.toBe.database)) this.toBe.database = "-";
+    if (!(this.toBe.analytics)) this.toBe.analytics = "-";
+    if (!(this.toBe.streaming)) this.toBe.streaming = "-";
+    if (!(this.toBe.messaging)) this.toBe.messaging = "-";
+
+    if (!(this.toBe.schemaDefinition)) this.toBe.schemaDefinition = "-";
+    if (!(this.toBe.cicd)) this.toBe.cicd = "-";
+    if (!(this.toBe.integration)) this.toBe.integration = "-";
+    if (!(this.toBe.serverless)) this.toBe.serverless = "-";
+    if (!(this.toBe.imageBuild)) this.toBe.imageBuild = "-";
+
+    if (!(this.toBe.containerOrchestration)) this.toBe.containerOrchestration = "-";
+    if (!(this.toBe.serviceDiscovery)) this.toBe.serviceDiscovery = "-";
+    if (!(this.toBe.rpc)) this.toBe.rpc = "-";
+    if (!(this.toBe.serviceMesh)) this.toBe.serviceMesh = "-";
+    if (!(this.toBe.apiGateway)) this.toBe.apiGateway = "-";
+
+    if (!(this.toBe.hostManagement)) this.toBe.hostManagement = "-";
+    if (!(this.toBe.containerRegistry)) this.toBe.containerRegistry = "-";
+    if (!(this.toBe.security)) this.toBe.security = "-";
+    if (!(this.toBe.keyManagement)) this.toBe.keyManagement = "-";
+    if (!(this.toBe.memoryManagement)) this.toBe.memoryManagement = "-";
+
+    if (!(this.toBe.monitoring)) this.toBe.monitoring = "-";
+    if (!(this.toBe.logging)) this.toBe.logging = "-";
+    if (!(this.toBe.tracing)) this.toBe.tracing = "-";
+    if (!(this.toBe.apiAnalytics)) this.toBe.apiAnalytics = "-";
+    if (!(this.toBe.alerts)) this.toBe.alerts = "-";
 
     console.log(this.toBe);
 

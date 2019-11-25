@@ -392,211 +392,236 @@
 
 
 
+                
                 <div class="card" *ngIf="!hideFuture">
-                    <div class="card-header">
-                        <h4>Application Devlopment</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <label>Platform :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Platform">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Database :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Database">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Analytics</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Analytics">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Streaming :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Streaming">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Message :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Message">
-                                    Click to Select >>
-                                </button>
-                            </div>
-
+                        <div class="card-header">
+                            <h4>Application Devlopment</h4>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col">
-                                <label>Schema Definition :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#SchemaDefinition">
-                                    Click to Select >>
-                                </button>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Platform :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Platform">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(platformSelected, platformOther)}}</p>
+    
+                                </div>
+                                <div class="col">
+                                    <label>Database :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Database">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(databaseSelected, databaseOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Analytics</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Analytics">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(analyticsSelected, analyticsOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Streaming :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Streaming">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(streamingSelected, streamingOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Message :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Message">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(messagingSelected, messagingOther)}}</p>
+                                </div>
+    
                             </div>
-                            <div class="col">
-                                <label>CI/CD :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#cicd">
-                                    Click to Select >>
-                                </button>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Schema Definition :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#SchemaDefinition">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(schemaDefinitionSelected, schemaDefinitionOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>CI/CD :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#cicd">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(cicdSelected, cicdOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Integration :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Integration">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(integrationSelected, integrationOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Serverless :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Serverless">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(serverlessSelected, serverlessOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Image Build :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#ImageBuild">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(imageBuildSelected, imageBuildOther)}}</p>
+                                </div>
+    
                             </div>
-                            <div class="col">
-                                <label>Integration :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Integration">
-                                    Click to Select >>
-                                </button>
+                        </div>
+    
+    
+    
+                        <div class="card-header">
+                            <h4>Orchestration & Management</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Container Orchestration :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#ContainerOrchestration">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(containerOrchestrationSelected, containerOrchestrationOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Service Discovery :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#ServiceDiscovery">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(serviceDiscoverySelected, serviceDiscoveryOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Remote Procedure Calls :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#rpc">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(remoteProcedureCellsSelected, rpcOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Service Mesh :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#ServiceMesh">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(serviceMeshSelected, serviceMeshOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>API Gateway :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#APIGateway">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(apiGatewaySelected, apiGatewayOther)}}</p>
+                                </div>
+    
                             </div>
-                            <div class="col">
-                                <label>Serverless :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Serverless">
-                                    Click to Select >>
-                                </button>
+                        </div>
+    
+    
+    
+                        <div class="card-header">
+                            <h4>Provisioning</h4>
+                        </div>
+                        <div class="card-body">
+    
+    
+                            <div class="row">
+                                <div class="col">
+                                    <label>Host Management :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#HostManagement">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(hostManagementSelected, hostManagementOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Container Registry :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#ContainerRegistry">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(containerRegistrySelected, containerRegistryOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Security :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Security">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(securitySelected, securityOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Key Management :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#KeyManagement">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(keyManagementSelected, keyManagementOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Memory Management :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#MemoryManagement">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(memoryManagementSelected, memoryManagementOther)}}</p>
+                                </div>
+    
                             </div>
-                            <div class="col">
-                                <label>Image Build :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ImageBuild">
-                                    Click to Select >>
-                                </button>
+                        </div>
+    
+                        <div class="card-header">
+                            <h4>Governance</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Monitoring :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Monitoring">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(monitoringSelected, monitoringOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Logging :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Logging">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(loggingSelected, loggingOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Tracing :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Tracing">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(tracingSelected, tracingOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>API Analytics :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#APIAnalytics">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(apiAnalyticsSelected, apiAnalyticsOther)}}</p>
+                                </div>
+                                <div class="col">
+                                    <label>Alerts :</label>
+                                    <button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#Alerts">
+                                        Click to Select >>
+                                    </button>
+                                    <p class="text-muted mt-2">{{handleSave(alertsSelected, alertsOther)}}</p>
+                                </div>
+    
                             </div>
-
+                        </div>
+    
+    
+    
+                        <div class="card-footer">
+                            <button (click)="onSubmit()" type="submit" class="btn btn-block btn-info " style="width: 100px">Submit</button>
                         </div>
                     </div>
-
-
-
-                    <div class="card-header">
-                        <h4>Orchestration & Management</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <label>Container Orchestration :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerOrchestration">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Service Discovery :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceDiscovery">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Remote Procedure Calls :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#rpc">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Service Mesh :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ServiceMesh">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>API Gateway :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIGateway">
-                                    Click to Select >>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="card-header">
-                        <h4>Provisioning</h4>
-                    </div>
-                    <div class="card-body">
-
-
-                        <div class="row">
-                            <div class="col">
-                                <label>Host Management :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#HostManagement">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Container Registry :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#ContainerRegistry">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Security :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Security">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Key Management :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#KeyManagement">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Memory Management :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#MemoryManagement">
-                                    Click to Select >>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="card-header">
-                        <h4>Governance</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <label>Monitoring :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Monitoring">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Logging :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Logging">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Tracing :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Tracing">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>API Analytics :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#APIAnalytics">
-                                    Click to Select >>
-                                </button>
-                            </div>
-                            <div class="col">
-                                <label>Alerts :</label>
-                                <button type="button" class="btn btn-block btn-secondary" data-toggle="modal" data-target="#Alerts">
-                                    Click to Select >>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="card-footer">
-                        <button (click)="showCurrent()" type="submit" class="mr-2 btn btn-info ">
-                            <i class="fas fa-arrow-left mr-2"></i>Go to Back</button>
-                        <button (click)="onSubmit()" type="submit" class="btn btn-info " style="width: 100px">Submit</button>
-                    </div>
-                </div>
 
 
 

@@ -111,6 +111,16 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
+                                                <div class="form-group">
+                                                        <label>App Name</label>
+                                                        <input [ngClass]="{ 'is-invalid': submitted && f.appName.errors }" formControlName="appName" type="text" class="form-control"
+                                                            id="exampleInputEmail1" placeholder="appName">
+                                                        <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.appName.errors.required">app name is required</div>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Vertical</label>
                                                 <input [ngClass]="{ 'is-invalid': submitted && f.vertical.errors }" formControlName="vertical" type="text" class="form-control"
@@ -140,16 +150,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                                <div class="form-group">
-                                                        <label>App Name</label>
-                                                        <input [ngClass]="{ 'is-invalid': submitted && f.appName.errors }" formControlName="appName" type="text" class="form-control"
-                                                            id="exampleInputEmail1" placeholder="appName">
-                                                        <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
-                                                            <div *ngIf="f.appName.errors.required">app name is required</div>
-                                                        </div>
-                                                    </div>
-                                        </div>
+                                        
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>AL</label>
