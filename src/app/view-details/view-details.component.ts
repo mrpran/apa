@@ -36,7 +36,7 @@ export class ViewDetailsComponent implements OnInit {
   currentUser;
   ngOnInit() {
     this.currentUser =JSON.parse(localStorage.getItem('currentUser'));
-    console.log(this.currentUser.access_token);
+    //console.log(this.currentUser.access_token);
     this.authenticationService.getRecords().subscribe(
       records =>{
         this.sampleData = records;
@@ -147,7 +147,6 @@ export class ViewDetailsComponent implements OnInit {
 
   retriveData(data) {
     this.current_project = data;
-    console.log(this.current_project);
   }
 
   deleteId;
@@ -170,6 +169,7 @@ export class ViewDetailsComponent implements OnInit {
         this.router.navigate(["view-details"]);
       },
       error =>{
+        this.toast.error(error);
         console.log(error);
       }
     );

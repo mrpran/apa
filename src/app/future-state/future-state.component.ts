@@ -55,6 +55,11 @@ export class FutureStateComponent implements OnInit {
     }
   }
 
+  xyz : string;
+  handleSavePlatform() {
+    this.xyz = (this.platformSelected.toString()).replace(/,/g,", ");
+  }
+
 
   databaseList: string[];
   databaseSelected = [];

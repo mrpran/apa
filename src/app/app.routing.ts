@@ -13,17 +13,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 // , canActivate: [AuthGuard] 
 const appRoutes: Routes = [
-    { path: '', component: ViewDetailsComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'portfolio-details', component: PortfolioDetailsComponent},
-    { path: 'application-estate', component: ApplicationEstateComponent },
-    { path: 'future-state', component: FutureStateComponent },
-    { path: 'view-details', component: ViewDetailsComponent },
-    { path: 'edit-details/:editId', component: EditDetailsComponent },
-    { path: 'test', component: TestComponent },
-    { path: 'keycloak-login', component: KeycloakLoginComponent },
-    { path: 'pagination', component: PaginationComponent },
-    { path: '**',  component: PageNotFoundComponent }
+    { path: '', component: ViewDetailsComponent, canActivate: [AuthGuard] },
+    //{ path: 'login', component: LoginComponent },
+    { path: 'portfolio-details', component: PortfolioDetailsComponent, canActivate: [AuthGuard] },
+    { path: 'application-estate', component: ApplicationEstateComponent , canActivate: [AuthGuard] },
+    { path: 'future-state', component: FutureStateComponent , canActivate: [AuthGuard] },
+    { path: 'view-details', component: ViewDetailsComponent , canActivate: [AuthGuard] },
+    { path: 'edit-details/:editId', component: EditDetailsComponent , canActivate: [AuthGuard] },
+    { path: 'test', component: TestComponent , canActivate: [AuthGuard] },
+    { path: 'keycloak-login', component: KeycloakLoginComponent  },
+    { path: 'pagination', component: PaginationComponent , canActivate: [AuthGuard] },
+    { path: '**',  component: PageNotFoundComponent  }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

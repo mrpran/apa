@@ -570,6 +570,7 @@ export class EditDetailsComponent implements OnInit {
   toBePatch() {
     //
     this.platformSelected = this.toBeSelected.platform.split(',');
+    this.platformSelected.splice(this.platformSelected.indexOf('-'),1);
     this.platformOther = this.platformSelected.filter(e => !this.platformList.includes(e)).toString();
     this.platformOther != '' ? this.platformSelected.splice(this.platformSelected.indexOf(this.platformOther), 1, 'Other') : {};
 
