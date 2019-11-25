@@ -49,7 +49,7 @@ export class PortfolioDetailsComponent implements OnInit {
       vertical: ['App Moderanization', Validators.required],
       account: ['DTCC', Validators.required],
       bo: ['Dinesh', Validators.required],
-      appName: ['App Modernization', Validators.required],
+      appName: ['App-1', Validators.required],
       al: ['test@wipro.com', Validators.required]
     });
     if (role == "ORG_ADMIN") {

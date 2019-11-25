@@ -150,8 +150,10 @@ export class ViewDetailsComponent implements OnInit {
   }
 
   deleteId;
+  deleteAppName;
   deleteData(data) {
     this.deleteId = data.projectId;
+    this.deleteAppName=data.appName;
   }
 
 
@@ -165,7 +167,7 @@ export class ViewDetailsComponent implements OnInit {
   deleteRecord() {
     this.authenticationService.deleteRecord(this.deleteId).subscribe(
       () => {
-        this.toast.warning(this.deleteId + " deleted !");
+        this.toast.warning(this.deleteAppName + " deleted !");
         this.router.navigate(["view-details"]);
       },
       error =>{
