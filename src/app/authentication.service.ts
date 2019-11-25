@@ -61,7 +61,7 @@ export class AuthenticationService {
 
   // sendData() {
   //   let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  //   return this.http.post<any>('http://13.233.84.142:8088/portfolio', this.data, {
+  //   return this.http.post<any>('http://13.234.213.35:8088/portfolio', this.data, {
   //     headers: new HttpHeaders({
   //       'Content-Type': 'application/json',
   //       'Authorization': `Bearer ${currentUser.token}`
@@ -71,7 +71,7 @@ export class AuthenticationService {
   updateData(data) {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(currentUser);
-    return this.http.put<any>('http://13.233.84.142:8088/portfolio', data, {
+    return this.http.put<any>('http://13.234.213.35:8088/portfolio', data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -82,7 +82,7 @@ export class AuthenticationService {
 
   getRecord(editId) {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.get<any>('http://13.233.84.142:8088/portfolio/' + editId, {
+    return this.http.get<any>('http://13.234.213.35:8088/portfolio/' + editId, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -93,7 +93,7 @@ export class AuthenticationService {
 
   getRecords() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.get<any>('http://13.233.84.142:8088/portfolio', {
+    return this.http.get<any>('http://13.234.213.35:8088/portfolio', {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -103,7 +103,7 @@ export class AuthenticationService {
 
   deleteRecord(id) {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.delete<any>('http://13.233.84.142:8088/portfolio/' + id, {
+    return this.http.delete<any>('http://13.234.213.35:8088/portfolio/' + id, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
@@ -129,7 +129,7 @@ export class AuthenticationService {
 
 
   keycloak_login(username: string, password: string) {
-    const url = "http://13.233.84.142:8080/auth/realms/master/protocol/openid-connect/token";
+    const url = "http://13.234.213.35:8080/auth/realms/master/protocol/openid-connect/token";
     const body = new HttpParams()
       .set('client_id', "app-portfolio")
       .set('password', password)
@@ -144,7 +144,7 @@ export class AuthenticationService {
 
   sendData1() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return this.http.post<any>('http://13.233.84.142:8088/portfolio', this.data, {
+    return this.http.post<any>('http://13.234.213.35:8088/portfolio', this.data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${currentUser.access_token}`
